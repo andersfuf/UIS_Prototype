@@ -65,6 +65,7 @@ create database test;
 psql -h localhost -d test -U postgres -W
 
 ModuleNotFoundError: No module named 'flask_wtf'
+
 $ pip install flask_wtf
 
 no default user - register
