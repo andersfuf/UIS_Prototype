@@ -32,6 +32,8 @@ CUS7-3 (name): confirm update;
 
 CUS7-2 (anders): confirm dropdown;
 
+CUS7-4 (name): ER-TO-RELATIONAL deposit, transfer, withdraw;
+
 CUS4-1(name, 5%): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date. 
 
 CUS4-2(name); date part; consolidated view at point in time.
