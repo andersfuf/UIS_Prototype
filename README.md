@@ -1,6 +1,9 @@
-#April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINT
+# April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINT
+
 Reviewing the prioritized user stories. User stories to be picked. 
-##Rules:  
+
+## Rules:  
+
 To pick: Add your name. 
 
 Update progress. 
