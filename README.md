@@ -52,3 +52,7 @@ EUS6 (name) Whats a CD(Certificates of deposit)?
 
 ## Requirements:
 ModuleNotFoundError: No module named 'flask_bcrypt'
+$ pip install flask_bcrypt
+ModuleNotFoundError: No module named 'flask_login'
+$ pip install flask_login
+psycopg2.OperationalError: FATAL: database "test" does not exist
