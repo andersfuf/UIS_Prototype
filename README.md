@@ -8,7 +8,7 @@ We consider this a sprint started. Lets be modest and see if we can get some don
  
 ## Rules:  
 
-To pick: Add your name. 
+To pick: Add your name. Pick one at the time, (pick only several when you break the rule)
 
 Update progress. 
 
