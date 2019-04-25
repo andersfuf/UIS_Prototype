@@ -16,8 +16,9 @@ Finalize ‘one at the time’.
 
 Commit to repository. 
 
-## User Stories:
+## User stories:
 
+### Customer role:
 
 CUS-1: finished (100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
 
@@ -34,9 +35,15 @@ CUS7-2 (anders): confirm dropdown;
 
 CUS7-4 (name): ER-TO-RELATIONAL deposit, transfer, withdraw;
 
+CUS4: As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments.
+
 CUS4-1(name, 5%): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date. 
 
 CUS4-2(name); date part; consolidated view at point in time.
+
+### Employee role:
+
+CUS10(moved,SPLIT): As a customer, I can deposit money to my checking account, so that I can have it in a safe place at the bank.
 
 EUS-CUS10 (name, 0%):  Move to employee as it is a employee/counter utility; employee must chose the customer; CUS10: As a customer, I can deposit money to my checking account, so that I can have it in a safe place at the bank.- EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
 
