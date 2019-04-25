@@ -45,3 +45,4 @@ class Transfers(tuple):
         self.id = user_data[0]
         self.amount = user_data[1]
         self.transfer_date = user_data[2]
+
