@@ -48,3 +48,7 @@ EUS3-1c (name) un-register page implements deleting a customer along with the ac
 EUS3-2 (name) authentication against employee of EUS3.
 
 EUS6 (name) Whats a CD(Certificates of deposit)?
+
+
+## Requirements:
+ModuleNotFoundError: No module named 'flask_bcrypt'
