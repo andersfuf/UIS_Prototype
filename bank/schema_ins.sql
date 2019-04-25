@@ -121,3 +121,8 @@ CREATE TABLE IF NOT EXISTS Certificates_of_deposit(
 	amount integer,
 	maturity_date date
 );
+
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date)
+VALUES (now(), 10000, now());
+INSERT INTO public.certificates_of_deposit(cd_number, start_date, amount, maturity_date)
+VALUES (7000, now(), 10000, now());
