@@ -30,7 +30,7 @@ CUS7-1 (100%): HTML finished version one; SPLIT; update not confirmed;  ;
 
 CUS7-3 (name): confirm update;
 
-CUS7-2 (name): confirm dropdown;
+CUS7-2 (anders): confirm dropdown;
 
 EUS-CUS10 (name, 0%):  Move to employee as it is a employee/counter utility; employee must chose the customer; CUS10: As a customer, I can deposit money to my checking account, so that I can have it in a safe place at the bank.- EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
 
