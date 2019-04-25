@@ -31,7 +31,7 @@ CUS7-1 (100%): HTML finished version one; SPLIT; update not confirmed;  ;
 
 CUS7-3 (name): confirm update;
 
-CUS7-2 (anders): confirm dropdown;
+CUS7-2 (none): confirm dropdown;
 
 CUS7-4 (name): ER to relational part. deposit, transfer, withdraw;
 
