@@ -1,4 +1,20 @@
-# UIS_Prototype
+#April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINT
+Reviewing the prioritized user stories. User stories to be picked. 
+##Rules:  
+To pick: Add your name. 
+
+Update progress. 
+
+Finalize ‘one at the time’. 
+
+Commit to repository. 
+
+Our two target dates are: monday April 29th (choose not to meet if github works; stand by ) and Wednesday May 1st, when we meet for acceptance test. 
+
+We consider this a sprint started. Lets be modest and see if we can get some done. In a normal workplace situation no user story should for example not take more that 20 hours. 
+
+## User Stories:
+
 CUS-1: finished (100%);
 
 Suspend authentication for other parts of the application (YES / NO ) - No action - defered.
