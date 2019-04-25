@@ -18,7 +18,8 @@ Commit to repository.
 
 ## User Stories:
 
-CUS-1: finished (100%);
+
+CUS-1: finished (100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
 
 Suspend authentication for other parts of the application (YES / NO ) - No action - defered.
 
