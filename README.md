@@ -61,3 +61,15 @@ ModuleNotFoundError: No module named 'flask_login'
 $ pip install flask_login
 
 psycopg2.OperationalError: FATAL: database "test" does not exist
+create database test;
+psql -h localhost -d test -U postgres -W
+
+ModuleNotFoundError: No module named 'flask_wtf'
+$ pip install flask_wtf
+
+no default user - register
+
+psycopg2.ProgrammingError: relation "customers" does not exist
+LINE 2:         INSERT INTO Customers(name, CPR_number, password)
+
+psql -h localhost -d test -U postgres -W -f schema.sql
