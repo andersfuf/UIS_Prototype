@@ -1,31 +1,31 @@
 # UIS_Prototype
-1.CUS-1: finished;
+CUS-1: finished (100%);
 
-2.Suspend authentication for rest of application (YES / NO )
+Suspend authentication for other parts of the application (YES / NO ) - No action - defered.
 
-3.CUS4-1: investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date. 
+CUS4-1(<name>, 5%): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date. 
 
-4.CUS4-2; date part; consolidated view at point in time.
+CUS4-2(<name>); date part; consolidated view at point in time.
 
-5.CUS7-1: HTML finished version one;update not confirmed;  SPLIT ; 
+CUS7-1 (100%): HTML finished version one; SPLIT; update not confirmed;  ; 
 
-6.CUS7-2: confirm dropdown;
+CUS7-3 (<name>): confirm update;
 
-7.CUS10: Move to employee as it is a employee/counter utility; emplyee must chose the cutomer; CUS10: As a customer, I can deposit money to my checking account, so that I can have it in a safe place at the bank.-> EMP-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
+CUS7-2 (<name>): confirm dropdown;
 
-8.CUS10 moved to employee; status 0% but CUS7 can be used as start.
+EUS-CUS10 (<name>, 0%):  Move to employee as it is a employee/counter utility; employee must chose the customer; CUS10: As a customer, I can deposit money to my checking account, so that I can have it in a safe place at the bank.-> EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
 
-9.EUS1 is very similar to CUS1. 60% finished even though it is not started.
+CUS10 moved to employee; status 0% but CUS7 can be used as start.
 
-10.EUS3 The register page is this user story. However, only employees should have acces to this story. SPLIT
+EUS1(<name>, 60%)  is very similar to CUS1. 60% finished even though it is not started.
 
-11.EUS3-1 register page as is implements adding a customer
+EUS3 Complex story. SPLIT only employees should have acces to this story. 
+EUS3-1a (<name>) register page as is implements adding a customer
 
-12.EUS3-1b add and remove money accounts for customers
+EUS3-1b (<name>) add and remove money accounts for customers
 
-13.EUS3-1c  un-register page implements deleting a customer along with the accounts
+EUS3-1c (<name>) un-register page implements deleting a customer along with the accounts
+	
+EUS3-2 (<name>) authentication against employee of EUS3.
 
-14.EUS3-2 authentication against employee
-
-15.EUS3-split-comments: Complex story A)  
-
+EUS6 (<name>) Whats a CD(Certificates of deposit)?
