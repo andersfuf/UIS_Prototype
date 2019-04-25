@@ -8,7 +8,7 @@ We consider this a sprint started. Lets be modest and see if we can get some don
  
 ## Rules:  
 
-To pick: Add your name. 
+To pick: Add your name. Pick one at the time, (pick only several when you break the rule)
 
 Update progress. 
 
@@ -16,38 +16,64 @@ Finalize ‘one at the time’.
 
 Commit to repository. 
 
-## User Stories:
+## User stories:
 
-CUS-1: finished (100%);
+### Customer role:
+
+CUS-1: finished (100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
 
 Suspend authentication for other parts of the application (YES / NO ) - No action - defered.
 
-CUS4-1(name, 5%): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date. 
 
-CUS4-2(name); date part; consolidated view at point in time.
+CUS7(SPLIT): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money.
 
 CUS7-1 (100%): HTML finished version one; SPLIT; update not confirmed;  ; 
 
 CUS7-3 (name): confirm update;
 
-CUS7-2 (anders): confirm dropdown;
+CUS7-2 (none): confirm dropdown;
 
-EUS-CUS10 (name, 0%):  Move to employee as it is a employee/counter utility; employee must chose the customer; CUS10: As a customer, I can deposit money to my checking account, so that I can have it in a safe place at the bank.- EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
+CUS7-4 (name): ER to relational part. deposit, transfer, withdraw;
 
-CUS10 moved to employee; status 0% but CUS7 can be used as start.
+CUS4(SPLIT): As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments.
 
-EUS1(name, 60%)  is very similar to CUS1. 60% finished even though it is not started.
+CUS4-1(name, 5%): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date. 
 
-EUS3 Complex story. SPLIT only employees should have acces to this story. 
-EUS3-1a (name) register page as is implements adding a customer
+CUS4-2(name); date part; consolidated view at point in time.
 
-EUS3-1b (name) add and remove money accounts for customers
+CUS4-3(name): ER to relational part. certificates_of_deposit, investmentaccounts;
 
-EUS3-1c (name) un-register page implements deleting a customer along with the accounts
 
-EUS3-2 (name) authentication against employee of EUS3.
+### Employee role:
 
-EUS6 (name) Whats a CD(Certificates of deposit)?
+EUS-CUS10 ((moved,SPLIT), 0%):  Move to employee as it is a employee/counter utility; Employee must chose the customer; CUS10: As a customer, I can deposit money to my checking account, so that I can have it in a safe place at the bank.-> EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
+
+EUS-CUS10-1: CUS10 moved to employee; status 0% but CUS7 can be used as start.
+
+EUS-CUS10-2: Authentication part
+
+EUS-CUS10-3: ER to relational part.
+
+
+EUS1(name, 60%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
+
+EUS1-2: (name) ER to relational part.
+
+EUS3 (complex, SPLIT): Complex story. SPLIT, only employees should have acces to this story). EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
+
+EUS3-1 (name) register page as is implements adding a customer
+
+EUS3-2 (name) add and remove money accounts for customers
+
+EUS3-3 (name) un-register page implements deleting a customer along with the accounts
+
+EUS3-4 (name) authentication against employee of EUS3.
+
+EUS3-5 (name) ER to relational part.
+
+EUS6 (name): As a bank employee, I can create a new CD for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank.
+
+EUS6-2 (name) ER to relational part.
 
 
 ## Requirements:
