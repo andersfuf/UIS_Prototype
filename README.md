@@ -2,6 +2,10 @@
 
 Reviewing the prioritized user stories. User stories to be picked. 
 
+Our two target dates are: monday April 29th (choose not to meet if github works; stand by ) and Wednesday May 1st, when we meet for acceptance test. 
+
+We consider this a sprint started. Lets be modest and see if we can get some done. In a normal workplace situation no user story should for example not take more that 20 hours.
+ 
 ## Rules:  
 
 To pick: Add your name. 
@@ -11,10 +15,6 @@ Update progress.
 Finalize ‘one at the time’. 
 
 Commit to repository. 
-
-Our two target dates are: monday April 29th (choose not to meet if github works; stand by ) and Wednesday May 1st, when we meet for acceptance test. 
-
-We consider this a sprint started. Lets be modest and see if we can get some done. In a normal workplace situation no user story should for example not take more that 20 hours. 
 
 ## User Stories:
 
