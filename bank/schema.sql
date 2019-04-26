@@ -6,6 +6,31 @@ CREATE TABLE IF NOT EXISTS Customers(
 	address text
 );
 
+CREATE TABLE IF NOT EXISTS Employees(
+	CPR_number integer PRIMARY KEY,
+    name varchar(20),
+    password varchar(120)
+);
+-- Decision. 
+-- YES relational style. No in this case every entity is implemented
+-- NO objects atyle. In this case only typed objects
+-- NO nulls style. in this case only accounts
+
+-- Serial this is the account number across the system
+-- NO with serial as is -> implement a type on manages
+-- YES or implement the serial on accounts
+
+CREATE TABLE IF NOT EXISTS accounts(
+	account_number SERIAL PRIMARY KEY,
+	created_date date
+);
+
+CREATE TABLE IF NOT EXISTS manages(
+	emp_cpr_number INTEGER NOT NULL REFERENCES employees(cpr_number),
+	account_number INTEGER NOT NULL REFERENCES accounts
+);
+
+
 CREATE TABLE IF NOT EXISTS CheckingAccounts(
 	account_number SERIAL,
 	created_date date,
@@ -20,12 +45,7 @@ CREATE TABLE IF NOT EXISTS InvestmentAccounts(
 	--FOREIGN KEY (account_number, CPR_number)
 );
 
-
-CREATE TABLE IF NOT EXISTS Employees(
-	CPR_number integer PRIMARY KEY,
-    name varchar(20),
-    password varchar(120)
-);
+--
 
 CREATE TABLE IF NOT EXISTS Transfers(
 	id SERIAL PRIMARY KEY,
