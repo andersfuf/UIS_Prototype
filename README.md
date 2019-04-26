@@ -77,22 +77,15 @@ EUS6-2 (name) ER to relational part.
 
 
 ## Requirements:
+Run the code below to install the necessary modules.
 
-ModuleNotFoundError: No module named 'flask_bcrypt'
+>$ pip install -r requirements.txt
 
-$ pip install flask_bcrypt
-
-ModuleNotFoundError: No module named 'flask_login'
-
-$ pip install flask_login
+## Database init
 
 psycopg2.OperationalError: FATAL: database "test" does not exist
 create database test;
 psql -h localhost -d test -U postgres -W
-
-ModuleNotFoundError: No module named 'flask_wtf'
-
-$ pip install flask_wtf
 
 no default user - register
 
