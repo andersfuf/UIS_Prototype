@@ -19,30 +19,29 @@ CREATE TABLE IF NOT EXISTS Employees(
 -- Serial this is the account number across the system
 -- NO with serial as is -> implement a type on manages
 -- YES or implement the serial on accounts
-
+/*
 CREATE TABLE IF NOT EXISTS accounts(
 	account_number SERIAL PRIMARY KEY,
 	created_date date
 );
+*/
 
 CREATE TABLE IF NOT EXISTS manages(
 	emp_cpr_number INTEGER NOT NULL REFERENCES employees(cpr_number),
-	account_number INTEGER NOT NULL REFERENCES accounts
+	account_number INTEGER NOT NULL, 
+	account_type VARCHAR(20) NOT NULL CHECK (account_type IN ('CheckingAccount','InvestmentAccount'))
 );
 
-
 CREATE TABLE IF NOT EXISTS CheckingAccounts(
-	account_number SERIAL,
+	account_number SERIAL PRIMARY KEY,
 	created_date date,
 	CPR_number integer  REFERENCES Customers(CPR_number)
-	--FOREIGN KEY (account_number, CPR_number) REFERENCES (account_number, CPR_number)
 );
 
 CREATE TABLE IF NOT EXISTS InvestmentAccounts(
-	account_number SERIAL,
+	account_number SERIAL PRIMARY KEY,
 	created_date date,
 	CPR_number integer REFERENCES Customers(CPR_number)
-	--FOREIGN KEY (account_number, CPR_number)
 );
 
 --
