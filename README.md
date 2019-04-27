@@ -33,7 +33,7 @@ CUS7-3 (name): confirm update;
 
 CUS7-2 (none): confirm dropdown;
 
-CUS7-4 (name): ER to relational part. deposit, transfer, withdraw;
+CUS7-4 (anders, 33%): ER to relational part. deposit, transfer, withdraw;
 
 CUS4(SPLIT): As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments.
 
@@ -57,7 +57,7 @@ EUS-CUS10-3: ER to relational part.
 
 EUS1(name, 0%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
 
-EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field.
+EUS1-2: (anders, 90%) ER to relational part. created table manages with account_type field.
 
 EUS3 (complex, SPLIT): Complex story. SPLIT, only employees should have acces to this story). EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
 
