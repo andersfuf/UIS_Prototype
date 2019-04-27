@@ -14,8 +14,10 @@ INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VAL
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5006, TRUE, 'UIS', 'UIS-LE1-C-Marcos', 'AUD 02 in the HCØ building (HCØ, Universitetsparken 5)');
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5007, TRUE, 'UIS', 'UIS-LE2-C-Finn', 'AUD 02 in the HCØ building (HCØ, Universitetsparken 5)');
 
-
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5000);
+--\set @my_account 0
+--INSERT INTO public.accounts(created_date, cpr_number)VALUES (now(),5000) RETURNING account_number AS :'my_account';
+/*
+INSERT INTO public.checkingaccounts(account_number) VALUES (:'my_account');
 INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5000);
 INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5001);
 INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5001);
@@ -43,7 +45,7 @@ VALUES (now(),5000),(now(),5000),(now(),5000),(now(),5000)
       ,(now(),5006),(now(),5006),(now(),5006),(now(),5006)
       ,(now(),5007),(now(),5007),(now(),5007),(now(),5007)
 ;
-
+*/
 INSERT INTO public.Employees(cpr_number, name, password) 
 VALUES (6000, 'UIS-DB3-C-Lasse',  'UIS')
 , (6001, 'UIS-PD3-C-Anders',  'UIS')
@@ -74,7 +76,7 @@ INSERT INTO withdraws ( amount, withdraw_date) VALUES (20480, now())
 INSERT INTO deposits ( amount, deposit_date) VALUES (40960, now())
 , (81920, now()), (163840, now()), (327696, now()), (655392, now()), (1310784, now());
 
-
+DELETE FROM certificates_of_deposit;
 INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date)
 VALUES (now(), 10000, now());
 INSERT INTO public.certificates_of_deposit(cd_number, start_date, amount, maturity_date)

@@ -34,8 +34,8 @@ CREATE TABLE IF NOT EXISTS Accounts(
 );
 
 CREATE TABLE IF NOT EXISTS CheckingAccounts(
-	account_number INTEGER PRIMARY KEY,
-	created_date date	
+	account_number INTEGER PRIMARY KEY
+	--created_date date	
 	--CPR_number integer  REFERENCES Customers(CPR_number)
 );
 
@@ -44,8 +44,8 @@ ALTER TABLE CheckingAccounts ADD CONSTRAINT FK_ChAcc_001
 ;
 
 CREATE TABLE IF NOT EXISTS InvestmentAccounts(
-	account_number SERIAL PRIMARY KEY,
-	created_date date
+	account_number SERIAL PRIMARY KEY
+	--created_date date
 	--CPR_number integer REFERENCES Customers(CPR_number)
 );
 ALTER TABLE InvestmentAccounts ADD CONSTRAINT FK_InAcc_001 
