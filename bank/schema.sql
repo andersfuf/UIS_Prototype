@@ -21,34 +21,34 @@ CREATE TABLE IF NOT EXISTS Employees(
 -- Serial this is the account number across the system
 -- 
 
-CREATE TABLE IF NOT EXISTS manages(
-	emp_cpr_number INTEGER NOT NULL REFERENCES employees(cpr_number),
-	account_number INTEGER NOT NULL, 
-	account_type VARCHAR(20) NOT NULL CHECK (account_type IN ('CheckingAccount','InvestmentAccount'))
-);
-
 CREATE TABLE IF NOT EXISTS Accounts(
 	account_number SERIAL PRIMARY KEY,
 	created_date date,
 	CPR_number integer  REFERENCES Customers(CPR_number)
 );
 
+
+CREATE TABLE IF NOT EXISTS manages(
+	emp_cpr_number INTEGER NOT NULL REFERENCES employees(cpr_number),
+	account_number INTEGER NOT NULL REFERENCES accounts
+);
+ALTER TABLE manages ADD CONSTRAINT pk_manages
+  PRIMARY KEY (emp_cpr_number, account_number)
+  ;
+
+
 CREATE TABLE IF NOT EXISTS CheckingAccounts(
 	account_number INTEGER PRIMARY KEY
-	--created_date date	
-	--CPR_number integer  REFERENCES Customers(CPR_number)
 );
 
-ALTER TABLE CheckingAccounts ADD CONSTRAINT FK_ChAcc_001 
+ALTER TABLE CheckingAccounts ADD CONSTRAINT fk_ChAcc_001 
   FOREIGN KEY (account_number) REFERENCES Accounts(account_number)
 ;
 
 CREATE TABLE IF NOT EXISTS InvestmentAccounts(
 	account_number SERIAL PRIMARY KEY
-	--created_date date
-	--CPR_number integer REFERENCES Customers(CPR_number)
 );
-ALTER TABLE InvestmentAccounts ADD CONSTRAINT FK_InAcc_001 
+ALTER TABLE InvestmentAccounts ADD CONSTRAINT fk_InAcc_001 
   FOREIGN KEY (account_number) REFERENCES Accounts(account_number)
 ;
 
