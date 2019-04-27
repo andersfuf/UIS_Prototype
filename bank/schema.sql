@@ -1,3 +1,5 @@
+\i schema_drop.sql
+
 CREATE TABLE IF NOT EXISTS Customers(
 	CPR_number integer PRIMARY KEY,
 	risk_type boolean default False,
@@ -11,20 +13,13 @@ CREATE TABLE IF NOT EXISTS Employees(
     name varchar(20),
     password varchar(120)
 );
--- Decision. 
--- YES relational style. No in this case every entity is implemented
--- NO objects atyle. In this case only typed objects
--- NO nulls style. in this case only accounts
+-- Solving the accounts ISA Hierachy. 
+-- -relational style. In this case every entity is implemented
+-- -objects atyle. In this case only typed objects. Implement a type on manages
+-- -nulls style. In this case only accounts
 
 -- Serial this is the account number across the system
--- NO with serial as is -> implement a type on manages
--- YES or implement the serial on accounts
-/*
-CREATE TABLE IF NOT EXISTS accounts(
-	account_number SERIAL PRIMARY KEY,
-	created_date date
-);
-*/
+-- 
 
 CREATE TABLE IF NOT EXISTS manages(
 	emp_cpr_number INTEGER NOT NULL REFERENCES employees(cpr_number),
@@ -32,25 +27,43 @@ CREATE TABLE IF NOT EXISTS manages(
 	account_type VARCHAR(20) NOT NULL CHECK (account_type IN ('CheckingAccount','InvestmentAccount'))
 );
 
-CREATE TABLE IF NOT EXISTS CheckingAccounts(
+CREATE TABLE IF NOT EXISTS Accounts(
 	account_number SERIAL PRIMARY KEY,
 	created_date date,
 	CPR_number integer  REFERENCES Customers(CPR_number)
 );
 
+CREATE TABLE IF NOT EXISTS CheckingAccounts(
+	account_number INTEGER PRIMARY KEY,
+	created_date date	
+	--CPR_number integer  REFERENCES Customers(CPR_number)
+);
+
+ALTER TABLE CheckingAccounts ADD CONSTRAINT FK_ChAcc_001 
+  FOREIGN KEY (account_number) REFERENCES Accounts(account_number)
+;
+
 CREATE TABLE IF NOT EXISTS InvestmentAccounts(
 	account_number SERIAL PRIMARY KEY,
-	created_date date,
-	CPR_number integer REFERENCES Customers(CPR_number)
+	created_date date
+	--CPR_number integer REFERENCES Customers(CPR_number)
 );
+ALTER TABLE InvestmentAccounts ADD CONSTRAINT FK_InAcc_001 
+  FOREIGN KEY (account_number) REFERENCES Accounts(account_number)
+;
 
 --
 
 CREATE TABLE IF NOT EXISTS Transfers(
 	id SERIAL PRIMARY KEY,
 	transfer_date date,
-	amount integer
+	amount INTEGER,
+	from_account  INTEGER REFERENCES accounts(account_number),
+	to_account    INTEGER REFERENCES accounts(account_number)
 );
+
+COMMENT ON COLUMN Transfers.from_account IS 'has origin';
+COMMENT ON COLUMN Transfers.to_account   IS 'has destination';
 
 CREATE TABLE IF NOT EXISTS Withdraws(
 	amount integer,
