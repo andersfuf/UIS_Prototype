@@ -46,3 +46,34 @@ class Transfers(tuple):
         self.amount = user_data[1]
         self.transfer_date = user_data[2]
 
+def insert_Customers(name, CPR_number, password):
+    cur = conn.cursor()
+    sql = """
+    INSERT INTO Customers(name, CPR_number, password)
+    VALUES (%s, %s, %s)
+    """ 
+    cur.execute(sql, (name, CPR_number, password))
+    conn.commit()
+    cur.close()
+
+def select_Customers(CPR_number):
+    cur = conn.cursor()
+    sql = """
+    SELECT * FROM Customers
+    WHERE CPR_number = %s
+    """
+    cur.execute(sql, (CPR_number,))
+    user = Customers(cur.fetchone())
+    cur.close()
+    return user
+
+def update_CheckingAccount(amount, CPR_number):
+    cur = conn.cursor()
+    sql = """
+    UPDATE CheckingAccount
+    SET amount = %s
+    WHERE CPR_number = %s
+    """ 
+    cur.execute(sql, (amount, CPR_number))
+    conn.commit()
+    cur.close()

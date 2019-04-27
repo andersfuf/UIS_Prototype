@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect, request, Blueprint
 from bank import app, conn, bcrypt
 from bank.forms import RegistrationForm, LoginForm
 from flask_login import login_user, current_user, logout_user, login_required
-from bank.models import Customers
+from bank.models import Customers, insert_Customers, select_Customers
 
 Login = Blueprint('Login', __name__)
 
@@ -30,14 +30,7 @@ def register():
         name=form.username.data
         CPR_number=form.CPR_number.data
         password=hashed_password
-        cur = conn.cursor()
-        sql = """
-        INSERT INTO Customers(name, CPR_number, password)
-        VALUES (%s, %s, %s)
-        """ 
-        cur.execute(sql, (name, CPR_number, password))
-        conn.commit()
-        cur.close()
+        insert_Customers(name, CPR_number, password)
         flash('Your account has been created! You are now able to log in', 'success')
         return redirect(url_for('Login.login'))
     return render_template('register.html', title='Register', form=form)
@@ -49,14 +42,7 @@ def login():
         return redirect(url_for('Login.home'))
     form = LoginForm()
     if form.validate_on_submit():
-        cur = conn.cursor()
-        sql = """
-        SELECT * FROM Customers
-        WHERE CPR_number = %s
-        """
-        cur.execute(sql, (form.CPR_number.data,))
-        user = Customers(cur.fetchone())
-        cur.close()
+        user = select_Customers(form.CPR_number.data)
         if user and bcrypt.check_password_hash(user[2], form.password.data):
             login_user(user, remember=form.remember.data)
             flash('Login successful.','success')
