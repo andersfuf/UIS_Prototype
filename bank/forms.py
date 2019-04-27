@@ -23,9 +23,9 @@ class TransferForm(FlaskForm):
     amount = IntegerField('amount', 
                         validators=[DataRequired()])
     sourceAccount = SelectField('From Account', 
-                        choices=[('CheckingAccount', 'InvestmentAccount')])
+                        choices=[(1, 'CheckingAccount'), (2, 'InvestmentAccount')])
     targetAccount = SelectField('To Account', 
-                        choices=[('CheckingAccount', 'InvestmentAccount')])
+                        choices=[(1, 'CheckingAccount'), (2, 'InvestmentAccount')])
     submit = SubmitField('Confirm')
 
 class DepositForm(FlaskForm):
