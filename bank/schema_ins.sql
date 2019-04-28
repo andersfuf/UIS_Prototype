@@ -1,3 +1,4 @@
+DELETE FROM certificates_of_deposit;
 --
 DELETE FROM InvestmentAccounts;
 DELETE FROM CheckingAccounts;
@@ -69,39 +70,6 @@ VALUES (8000),(8001),(8002),(8003),(8004),(8005),(8006),(8007);
 INSERT INTO InvestmentAccounts(account_number) 
 VALUES (8008),(8009),(8010),(8011),(8012),(8013),(8014),(8015);
 
---\set @my_account 0
---INSERT INTO public.accounts(created_date, cpr_number)VALUES (now(),5000) RETURNING account_number AS :'my_account';
-/*
-INSERT INTO public.checkingaccounts(account_number) VALUES (:'my_account');
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5000);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5001);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5001);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5002);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5002);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5003);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5003);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5004);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5004);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5005);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5005);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5006);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5006);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5007);
-INSERT INTO public.checkingaccounts(created_date, cpr_number) VALUES (now(),5007);
-
-
-INSERT INTO public.InvestmentAccounts(created_date, cpr_number) 
-VALUES (now(),5000),(now(),5000),(now(),5000),(now(),5000)
-      ,(now(),5001),(now(),5001),(now(),5001),(now(),5001)
-      ,(now(),5002),(now(),5002),(now(),5002),(now(),5002)
-      ,(now(),5003),(now(),5003),(now(),5003),(now(),5003)
-      ,(now(),5004),(now(),5004),(now(),5004),(now(),5004)
-      ,(now(),5005),(now(),5005),(now(),5005),(now(),5005)
-      ,(now(),5006),(now(),5006),(now(),5006),(now(),5006)
-      ,(now(),5007),(now(),5007),(now(),5007),(now(),5007)
-;
-*/
-
 -- contraints missing on transfers
 
 INSERT INTO transfers (transfer_date, amount) VALUES (now(), 10);
@@ -120,8 +88,14 @@ INSERT INTO withdraws ( amount, withdraw_date) VALUES (20480, now())
 INSERT INTO deposits ( amount, deposit_date) VALUES (40960, now())
 , (81920, now()), (163840, now()), (327696, now()), (655392, now()), (1310784, now());
 
-DELETE FROM certificates_of_deposit;
-INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date)
-VALUES (now(), 10000, now());
-INSERT INTO public.certificates_of_deposit(cd_number, start_date, amount, maturity_date)
-VALUES (7000, now(), 10000, now());
+
+-- new certificate
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number) VALUES (now(), 10000, now(), 8014);
+-- new certificate fixed rate 4 percent
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 10000, now(), 8013, 4);
+-- cd_number given
+INSERT INTO public.certificates_of_deposit(cd_number, start_date, amount, maturity_date,account_number) VALUES (7000, now(), 10000, now(),8015);
+-- cd_number given fixed rate 5 percent
+INSERT INTO public.certificates_of_deposit(cd_number, start_date, amount, maturity_date,account_number, rate) VALUES (7001, now(), 10000, now(),8012, 5);
+
+

@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS Employees(
     password varchar(120)
 );
 -- Solving the accounts ISA Hierachy. 
--- -relational style. In this case every entity is implemented
+-- (-)relational style. In this case every entity is implemented
 -- -objects atyle. In this case only typed objects. Implement a type on manages
 -- -nulls style. In this case only accounts
 
@@ -52,8 +52,7 @@ ALTER TABLE InvestmentAccounts ADD CONSTRAINT fk_InAcc_001
   FOREIGN KEY (account_number) REFERENCES Accounts(account_number)
 ;
 
---
-
+-- transfers
 CREATE TABLE IF NOT EXISTS Transfers(
 	id SERIAL PRIMARY KEY,
 	transfer_date date,
@@ -65,19 +64,33 @@ CREATE TABLE IF NOT EXISTS Transfers(
 COMMENT ON COLUMN Transfers.from_account IS 'has origin';
 COMMENT ON COLUMN Transfers.to_account   IS 'has destination';
 
+-- checking accounts
 CREATE TABLE IF NOT EXISTS Withdraws(
+	id SERIAL PRIMARY KEY,
+	account_number  INTEGER REFERENCES CheckingAccounts(account_number),
 	amount integer,
 	withdraw_date date
 );
 
 CREATE TABLE IF NOT EXISTS Deposits(
+	id SERIAL PRIMARY KEY,
+	account_number  INTEGER REFERENCES CheckingAccounts(account_number),
 	amount integer,
 	deposit_date date
 );
 
+-- investments
+-- Solving the certificate ISA Hierachy. 
+-- -relational style. In this case every entity is implemented
+-- -objects atyle. In this case only typed objects.
+-- (-)nulls style. In this case only one certificate entity set
+
 CREATE TABLE IF NOT EXISTS Certificates_of_deposit(
-	CD_number SERIAL PRIMARY KEY,
+	cd_number SERIAL PRIMARY KEY,
+	account_number  INTEGER REFERENCES InvestmentAccounts(account_number),
 	start_date date,
 	amount integer,
-	maturity_date date
+	maturity_date date,
+	rate integer    --at fixed rate certificated´s of deposite
 );
+COMMENT ON COLUMN Certificates_of_deposit.rate IS 'at fixed rate certificated´s of deposite';
