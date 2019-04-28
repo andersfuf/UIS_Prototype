@@ -33,7 +33,7 @@ CUS7-3 (name): confirm update;
 
 CUS7-2 (100%): confirm dropdown;
 
-CUS7-4 (anders, 33%): ER to relational part. deposit, transfer, withdraw;
+CUS7-4 (anders, 100%, REVIEW): ER to relational part. deposit, transfer, withdraw;
 
 CUS4(SPLIT): As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments.
 
@@ -41,7 +41,7 @@ CUS4-1(name, 5%): investment list; list of each and a total; one line for each i
 
 CUS4-2(name); date part; consolidated view at point in time.
 
-CUS4-3(name): ER to relational part. certificates_of_deposit, investmentaccounts;
+CUS4-3(anders, 100%, REVIEW): ER to relational part. certificates_of_deposit, investmentaccounts;
 
 
 ### Employee role:
@@ -52,12 +52,12 @@ EUS-CUS10-1: CUS10 moved to employee; status 0% but CUS7 can be used as start.
 
 EUS-CUS10-2: Authentication part
 
-EUS-CUS10-3: ER to relational part.
+EUS-CUS10-3(anders, 100%, REVIEW): ER to relational part.
 
 
 EUS1(name, 0%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
 
-EUS1-2: (anders, 85%) ER to relational part. created table manages with account_type field. Need to fix manages
+EUS1-2: (anders, 100%, REVIEW) ER to relational part. created table manages with account_type field. Need to fix manages
 
 EUS3 (complex, SPLIT): Complex story. SPLIT, only employees should have acces to this story). EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
 
@@ -69,11 +69,11 @@ EUS3-3 (name) un-register page implements deleting a customer along with the acc
 
 EUS3-4 (name) authentication against employee of EUS3.
 
-EUS3-5 (name) ER to relational part.
+EUS3-5 (anders, 100%, REVIEW) ER to relational part.
 
 EUS6 (name): As a bank employee, I can create a new CD for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank.
 
-EUS6-2 (name) ER to relational part.
+EUS6-2 (anders, 100%, REVIEW) ER to relational part.
 
 ### Tasks:
 
