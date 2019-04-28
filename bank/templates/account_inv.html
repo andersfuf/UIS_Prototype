@@ -1,0 +1,16 @@
+{% extends "layout_acc.html" %}
+{% block content %}
+    <h1>{{ current_user.name }}</h1>
+	
+	
+    <p> A specific investment accounts listed (3): {{inv_acc_list[3]}}</p>
+    <p>Investment accounts:</p>
+    <ul>
+      {% for n in inv_acc_list %}
+      <li>{{n}} {{n[4]}} {{n[1]}}</li>
+      {% endfor %}
+    </ul>
+    <br>
+    <p>Same list with a filter: {{ inv_acc_list|join(', ') }}</p>
+	
+{% endblock content %}
