@@ -37,3 +37,6 @@ class DepositForm(FlaskForm):
     amount = IntegerField('amount', 
                        validators=[DataRequired()])
     submit = SubmitField('Confirm')
+    
+class InvestForm(FlaskForm):
+    submit = SubmitField('Confirm')

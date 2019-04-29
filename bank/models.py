@@ -118,11 +118,14 @@ def select_investments(CPR_number):
     WHERE a.cpr_number = %s
     """
     cur.execute(sql, (CPR_number,))
-    investment_accounts = Customers(cur.fetchall())
+    tuple_resultset = cur.fetchall()
     cur.close()
-    return investment_accounts
+    return tuple_resultset
 
 def select_investments_with_certificates(CPR_number):
+    print('Hello world!-004')
+    print(CPR_number)
+    
     cur = conn.cursor()
     sql = """
     SELECT i.account_number, a.cpr_number, a.created_date
@@ -133,6 +136,6 @@ def select_investments_with_certificates(CPR_number):
     WHERE a.cpr_number = %s
     """
     cur.execute(sql, (CPR_number,))
-    investment_certificates = Customers(cur.fetchall())
+    tuple_resultset = cur.fetchall()
     cur.close()
-    return investment_certificates
+    return tuple_resultset

@@ -1,8 +1,10 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from bank import app, conn
-from bank.forms import TransferForm, DepositForm
+from bank.forms import TransferForm, DepositForm, InvestForm
 from flask_login import current_user
 from bank.models import Transfers, CheckingAccount, InvestmentAccount, update_CheckingAccount
+from bank.models import select_investments_with_certificates, select_investments
+import sys
 
 Customer = Blueprint('Customer', __name__)
 
@@ -11,7 +13,10 @@ def invest():
     if not current_user.is_authenticated:
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
-    return render_template('invest.html', title='Investments', inv_acc_list=[6,('anders','felt2','felt3','felt4','felt5'),8,9,10,11])
+    #form = InvestForm()
+    investments = select_investments(current_user.CPR_number)
+    investment_certificates = select_investments_with_certificates(current_user.CPR_number)
+    return render_template('invest.html', title='Investments', inv_acc_list=investments, inv_cd_list=investment_certificates)
     
 @Customer.route("/transfer", methods=['GET', 'POST'])
 def transfer():
