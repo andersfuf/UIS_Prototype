@@ -8,6 +8,9 @@ Customer = Blueprint('Customer', __name__)
 
 @Customer.route("/invest", methods=['GET', 'POST'])
 def invest():
+    if not current_user.is_authenticated:
+        flash('Please Login.','danger')
+        return redirect(url_for('Login.login'))
     return render_template('invest.html', title='Investments', inv_acc_list=[6,('anders','felt2','felt3','felt4','felt5'),8,9,10,11])
     
 @Customer.route("/transfer", methods=['GET', 'POST'])
