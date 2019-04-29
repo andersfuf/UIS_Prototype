@@ -57,7 +57,7 @@ EUS-CUS10-2: Authentication part
 EUS-CUS10-3(anders, 100%, left): ER to relational part.
 
 
-EUS1(lasse, 0%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
+EUS1(lasse, 100%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
 
 EUS1-2: (anders, 100%, REVIEW) ER to relational part. created table manages with account_type field. Need to fix manages
 
