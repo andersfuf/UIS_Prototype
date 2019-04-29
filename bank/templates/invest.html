@@ -2,15 +2,16 @@
 {% block content %}
     <h1>{{ current_user.name }}</h1>
 	
-	
+  <div class="content-section">	
     <p> A specific investment accounts listed (3): {{inv_acc_list[3]}}</p>
     <p>Investment accounts:</p>
-    <ul>
+    <ul class="list-group">
       {% for n in inv_acc_list %}
-      <li>{{n}} {{n[4]}} {{n[1]}}</li>
+      <li class="list-group-item list-group-item-light">{{n}} {{n[4]}} {{n[1]}}</li>
       {% endfor %}
     </ul>
     <br>
     <p>Same list with a filter: {{ inv_acc_list|join(', ') }}</p>
+  </div>
 	
 {% endblock content %}

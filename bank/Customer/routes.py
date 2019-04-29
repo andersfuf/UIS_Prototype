@@ -7,9 +7,8 @@ from bank.models import Transfers, CheckingAccount, InvestmentAccount, update_Ch
 Customer = Blueprint('Customer', __name__)
 
 @Customer.route("/invest", methods=['GET', 'POST'])
-#@Login.route("/account1")
 def invest():
-    return render_template('account_inv.html', title='Investments', inv_acc_list=[6,('anders','felt2','felt3','felt4','felt5'),8,9,10,11])
+    return render_template('invest.html', title='Investments', inv_acc_list=[6,('anders','felt2','felt3','felt4','felt5'),8,9,10,11])
     
 @Customer.route("/transfer", methods=['GET', 'POST'])
 def transfer():
