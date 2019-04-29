@@ -57,19 +57,19 @@ EUS-CUS10-2: Authentication part
 EUS-CUS10-3(anders, 100%, left): ER to relational part.
 
 
-EUS1(lasse, 0%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
+EUS1(lasse, 100%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
 
 EUS1-2: (anders, 100%, REVIEW) ER to relational part. created table manages with account_type field. Need to fix manages
 
 EUS3 (complex, SPLIT): Complex story. SPLIT, only employees should have acces to this story). EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
 
-EUS3-1 (lasse) register page as is implements adding a customer
+EUS3-1 (name) register page as is implements adding a customer
 
-EUS3-2 (lasse) add and remove money accounts for customers
+EUS3-2 (name) add and remove money accounts for customers
 
-EUS3-3 (lasse) un-register page implements deleting a customer along with the accounts
+EUS3-3 (name) un-register page implements deleting a customer along with the accounts
 
-EUS3-4 (lasse) authentication against employee of EUS3.
+EUS3-4 (name) authentication against employee of EUS3.
 
 EUS3-5 (anders, 100%, left) ER to relational part.
 

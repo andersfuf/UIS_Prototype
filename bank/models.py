@@ -1,17 +1,28 @@
 from datetime import datetime
 from bank import conn, login_manager
 from flask_login import UserMixin
-
+from psycopg2 import sql
 
 @login_manager.user_loader
 def load_user(user_id):
     cur = conn.cursor()
-    sql = """
-    SELECT * FROM Customers
-    WHERE CPR_number = %s
-    """
-    cur.execute(sql, (int(user_id),))
-    return Customers(cur.fetchone())
+
+    schema = 'customers'
+    id = 'cpr_number'
+    if str(user_id).startswith('60'):
+        schema = 'employees'
+        id = 'id'
+
+    user_sql = sql.SQL("""
+    SELECT * FROM {}
+    WHERE {} = %s
+    """).format(sql.Identifier(schema),  sql.Identifier(id))
+
+    cur.execute(user_sql, (int(user_id),))
+    if cur.rowcount > 0:
+        return Employees(cur.fetchone()) if schema == 'employees' else Customers(cur.fetchone())
+    else:
+        return None
 
 
 class Customers(tuple, UserMixin):
@@ -25,6 +36,14 @@ class Customers(tuple, UserMixin):
     def get_id(self):
        return (self.CPR_number)
 
+class Employees(tuple, UserMixin):
+    def __init__(self, employee_data):
+        self.id = employee_data[0]
+        self.name = employee_data[1]
+        self.password = employee_data[2]
+
+    def get_id(self):
+       return (self.id)
 
 class CheckingAccount(tuple):
     def __init__(self, user_data):
@@ -51,7 +70,7 @@ def insert_Customers(name, CPR_number, password):
     sql = """
     INSERT INTO Customers(name, CPR_number, password)
     VALUES (%s, %s, %s)
-    """ 
+    """
     cur.execute(sql, (name, CPR_number, password))
     conn.commit()
     cur.close()
@@ -63,7 +82,18 @@ def select_Customers(CPR_number):
     WHERE CPR_number = %s
     """
     cur.execute(sql, (CPR_number,))
-    user = Customers(cur.fetchone())
+    user = Customers(cur.fetchone()) if cur.rowcount > 0 else None;
+    cur.close()
+    return user
+
+def select_Employees(id):
+    cur = conn.cursor()
+    sql = """
+    SELECT * FROM Employees
+    WHERE id = %s
+    """
+    cur.execute(sql, (id,))
+    user = Employees(cur.fetchone()) if cur.rowcount > 0 else None;
     cur.close()
     return user
 

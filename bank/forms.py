@@ -12,9 +12,14 @@ class RegistrationForm(FlaskForm):
     submit = SubmitField('Sign Up')
 
 
-class LoginForm(FlaskForm):
-    CPR_number = IntegerField('CPR_number',
-                        validators=[DataRequired()])
+class CustomerLoginForm(FlaskForm):
+    id = IntegerField('CPR_number', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Login')
+
+class EmployeeLoginForm(FlaskForm):
+    id = IntegerField('Id', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
