@@ -3,6 +3,7 @@ DELETE FROM certificates_of_deposit;
 DELETE FROM InvestmentAccounts;
 DELETE FROM CheckingAccounts;
 DELETE FROM manages;
+DELETE FROM transfers;
 --
 DELETE FROM accounts;
 DELETE FROM employees;
@@ -72,12 +73,12 @@ VALUES (8008),(8009),(8010),(8011),(8012),(8013),(8014),(8015);
 
 -- contraints missing on transfers
 
-INSERT INTO transfers (transfer_date, amount) VALUES (now(), 10);
-INSERT INTO transfers (transfer_date, amount) VALUES (now(), 20);
-INSERT INTO transfers (transfer_date, amount) VALUES (now(), 40);
-INSERT INTO transfers (transfer_date, amount) VALUES (now(), 80);
-INSERT INTO transfers (transfer_date, amount) VALUES (now(), 160);
-INSERT INTO transfers (transfer_date, amount) VALUES (now(), 320);
+INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 10, 8000, 8001);
+INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 20, 8009, 8008);
+INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 40, 8005, 8006);
+INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 80, 8003, 8011);
+INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 160, 8002, 8003);
+INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 320, 8004, 8012);
 
 -- contraints missing on withdraws
 
