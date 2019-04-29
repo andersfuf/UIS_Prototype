@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS Customers(
 );
 
 CREATE TABLE IF NOT EXISTS Employees(
-	CPR_number integer PRIMARY KEY,
+	id integer PRIMARY KEY,
     name varchar(20),
     password varchar(120)
 );
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS Accounts(
 
 
 CREATE TABLE IF NOT EXISTS manages(
-	emp_cpr_number INTEGER NOT NULL REFERENCES employees(cpr_number),
+	emp_cpr_number INTEGER NOT NULL REFERENCES employees(id),
 	account_number INTEGER NOT NULL REFERENCES accounts
 );
 ALTER TABLE manages ADD CONSTRAINT pk_manages
