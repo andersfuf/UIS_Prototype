@@ -108,6 +108,15 @@ def update_CheckingAccount(amount, CPR_number):
     conn.commit()
     cur.close()
     
+def transfer_account(date, amount, from_account, to_account):
+    cur = conn.cursor()
+    sql = """
+    INSERT INTO Transfers(transfer_date, amount, from_account, to_account)
+    VALUES (%s, %s, %s, %s)
+    """
+    cur.execute(sql, (date, amount, from_account, to_account))
+    conn.commit()
+    cur.close()
 
 def select_investments(CPR_number):
     cur = conn.cursor()

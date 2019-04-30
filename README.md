@@ -29,7 +29,7 @@ CUS7(SPLIT): As a customer, I can transfer money from one of my accounts to anot
 
 CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed;  ; 
 
-CUS7-3 (name): confirm update;
+CUS7-3 (ziming, 100%): confirm update;
 
 CUS7-2 (ziming,100%): confirm dropdown;
 

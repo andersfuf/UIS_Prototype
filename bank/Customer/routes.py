@@ -2,9 +2,9 @@ from flask import render_template, url_for, flash, redirect, request, Blueprint
 from bank import app, conn
 from bank.forms import TransferForm, DepositForm, InvestForm
 from flask_login import current_user
-from bank.models import Transfers, CheckingAccount, InvestmentAccount, update_CheckingAccount
+from bank.models import Transfers, CheckingAccount, InvestmentAccount, update_CheckingAccount, transfer_account
 from bank.models import select_investments_with_certificates, select_investments
-import sys
+import sys, datetime
 
 Customer = Blueprint('Customer', __name__)
 
@@ -25,9 +25,11 @@ def transfer():
         return redirect(url_for('Login.login'))
     form = TransferForm()
     if form.validate_on_submit():
+        date = datetime.date.today()
         amount = form.amount.data
-        CPR_number = form.CPR_number.data
-        update_CheckingAccount(amount, CPR_number)
+        from_account = form.sourceAccount.data
+        to_account = form.targetAccount.data
+        transfer_account(date, amount, from_account, to_account)
         flash('Transfer succeed!', 'success')
         return redirect(url_for('Login.home'))
     return render_template('transfer.html', title='Transfer', form=form)

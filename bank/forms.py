@@ -27,10 +27,8 @@ class EmployeeLoginForm(FlaskForm):
 class TransferForm(FlaskForm):
     amount = IntegerField('amount', 
                         validators=[DataRequired()])
-    sourceAccount = SelectField('From Account', 
-                        choices=[(1, 'CheckingAccount'), (2, 'InvestmentAccount')])
-    targetAccount = SelectField('To Account', 
-                        choices=[(1, 'CheckingAccount'), (2, 'InvestmentAccount')])
+    sourceAccount = IntegerField('From Account:', validators=[DataRequired()])
+    targetAccount = IntegerField('Target Account:', validators=[DataRequired()])
     submit = SubmitField('Confirm')
 
 class DepositForm(FlaskForm):
