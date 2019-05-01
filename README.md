@@ -63,7 +63,7 @@ EUS1-2: (anders, 100%) ER to relational part. created table manages with account
 
 EUS3 (complex, SPLIT): Complex story. SPLIT, only employees should have acces to this story). EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
 
-EUS3-1 (name) register page as is implements adding a customer
+EUS3-1 (ziming, 80%) register page as is implements adding a customer
 
 EUS3-2 (name) add and remove money accounts for customers
 
@@ -92,14 +92,6 @@ Run the code below to install the necessary modules.
 >$ pip install -r requirements.txt
 
 ## Database init
+1. set the database in __init__.py file.
+2. run schema.sql, schema_ins.sql in your database.
 
-psycopg2.OperationalError: FATAL: database "test" does not exist
-create database test;
-psql -h localhost -d test -U postgres -W
-
-no default user - register
-
-psycopg2.ProgrammingError: relation "customers" does not exist
-LINE 2:         INSERT INTO Customers(name, CPR_number, password)
-
-psql -h localhost -d test -U postgres -W -f schema.sql

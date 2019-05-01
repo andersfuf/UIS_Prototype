@@ -22,8 +22,8 @@ def about():
 
 @Login.route("/register", methods=['GET', 'POST'])
 def register():
-    if current_user.is_authenticated:
-        return redirect(url_for('Login.home'))
+    #if current_user.is_authenticated:
+    #    return redirect(url_for('Login.home'))
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
