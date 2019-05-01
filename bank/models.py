@@ -118,6 +118,26 @@ def transfer_account(date, amount, from_account, to_account):
     conn.commit()
     cur.close()
 
+def select_emp_cus_accouts(emp_cpr_number):
+    cur = conn.cursor()
+    sql = """
+    SELECT
+      e.name employee
+    , c.name customer 
+    , cpr_number
+    , account_number 
+    FROM manages m
+      NATURAL JOIN accounts  
+      NATURAL JOIN customers c
+      JOIN employees e ON m.emp_cpr_number = e.id
+	WHERE emp_cpr_number = %s 
+    ;
+    """
+    cur.execute(sql, (CPR_number,))
+    tuple_resultset = cur.fetchall()
+    cur.close()
+    return tuple_resultset
+
 def select_investments(CPR_number):
     cur = conn.cursor()
     sql = """
