@@ -132,9 +132,6 @@ def select_investments(CPR_number):
     return tuple_resultset
 
 def select_investments_with_certificates(CPR_number):
-    print('Hello world!-004')
-    print(CPR_number)
-    
     cur = conn.cursor()
     sql = """
     SELECT i.account_number, a.cpr_number, a.created_date
@@ -143,6 +140,18 @@ def select_investments_with_certificates(CPR_number):
     JOIN accounts a ON i.account_number = a.account_number
     JOIN certificates_of_deposit cd ON i.account_number = cd.account_number    
     WHERE a.cpr_number = %s
+    """
+    cur.execute(sql, (CPR_number,))
+    tuple_resultset = cur.fetchall()
+    cur.close()
+    return tuple_resultset
+
+def select_investments_certificates_sum(CPR_number):
+    cur = conn.cursor()
+    sql = """
+    SELECT account_number, cpr_number, created_date, sum
+    FROM vw_cd_sum
+    WHERE cpr_number = %s
     """
     cur.execute(sql, (CPR_number,))
     tuple_resultset = cur.fetchall()

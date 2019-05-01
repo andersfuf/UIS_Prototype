@@ -3,7 +3,7 @@ from bank import app, conn
 from bank.forms import TransferForm, DepositForm, InvestForm
 from flask_login import current_user
 from bank.models import Transfers, CheckingAccount, InvestmentAccount, update_CheckingAccount, transfer_account
-from bank.models import select_investments_with_certificates, select_investments
+from bank.models import select_investments_with_certificates, select_investments, select_investments_certificates_sum
 import sys, datetime
 
 Customer = Blueprint('Customer', __name__)
@@ -14,9 +14,11 @@ def invest():
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
     #form = InvestForm()
-    investments = select_investments(current_user.CPR_number)
+    #investments = select_investments(current_user.CPR_number)
     investment_certificates = select_investments_with_certificates(current_user.CPR_number)
-    return render_template('invest.html', title='Investments', inv_acc_list=investments, inv_cd_list=investment_certificates)
+    investment_sums = select_investments_certificates_sum(current_user.CPR_number)
+    return render_template('invest.html', title='Investments', inv_cd_list=investment_certificates
+    , inv_sums=investment_sums)
     
 @Customer.route("/transfer", methods=['GET', 'POST'])
 def transfer():
