@@ -35,7 +35,7 @@ CUS7-2 (ziming+anders,100%): confirm dropdown;
 
 CUS7-4 (anders, 100%, left): ER to relational part. deposit, transfer, withdraw;
 
-CUS7-5 (name, ): must be logged in as employee part
+CUS7-5 (anders+, 10%): must be logged in as employee part
 
 CUS7-6 (name, ): restrict from_accounts to employees manages accounts
 

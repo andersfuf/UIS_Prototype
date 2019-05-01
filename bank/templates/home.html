@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+    <h1>{{ current_user.name }}</h1>
     {% for post in posts %}
         <article class="media content-section">
           <div class="media-body">
