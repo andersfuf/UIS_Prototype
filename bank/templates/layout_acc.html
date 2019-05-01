@@ -27,13 +27,28 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{{ url_for('Login.home') }}">Home</a>
-              <a class="nav-item nav-link" href="{{ url_for('Login.about') }}">About</a>
+              {% if current_user.is_authenticated %}
+                <li class="dropdown">
+                 <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">UIS bank<b class="caret"></b></a>
+                 <ul class="dropdown-menu">
+                    <li><a class="nav-item nav-link" href="{{ url_for('Login.account') }}">Account</a></li>
+                    <li><a class="nav-item nav-link" href="{{ url_for('Employee.transfer') }}">Transfer</a></li>
+                    <li class="divider"></li>
+                    <li><a class="nav-item nav-link" href="{{ url_for('Customer.invest') }}">Investments</a></li>
+                    <li class="divider"></li>
+                    <li><a class="nav-item nav-link" href="https://www.pgadmin.org">site pgAdmin</a></li>
+                    <li><a class="nav-item nav-link" href="http://127.0.0.1:58653/browser/ ">pgAdmin4</a></li>
+                 </ul>
+               </li>
+              {% else %}
+              {% endif %}
+               <a class="nav-item nav-link" href="{{ url_for('Login.about') }}">About</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
                 <a class="nav-item nav-link" href="{{ url_for('Login.account') }}">Account</a>
-                <a class="nav-item nav-link" href="{{ url_for('Customer.transfer') }}">Transfer</a>
+                <a class="nav-item nav-link" href="{{ url_for('Employee.transfer') }}">Transfer</a>
                 <a class="nav-item nav-link" href="{{ url_for('Customer.invest') }}">Investments</a>
                 <a class="nav-item nav-link" href="{{ url_for('Login.logout') }}">Logout</a>
               {% else %}
@@ -63,6 +78,7 @@
           <div class="content-section">
             <h3>Account</h3>
               <ul class="list-group">
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('Employee.transfer') }}">Transfer</a></li>
                 <li class="list-group-item list-group-item-light">Checking Accounts</li>
                 <li class="list-group-item list-group-item-light">Investment Accounts</li>
                 <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('Customer.invest') }}">View investment accounts</a></li>

@@ -2,7 +2,8 @@ from flask import render_template, url_for, flash, redirect, request, Blueprint
 from bank import app, conn
 from bank.forms import TransferForm, DepositForm
 from flask_login import current_user
-from bank.models import Transfers, CheckingAccount, InvestmentAccount, select_emp_cus_accounts
+from bank.models import Transfers, CheckingAccount, InvestmentAccount, select_emp_cus_accounts, transfer_account
+import sys, datetime
 
 Employee = Blueprint('Employee', __name__)
 
@@ -35,10 +36,14 @@ def transfer():
         return redirect(url_for('Login.login'))
     CPR_number = current_user.get_id()
     print(CPR_number)
-    #drop_accounts = select_emp_cus_accounts(current_user.cpr_number)
-    drop_accounts = select_emp_cus_accounts(current_user.get_id())
-    #print(drop_accounts)
+    dropdown_accounts = select_emp_cus_accounts(current_user.get_id())
+    drp_accounts = []
+    for drp in dropdown_accounts:
+        drp_accounts.append((drp[3], drp[1]+' '+str(drp[3])))
+    print(drp_accounts)
     form = TransferForm()
+    form.sourceAccount.choices = drp_accounts    
+    form.targetAccount.choices = drp_accounts    
     if form.validate_on_submit():
         date = datetime.date.today()
         amount = form.amount.data
@@ -47,4 +52,4 @@ def transfer():
         transfer_account(date, amount, from_account, to_account)
         flash('Transfer succeed!', 'success')
         return redirect(url_for('Login.home'))
-    return render_template('transfer.html', title='Transfer', form=form)
+    return render_template('transfer.html', title='Transfer', drop_cus_acc=dropdown_accounts, form=form)

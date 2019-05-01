@@ -79,6 +79,7 @@
             <h3>Account</h3>
               <ul class="list-group">
               {% if current_user.is_authenticated %}
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('Employee.transfer') }}">Transfer</a></li>
                 <li class="list-group-item list-group-item-light">Checking Accounts</li>
                 <li class="list-group-item list-group-item-light">Investment Accounts</li>
                 <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('Customer.invest') }}">View investment accounts</a></li>
