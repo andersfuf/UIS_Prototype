@@ -31,7 +31,7 @@ CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed;  
 
 CUS7-3 (ziming, 100%): confirm update;
 
-CUS7-2 (ziming,100%): confirm dropdown;
+CUS7-2 (ziming+anders,100%): confirm dropdown;
 
 CUS7-4 (anders, 100%, left): ER to relational part. deposit, transfer, withdraw;
 
