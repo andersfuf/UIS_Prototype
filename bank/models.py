@@ -118,7 +118,7 @@ def transfer_account(date, amount, from_account, to_account):
     conn.commit()
     cur.close()
 
-def select_emp_cus_accouts(emp_cpr_number):
+def select_emp_cus_accounts(emp_cpr_number):
     cur = conn.cursor()
     sql = """
     SELECT
@@ -133,7 +133,7 @@ def select_emp_cus_accouts(emp_cpr_number):
 	WHERE emp_cpr_number = %s 
     ;
     """
-    cur.execute(sql, (CPR_number,))
+    cur.execute(sql, (emp_cpr_number,))
     tuple_resultset = cur.fetchall()
     cur.close()
     return tuple_resultset
@@ -167,6 +167,7 @@ def select_investments_with_certificates(CPR_number):
     return tuple_resultset
 
 def select_investments_certificates_sum(CPR_number):
+    print(CPR_number)
     cur = conn.cursor()
     sql = """
     SELECT account_number, cpr_number, created_date, sum

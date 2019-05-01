@@ -16,7 +16,9 @@ login_manager.login_message_category = 'info'
 
 from bank.Login.routes import Login
 from bank.Customer.routes import Customer
+from bank.Employee.routes import Employee
 app.register_blueprint(Login)
 app.register_blueprint(Customer)
+app.register_blueprint(Employee)
 
 #from bank import routes

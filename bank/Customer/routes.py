@@ -20,21 +20,6 @@ def invest():
     return render_template('invest.html', title='Investments', inv_cd_list=investment_certificates
     , inv_sums=investment_sums)
     
-@Customer.route("/transfer", methods=['GET', 'POST'])
-def transfer():
-    if not current_user.is_authenticated:
-        flash('Please Login.','danger')
-        return redirect(url_for('Login.login'))
-    form = TransferForm()
-    if form.validate_on_submit():
-        date = datetime.date.today()
-        amount = form.amount.data
-        from_account = form.sourceAccount.data
-        to_account = form.targetAccount.data
-        transfer_account(date, amount, from_account, to_account)
-        flash('Transfer succeed!', 'success')
-        return redirect(url_for('Login.home'))
-    return render_template('transfer.html', title='Transfer', form=form)
 
 @Customer.route("/deposit", methods=['GET', 'POST'])
 def deposit():
