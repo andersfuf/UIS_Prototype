@@ -92,10 +92,14 @@ INSERT INTO deposits ( amount, deposit_date) VALUES (40960, now())
 
 -- new certificate
 INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number) VALUES (now(), 10000, now(), 8014);
--- new certificate fixed rate 4 percent
-INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 10000, now(), 8013, 4);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number) VALUES (now(), 20000, now(), 8014);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number) VALUES (now(), 40000, now(), 8014);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number) VALUES (now(),  1000, now(), 8014);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number) VALUES (now(),  2000, now(), 8014);
 -- cd_number given
 INSERT INTO public.certificates_of_deposit(cd_number, start_date, amount, maturity_date,account_number) VALUES (7000, now(), 10000, now(),8015);
+-- new certificate fixed rate 4 percent
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 10000, now(), 8013, 4);
 -- cd_number given fixed rate 5 percent
 INSERT INTO public.certificates_of_deposit(cd_number, start_date, amount, maturity_date,account_number, rate) VALUES (7001, now(), 10000, now(),8012, 5);
 

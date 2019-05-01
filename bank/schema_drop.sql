@@ -1,6 +1,7 @@
-DROP VIEW IF EXISTS vw_tdw;
-DROP VIEW IF EXISTS ww_invest_certificates;
-DROP VIEW IF EXISTS vw_invest_accounts;
+--DROP VIEW IF EXISTS vw_tdw;
+--DROP VIEW IF EXISTS ww_invest_certificates;
+--DROP VIEW IF EXISTS vw_invest_accounts;
+DROP VIEW IF EXISTS vw_cd_sum;
 
 --
 DROP TABLE IF EXISTS Withdraws;
