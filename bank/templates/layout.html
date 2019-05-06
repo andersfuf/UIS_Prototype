@@ -48,7 +48,7 @@
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
                 <a class="nav-item nav-link" href="{{ url_for('Login.account') }}">Account</a>
-                <a class="nav-item nav-link" href="{{ url_for('Login.register') }}">Add customer</a>
+                <a class="nav-item nav-link" href="{{ url_for('Employee.addcustomer') }}">Add customer</a>
                 <a class="nav-item nav-link" href="{{ url_for('Employee.transfer') }}">Transfer</a>
                 <a class="nav-item nav-link" href="{{ url_for('Customer.invest') }}">Investments</a>
                 <a class="nav-item nav-link" href="{{ url_for('Login.logout') }}">Logout</a>

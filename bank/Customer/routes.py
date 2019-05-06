@@ -1,5 +1,5 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint
-from bank import app, conn
+from bank import app, conn, bcrypt
 from bank.forms import DepositForm, InvestForm
 from flask_login import current_user
 from bank.models import CheckingAccount, InvestmentAccount, update_CheckingAccount

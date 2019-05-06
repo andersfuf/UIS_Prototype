@@ -1,6 +1,6 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from bank import app, conn, bcrypt
-from bank.forms import RegistrationForm, CustomerLoginForm, EmployeeLoginForm
+from bank.forms import CustomerLoginForm, EmployeeLoginForm
 from flask_login import login_user, current_user, logout_user, login_required
 from bank.models import Customers, insert_Customers, select_Customers, select_Employees
 
@@ -18,22 +18,6 @@ def home():
 @Login.route("/about")
 def about():
     return render_template('about.html', title='About')
-
-
-@Login.route("/register", methods=['GET', 'POST'])
-def register():
-    #if current_user.is_authenticated:
-    #    return redirect(url_for('Login.home'))
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        name=form.username.data
-        CPR_number=form.CPR_number.data
-        password=hashed_password
-        insert_Customers(name, CPR_number, password)
-        flash('Your account has been created! You are now able to log in', 'success')
-        return redirect(url_for('Login.login'))
-    return render_template('register.html', title='Register', form=form)
 
 
 @Login.route("/login", methods=['GET', 'POST'])

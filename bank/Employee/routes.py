@@ -1,11 +1,27 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint
-from bank import app, conn
-from bank.forms import TransferForm, DepositForm
+from bank import app, conn, bcrypt
+from bank.forms import TransferForm, DepositForm, AddCustomerForm
 from flask_login import current_user
-from bank.models import Transfers, CheckingAccount, InvestmentAccount, select_emp_cus_accounts, transfer_account
+from bank.models import Transfers, CheckingAccount, InvestmentAccount, select_emp_cus_accounts, transfer_account, insert_Customers
 import sys, datetime
 
 Employee = Blueprint('Employee', __name__)
+
+@Employee.route("/addcustomer", methods=['GET', 'POST'])
+def addcustomer():
+    #if current_user.is_authenticated:
+    #    return redirect(url_for('Login.home'))
+    form = AddCustomerForm()
+    if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        name=form.username.data
+        CPR_number=form.CPR_number.data
+        password=hashed_password
+        insert_Customers(name, CPR_number, password)
+        flash('Account has been created! The customer is now able to log in', 'success')
+        return redirect(url_for('Login.home'))
+    return render_template('addcustomer.html', title='Add Customer', form=form)
+
 
 @Employee.route("/manageCustomer", methods=['GET', 'POST'])
 def manageCustomer():

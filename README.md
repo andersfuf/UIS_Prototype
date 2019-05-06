@@ -67,7 +67,7 @@ EUS1-2: (anders, 100%) ER to relational part. created table manages with account
 
 EUS3 (complex, SPLIT): Complex story. SPLIT, only employees should have acces to this story). EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
 
-EUS3-1 (ziming, 80%) register page as is implements adding a customer
+EUS3-1 (ziming, 100%) register page as is implements adding a customer
 
 EUS3-2 (name) add and remove money accounts for customers
 
