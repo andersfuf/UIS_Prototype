@@ -14,12 +14,12 @@ def invest():
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
     #form = InvestForm()
-    #investments = select_investments(current_user.CPR_number)
+    investments = select_investments(current_user.get_id())
     investment_certificates = select_investments_with_certificates(current_user.get_id())
     investment_sums = select_investments_certificates_sum(current_user.get_id())
-    return render_template('invest.html', title='Investments', inv_cd_list=investment_certificates
+    return render_template('invest.html', title='Investments', inv=investments, inv_cd_list=investment_certificates
     , inv_sums=investment_sums)
-    
+
 
 @Customer.route("/deposit", methods=['GET', 'POST'])
 def deposit():

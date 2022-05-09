@@ -21,6 +21,12 @@ def load_user(user_id):
 
     cur.execute(user_sql, (int(user_id),))
     if cur.rowcount > 0:
+        # return-if svarer til nedenstående:
+    		# if schema == 'employees':
+    		#   return Employees(cur.fetchone())
+    		# else:
+    		#   return Customers(cur.fetchone())
+
         return Employees(cur.fetchone()) if schema == 'employees' else Customers(cur.fetchone())
     else:
         return None
@@ -73,6 +79,7 @@ def insert_Customers(name, CPR_number, password):
     VALUES (%s, %s, %s)
     """
     cur.execute(sql, (name, CPR_number, password))
+    # Husk commit() for INSERT og UPDATE, men ikke til SELECT!
     conn.commit()
     cur.close()
 
@@ -106,6 +113,7 @@ def update_CheckingAccount(amount, CPR_number):
     WHERE CPR_number = %s
     """ 
     cur.execute(sql, (amount, CPR_number))
+    # Husk commit() for INSERT og UPDATE, men ikke til SELECT!
     conn.commit()
     cur.close()
     
@@ -116,6 +124,7 @@ def transfer_account(date, amount, from_account, to_account):
     VALUES (%s, %s, %s, %s)
     """
     cur.execute(sql, (date, amount, from_account, to_account))
+    # Husk commit() for INSERT og UPDATE, men ikke til SELECT!
     conn.commit()
     cur.close()
 
@@ -139,20 +148,22 @@ def select_emp_cus_accounts(emp_cpr_number):
     cur.close()
     return tuple_resultset
 
-def select_investments(CPR_number):
+def select_investments(emp_cpr_number):
     cur = conn.cursor()
     sql = """
     SELECT i.account_number, a.cpr_number, a.created_date 
     FROM investmentaccounts i
-    JOIN accounts a ON i.account_number = a.account_number    
-    WHERE a.cpr_number = %s
+    JOIN accounts a ON i.account_number = a.account_number
+    JOIN manages m ON m.account_number = a.account_number
+    JOIN employees e ON e.id = m.emp_cpr_number
+    WHERE e.id = %s
     """
-    cur.execute(sql, (CPR_number,))
+    cur.execute(sql, (emp_cpr_number,))
     tuple_resultset = cur.fetchall()
     cur.close()
     return tuple_resultset
 
-def select_investments_with_certificates(CPR_number):
+def select_investments_with_certificates(emp_cpr_number):
     cur = conn.cursor()
     sql = """
     SELECT i.account_number, a.cpr_number, a.created_date
@@ -160,22 +171,23 @@ def select_investments_with_certificates(CPR_number):
     FROM investmentaccounts i
     JOIN accounts a ON i.account_number = a.account_number
     JOIN certificates_of_deposit cd ON i.account_number = cd.account_number    
-    WHERE a.cpr_number = %s
+    JOIN manages m ON m.account_number = a.account_number
+    JOIN employees e ON e.id = m.emp_cpr_number
+    WHERE e.id = %s
     """
-    cur.execute(sql, (CPR_number,))
+    cur.execute(sql, (emp_cpr_number,))
     tuple_resultset = cur.fetchall()
     cur.close()
     return tuple_resultset
 
-def select_investments_certificates_sum(CPR_number):
-    print(CPR_number)
+def select_investments_certificates_sum(emp_cpr_number):
     cur = conn.cursor()
     sql = """
     SELECT account_number, cpr_number, created_date, sum
     FROM vw_cd_sum
-    WHERE cpr_number = %s
+    WHERE emp_cpr_number = %s
     """
-    cur.execute(sql, (CPR_number,))
+    cur.execute(sql, (emp_cpr_number,))
     tuple_resultset = cur.fetchall()
     cur.close()
     return tuple_resultset

@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW ww_invest_certificates
+CREATE OR REPLACE VIEW vw_invest_certificates
 AS
 SELECT i.account_number, a.cpr_number, a.created_date
     , cd.cd_number, start_date, maturity_date, rate, amount 

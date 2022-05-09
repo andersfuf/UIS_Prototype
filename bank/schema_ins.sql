@@ -1,3 +1,6 @@
+DELETE FROM deposits;
+DELETE FROM withdraws;
+DELETE FROM checkingaccounts;
 DELETE FROM certificates_of_deposit;
 --
 DELETE FROM InvestmentAccounts;

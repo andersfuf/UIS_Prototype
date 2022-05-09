@@ -95,12 +95,7 @@ CREATE TABLE IF NOT EXISTS Certificates_of_deposit(
 );
 COMMENT ON COLUMN Certificates_of_deposit.rate IS 'at fixed rate certificated´s of deposite';
 
-
-CREATE OR REPLACE VIEW vw_cd_sum
-AS
-SELECT i.account_number, a.cpr_number, a.created_date
-    , sum (amount) 
-    FROM investmentaccounts i
-    JOIN accounts a ON i.account_number = a.account_number
-    JOIN certificates_of_deposit cd ON i.account_number = cd.account_number   
-GROUP BY  i.account_number, a.cpr_number, a.created_date;
+\i sql_ddl/vw_cd_sum.sql
+\i sql_ddl/vw_invest_accounts.sql
+\i sql_ddl/vw_invest_certificates.sql
+\i sql_ddl/vw_tdw.sql
