@@ -1,3 +1,18 @@
+# June 2022 , 2022 DEVELOPMENT SPRINT
+Some enhancements
+
+### Tasks:
+cm-2: Adding data to the database
+
+## User stories:
+
+### Customer role:
+CUS-1:  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me. 
+CUS-1-1: Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity. 
+EMP-1-1: Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
+### Employee role:
+
+
 # April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINT
 
 Reviewing the prioritized user stories. User stories to be picked. 
