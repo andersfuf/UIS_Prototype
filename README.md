@@ -1,8 +1,6 @@
 # June 2022 , 2022 DEVELOPMENT SPRINT
 Some enhancements
 
-### Tasks:
-cm-2: Adding data to the database
 
 ## User stories:
 
@@ -14,6 +12,11 @@ CUS-1-1: Customer-part Carry authencication to all customer related endpoints: A
 ### Employee role:
 
 EMP-1-1: Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
+
+### Tasks:
+
+cm-2 (pax+anders,100%): Adding data to the database
+
 
 # April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINT
 
