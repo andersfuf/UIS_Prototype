@@ -120,10 +120,9 @@ Run the code below to install the necessary modules.
 2. run schema.sql, schema_ins.sql in your database.
 
 ## Running flask
-
-export FLASK_APP=run.py
-export FLASK_ENV=development
-export FLASK_RUN_PORT=5106.     (Optional. Default port is port 5000.)
-flask run
+>$ export FLASK_APP=run.py
+>$ export FLASK_ENV=development
+>$ export FLASK_RUN_PORT=5106.     (Optional. Default port is port 5000.)
+>$ flask run
 
 
