@@ -125,7 +125,7 @@ Run the code below to install the necessary modules.
 >
 >$ export FLASK_ENV=development
 >
->$ export FLASK_RUN_PORT=5106     (Optional. Default port is port 5000.)
+>$ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
 >
 >$ flask run
 
