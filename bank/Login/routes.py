@@ -37,8 +37,19 @@ def login():
             return redirect(next_page) if next_page else redirect(url_for('Login.home'))
         else:
             flash('Login Unsuccessful. Please check identifier and password', 'danger')
-    return render_template('login.html', title='Login', is_employee=is_employee, form=form)
 
+    teachers = [{"id": str(6234), "name":"anders. teachers with 6."}, {"id": str(6214), "name":"simon"},
+                {"id": str(6862), "name":"dmitry"}, {"id": str(6476), "name":"finn"}]
+    parents =  [{"id": str(4234), "name":"parent-anders. parents with 4."}, {"id": str(4214), "name":"parent-simon"},
+                {"id": str(4862), "name":"parent-dmitry"}, {"id": str(4476), "name":"parent-finn"}]
+    students = [{"id": str(5234), "name":"student-anders. students with 5."}, {"id": str(5214), "name":"student-simon"},
+                {"id": str(5862), "name":"student-dmitry"}, {"id": str(5476), "name":"student-finn"}]
+    #return render_template('login.html', title='Login', is_employee=is_employee, form=form)
+    return render_template('login.html', title='Login', is_employee=is_employee, form=form
+    , teachers=teachers, parents=parents, students=students
+    )
+#teachers={{"id": str(1234), "name":"anders"},}
+#data={"user_id": str(user_id), "total_trials":total_trials}
 
 @Login.route("/logout")
 def logout():
