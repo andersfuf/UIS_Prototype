@@ -6,14 +6,41 @@ from bank.models import CheckingAccount, InvestmentAccount, update_CheckingAccou
 from bank.models import select_investments_with_certificates, select_investments, select_investments_certificates_sum
 import sys, datetime
 
+#202212
+from bank import roles, mysession
+
+iEmployee = 1
+iCustomer = 2
+
+
 Customer = Blueprint('Customer', __name__)
 
 @Customer.route("/invest", methods=['GET', 'POST'])
 def invest():
+
+    #202212
+    # Her laves et login check
     if not current_user.is_authenticated:
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
-    #form = InvestForm()
+
+    #202212
+    #customer
+    # CUS4; CUS4-1, CUS4-4
+    # There us no employee counterpart yet (invest overview)
+    if not mysession["role"] == roles[iCustomer]:  
+        flash('Viewing investents is customer only.','danger')
+        return redirect(url_for('Login.login'))
+              
+        
+    mysession["state"]="invest"
+    print(mysession)
+    
+    #202212
+    # i think this view works for employee and customer but the 
+    # view is different as employees have customers.
+    # CUS4; CUS4-1, CUS4-4
+    
     investments = select_investments(current_user.get_id())
     investment_certificates = select_investments_with_certificates(current_user.get_id())
     investment_sums = select_investments_certificates_sum(current_user.get_id())
@@ -26,6 +53,19 @@ def deposit():
     if not current_user.is_authenticated:
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
+        
+        
+    #202212
+    #EUS-CUS10
+    # move to customer object
+    if not mysession["role"] == roles[iEmployee]:  
+        flash('Deposit is employee only.','danger')
+        return redirect(url_for('Login.login'))              
+        
+    mysession["state"]="deposit"
+    print(mysession)
+
+
     form = DepositForm()
     if form.validate_on_submit():
         amount=form.amount.data

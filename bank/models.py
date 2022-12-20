@@ -39,6 +39,7 @@ class Customers(tuple, UserMixin):
         self.password = user_data[2]
         self.name = user_data[3]
         self.address = user_data[4]
+        self.role = "customer"
 
     def get_id(self):
        return (self.CPR_number)
@@ -48,6 +49,7 @@ class Employees(tuple, UserMixin):
         self.id = employee_data[0]
         self.name = employee_data[1]
         self.password = employee_data[2]
+        self.role = "employee"
 
     def get_id(self):
        return (self.id)

@@ -5,12 +5,26 @@ from flask_login import current_user
 from bank.models import Transfers, CheckingAccount, InvestmentAccount, select_emp_cus_accounts, transfer_account, insert_Customers
 import sys, datetime
 
+#202212
+from bank import roles, mysession
+
+iEmployee = 1
+iCustomer = 2 # bruges til transfer/
+
 Employee = Blueprint('Employee', __name__)
 
 @Employee.route("/addcustomer", methods=['GET', 'POST'])
 def addcustomer():
-    #if current_user.is_authenticated:
-    #    return redirect(url_for('Login.home'))
+    
+    if not current_user.is_authenticated:
+        return redirect(url_for('Login.home'))
+        
+    #202212
+    # employee only
+    if not mysession["role"] == roles[iEmployee]:  
+        flash('Adding customers is employee only.','danger')
+        return redirect(url_for('Login.login'))
+
     form = AddCustomerForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
@@ -28,6 +42,14 @@ def manageCustomer():
     if not current_user.is_authenticated:
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
+        
+    # manageCustor/ må være EUS10
+    # transfer/  må være CUS7
+
+    if not mysession["role"] == roles[iEmployee]:  
+        flash('Managing customers is employee only.','danger')
+        return redirect(url_for('Login.login'))
+    
     form = TransferForm()
     if form.validate_on_submit():
         amount=form.amount.data
@@ -50,6 +72,18 @@ def transfer():
     if not current_user.is_authenticated:
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
+        
+    # CUS7 is the customer transfer. Create new endpoint.
+    # EUS10 is the employee transfer.
+    # manageCustor/ er EUS!=
+    # transfer/  må være CUS7
+    # move to customer
+    
+    if not mysession["role"] == roles[iCustomer]:  
+        flash('transfer money is customer only.','danger')
+        return redirect(url_for('Login.login'))
+ 
+    
     CPR_number = current_user.get_id()
     print(CPR_number)
     dropdown_accounts = select_emp_cus_accounts(current_user.get_id())
