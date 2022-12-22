@@ -18,8 +18,11 @@ def home():
     #202212
     mysession["state"]="home or /"
     print(mysession)
+    #202212
+    role =  mysession["role"]
+    print('role: '+ role)
     
-    return render_template('home.html', posts=posts)
+    return render_template('home.html', posts=posts, role=role)
 
 
 @Login.route("/about")
@@ -36,6 +39,7 @@ def login():
     #202212
     mysession["state"]="login"
     print(mysession)
+    role=None
     
     # jeg tror det her betyder at man er er logget på, men har redirected til login
     # så kald formen igen
@@ -61,7 +65,6 @@ def login():
         # Her checkes om der er logget på
         if user != None and bcrypt.check_password_hash(user[2], form.password.data):
 
-
             #202212
             print("role:" + user.role)
             if user.role == 'employee':  
@@ -70,7 +73,8 @@ def login():
                 mysession["role"] = roles[2] #customer
             else:
                 mysession["role"] = roles[0] #ingen
-            
+                
+            mysession["id"] = form.id.data
             print(mysession)
             print(roles)
                             
@@ -88,9 +92,14 @@ def login():
                 {"id": str(4862), "name":"parent-dmitry"}, {"id": str(4476), "name":"parent-finn"}]
     students = [{"id": str(5234), "name":"student-anders. students with 5."}, {"id": str(5214), "name":"student-simon"},
                 {"id": str(5862), "name":"student-dmitry"}, {"id": str(5476), "name":"student-finn"}]
+
+    #202212
+    role =  mysession["role"]
+    print('role: '+ role)
+
     #return render_template('login.html', title='Login', is_employee=is_employee, form=form)
     return render_template('login.html', title='Login', is_employee=is_employee, form=form
-    , teachers=teachers, parents=parents, students=students
+    , teachers=teachers, parents=parents, students=students, role=role
     )
 #teachers={{"id": str(1234), "name":"anders"},}
 #data={"user_id": str(user_id), "total_trials":total_trials}

@@ -4,8 +4,8 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
 #202212
-from flask import session
-from flask_session import Session
+#from flask import session
+#from flask_session import Session
 
 
 app = Flask(__name__)

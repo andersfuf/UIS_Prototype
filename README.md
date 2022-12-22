@@ -97,7 +97,7 @@ EUS3-4 (name) authentication against employee of EUS3.
 
 EUS3-5 (anders, 100%) ER to relational part.
 
-EUS6 (name): As a bank employee, I can create a new CD(typo, must be adding an account) for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank.
+EUS6 (name): As a bank employee, I can create a new CD (certificate of deposite) for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank.
 
 EUS6-2 (anders, 100%) ER to relational part.
 

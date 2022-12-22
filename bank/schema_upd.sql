@@ -29,11 +29,10 @@ VALUES (8016, '2018-06-01',5008), (8017, '2018-06-01',5008), (8018, '2018-06-01'
 ,      (8022, '2018-06-01',5010), (8023, '2018-06-01',5010), (8024, '2018-06-01',5010)
 ;
 
-
-
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6008, 8010), (6008, 8011), (6008, 8016), (6008, 8017), (6008, 8018);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6009, 8012), (6009, 8013), (6009, 8019), (6009, 8020), (6009, 8021);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6010, 8014), (6010, 8015), (6010, 8022), (6010, 8023), (6010, 8024);
+
 
 
 INSERT INTO deposits (account_number, amount, deposit_date)
@@ -55,4 +54,53 @@ VALUES (now(), 5000, 8000, 8016), (now(), 5000, 8001, 8017), (now(), 5000, 8002,
 INSERT INTO investmentaccounts (account_number)
 VALUES (8016), (8019), (8022)
 ;
+
+
+
+-- 202212
+-- Investment accounts for 6001-6003. Mangage own accounts 
+INSERT INTO public.accounts(account_number, created_date, cpr_number) 
+VALUES (8025, '2018-06-01',5001), (8028, '2018-06-01',5002), (8031, '2018-06-01',5003)
+,      (8026, '2018-06-01',5001), (8029, '2018-06-01',5002), (8032, '2018-06-01',5003)
+,      (8027, '2018-06-01',5001), (8030, '2018-06-01',5002), (8033, '2018-06-01',5003)
+;
+
+INSERT INTO public.manages(emp_cpr_number, account_number) 
+VALUES (6001, 8025), (6001, 8026), (6001, 8027)
+,      (6002, 8028), (6002, 8029), (6002, 8030)
+,      (6003, 8031), (6003, 8032), (6003, 8033);
+
+INSERT INTO investmentaccounts (account_number)
+VALUES (8025), (8026), (8027)
+,      (8028), (8029), (8030)
+,      (8031), (8032), (8033)
+;
+
+
+-- new certificate fixed rate 4 percent
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 140000, now(), 8025, 4);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 130000, now(), 8025, 5);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 120000, now(), 8026, 4);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 110000, now(), 8026, 5);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 100000, now(), 8026, 4);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),  90000, now(), 8027, 5);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),  80000, now(), 8027, 6);
+
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 140000, now(), 8008, 4);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 130000, now(), 8009, 5);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 120000, now(), 8010, 4);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 110000, now(), 8008, 5);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 100000, now(), 8010, 4);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),  90000, now(), 8009, 5);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),  80000, now(), 8008, 6);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),   2000, now(), 8016, 6);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),  80030, now(), 8019, 6);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),   4000, now(), 8022, 6);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),  80400, now(), 8022, 2);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),   6000, now(), 8030, 6);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),  85000, now(), 8019, 2);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),   8000, now(), 8031, 6);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),   8000, now(), 8022, 6);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),   8000, now(), 8032, 6);
+INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),   6500, now(), 8012, 3);
 

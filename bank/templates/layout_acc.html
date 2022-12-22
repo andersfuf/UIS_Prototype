@@ -32,7 +32,7 @@
                  <a href="#" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown">UIS bank<b class="caret"></b></a>
                  <ul class="dropdown-menu">
                     <li><a class="nav-item nav-link" href="{{ url_for('Login.account') }}">Account</a></li>
-                    <li><a class="nav-item nav-link" href="{{ url_for('Employee.transfer') }}">Transfer</a></li>
+                    <li><a class="nav-item nav-link" href="{{ url_for('Customer.transfer') }}">Transfer</a></li>
                     <li class="divider"></li>
                     <li><a class="nav-item nav-link" href="{{ url_for('Customer.invest') }}">Investments</a></li>
                     <li class="divider"></li>
@@ -48,12 +48,19 @@
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
                 <a class="nav-item nav-link" href="{{ url_for('Login.account') }}">Account</a>
-                <a class="nav-item nav-link" href="{{ url_for('Employee.transfer') }}">Transfer</a>
+
+			   {% if "customer" == role %}
+                <a class="nav-item nav-link" href="{{ url_for('Customer.transfer') }}">Transfer</a>
                 <a class="nav-item nav-link" href="{{ url_for('Customer.invest') }}">Investments</a>
+ 			   {% endif %}
+		       {% if role == 'employee' %}
+                <a class="nav-item nav-link" href="{{ url_for('Employee.addcustomer') }}">Add customer</a>
+                <a class="nav-item nav-link" href="{{ url_for('Employee.investe') }}">Investments</a>
+ 			   {% endif %}
+
                 <a class="nav-item nav-link" href="{{ url_for('Login.logout') }}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{{ url_for('Login.login') }}">Login</a>
-                <a class="nav-item nav-link" href="{{ url_for('Employee.addcustomer') }}">Register</a>
               {% endif %}
             </div>
           </div>
@@ -74,14 +81,27 @@
           {% endwith %}
           {% block content %}{% endblock %}
         </div>
+        <!-- Right Side box-->
         <div class="col-md-4">
           <div class="content-section">
             <h3>Account</h3>
               <ul class="list-group">
-                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('Employee.transfer') }}">Transfer</a></li>
+				  
+			   {% if "customer" == role %}
+			        <p>UIS Prototype-customer</p> 
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('Customer.transfer') }}">Transfer</a></li>
                 <li class="list-group-item list-group-item-light">Checking Accounts</li>
                 <li class="list-group-item list-group-item-light">Investment Accounts</li>
                 <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('Customer.invest') }}">View investment accounts</a></li>
+ 			   {% endif %}
+	 	       {% if role == 'employee' %}
+			        <p>UIS Prototype-emp</p> 
+                <li class="list-group-item list-group-item-light">Transfer</li>
+                <li class="list-group-item list-group-item-light">Checking Accounts</li>
+                <li class="list-group-item list-group-item-light">Investment Accounts</li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('Employee.investe') }}">View investment accounts</a></li>
+ 			   {% endif %}
+				
                 <li class="list-group-item list-group-item-light">etc</li>
               </ul>
             </p>
