@@ -1,24 +1,45 @@
-# June 2022 , 2022 DEVELOPMENT SPRINT
+# usage
+## Requirements:
+Run the code below to install the necessary modules.
+
+>$ pip install -r requirements.txt
+
+## Database init
+1. set the database in __init__.py file.
+2. run schema.sql, schema_ins.sql in your database.
+
+## Running flask
+
+>$ export FLASK_APP=run.py
+>
+>$ export FLASK_ENV=development
+>
+>$ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
+>
+>$ flask run
+
+# History
+## June 2022 , 2022 DEVELOPMENT SPRINT
 Some enhancements
 
 
-## User stories:
+### User stories:
 
-### Customer role:
+#### Customer role:
 CUS-1:  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1). 
 
 CUS-1-1: Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity. 
 
-### Employee role:
+#### Employee role:
 
 EMP-1-1: Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
 
-### Tasks:
+#### Tasks:
 
 cm-2 (pax+anders,100%): Adding data to the database
 
 
-# April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINT
+## April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINT
 
 Reviewing the prioritized user stories. User stories to be picked. 
 
@@ -26,7 +47,7 @@ Our two target dates are: monday April 29th (choose not to meet if github works;
 
 We consider this a sprint started. Lets be modest and see if we can get some done. In a normal workplace situation no user story should for example not take more that 20 hours.
  
-## Rules:  
+### Rules:  
 
 To pick: Add your name. Pick one at the time, (pick only several when you break the rule)
 
@@ -36,9 +57,9 @@ Finalize ‘one at the time’.
 
 Commit to repository. 
 
-## User stories:
+### User stories:
 
-### Customer role:
+#### Customer role:
 
 CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
 
@@ -70,7 +91,7 @@ CUS4-2(name); date part; consolidated view at point in time.
 CUS4-3(anders, 100%, left): ER to relational part. certificates_of_deposit, investmentaccounts;
 
 
-### Employee role:
+#### Employee role:
 
 EUS-CUS10 ((moved,SPLIT), 0%):  Move to employee as it is a employee/counter utility; Employee must chose the customer; CUS10: As a customer, I can deposit money to my checking account, so that I can have it in a safe place at the bank.-> EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
 
@@ -101,7 +122,7 @@ EUS6 (name): As a bank employee, I can create a new CD (certificate of deposite)
 
 EUS6-2 (anders, 100%) ER to relational part.
 
-### Tasks:
+#### Tasks:
 
 MVC1-1 (ziming, 100%) Move SQL
 
@@ -110,23 +131,5 @@ MVC1-2 (name, ) navigation
 CM-1 (name, ) adjusting technical debt
 
 
-## Requirements:
-Run the code below to install the necessary modules.
-
->$ pip install -r requirements.txt
-
-## Database init
-1. set the database in __init__.py file.
-2. run schema.sql, schema_ins.sql in your database.
-
-## Running flask
-
->$ export FLASK_APP=run.py
->
->$ export FLASK_ENV=development
->
->$ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
->
->$ flask run
 
 
