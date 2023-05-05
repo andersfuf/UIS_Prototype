@@ -1,4 +1,8 @@
 # usage
+The UIS_prototype is a website running Python and Flask library. It has evolved as an unfinished project with development flaws and serves as a starting point for adoption flask as a means of making your own prototype.
+The schema of the database is banking and transfer of money between accounts, offering two roles, the employee role managing customer accounts and the customer role offering a customer login to customer accounts.
+The Flask framework extends html with a { } - command set. SQL Datasets can be listed using loops and branching statements. 
+
 ## Requirements:
 Run the code below to install the necessary modules.
 
@@ -18,7 +22,17 @@ Run the code below to install the necessary modules.
 >
 >$ flask run
 
-# History
+# Development
+### Rules:  
+
+To pick: Add your name. Pick one at the time, (pick only several when you break the rule)
+
+Update progress. 
+
+Finalize ‘one at the time’. 
+
+Commit to repository. 
+
 ## June 2022 , 2022 DEVELOPMENT SPRINT
 Some enhancements
 
@@ -47,15 +61,6 @@ Our two target dates are: monday April 29th (choose not to meet if github works;
 
 We consider this a sprint started. Lets be modest and see if we can get some done. In a normal workplace situation no user story should for example not take more that 20 hours.
  
-### Rules:  
-
-To pick: Add your name. Pick one at the time, (pick only several when you break the rule)
-
-Update progress. 
-
-Finalize ‘one at the time’. 
-
-Commit to repository. 
 
 ### User stories:
 
