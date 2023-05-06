@@ -33,6 +33,15 @@ Finalize ‘one at the time’.
 
 Commit to repository. 
 
+## May 2022 , 2022 DEVELOPMENT SPRINT
+Some enhancements
+
+#### Tasks:
+
+CM-2 (anders, 0%): Adding data to the database
+
+CM-1 (name, ) adjusting technical debt (Remove underscore folders from git from python compilations.)
+
 ## June 2022 , 2022 DEVELOPMENT SPRINT
 Some enhancements
 
@@ -47,14 +56,6 @@ CUS-1-1: Customer-part Carry authencication to all customer related endpoints: A
 #### Employee role:
 
 EMP-1-1: Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
-
-#### Tasks:
-
-cm-2 (pax+anders,100%): Adding data to the database
-
-
-
-
 
 
 ## Back log of User stories.
@@ -141,7 +142,17 @@ MVC1-2 (name, ) navigation
 
 CM-1 (name, ) adjusting technical debt
 
+CM-2 (name, : Adding data to the database
+
 ## log
+
+## June 2022 , 2022 DEVELOPMENT SPRINT
+Some enhancements
+
+#### Tasks:
+
+CM-2 (pax+anders,100%): Adding data to the database
+
 
 ### April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINT
 Reviewing the prioritized user stories. User stories to be picked. 
