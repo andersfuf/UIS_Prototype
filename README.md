@@ -44,6 +44,8 @@ Some enhancements
 
 #### Employee role:
 
+Accounts EUS-11
+EUS-11 as an emplee i have access to specific customer accounts, so the employee can manage the customer. Thoughts: SQL. The data model maps employees to customer accounts. The employee could be mapped to a customer.
 
 #### Tasks:
 
@@ -109,6 +111,7 @@ EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though
 
 EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
 
+
 Add and delete customers.
 
 EUS3 (complex, SPLIT, 5 parts 40%): Complex story. SPLIT, only employees should have acces to this story). EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
@@ -122,6 +125,7 @@ EUS3-3 (name) un-register page implements deleting a customer along with the acc
 EUS3-4 (name) authentication against employee of EUS3.
 
 EUS3-5 (anders, 100%) ER to relational part.
+
 
 Certificate of deposits.
 
