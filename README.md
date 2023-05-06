@@ -33,7 +33,8 @@ Finalize ‘one at the time’.
 
 Commit to repository. 
 
-## May 2022 , 2022 DEVELOPMENT SPRINT
+## May 2023, 2023 DEVELOPMENT SPRINT
+
 Some enhancements
 
 #### Tasks:
@@ -43,6 +44,7 @@ CM-2 (anders, 0%): Adding data to the database
 CM-1 (name, ) adjusting technical debt (Remove underscore folders from git from python compilations.)
 
 ## June 2022 , 2022 DEVELOPMENT SPRINT
+
 Some enhancements
 
 
