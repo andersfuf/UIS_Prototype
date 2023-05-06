@@ -33,9 +33,17 @@ Finalize ‘one at the time’.
 
 Commit to repository. 
 
-## May 2023, 2023 DEVELOPMENT SPRINT
+## 2023 DEVELOPMENT SPRINTS
 
 Some enhancements
+
+### User stories:
+
+#### Customer role:
+
+
+#### Employee role:
+
 
 #### Tasks:
 
@@ -43,33 +51,16 @@ CM-2 (anders, 0%): Adding data to the database
 
 CM-1 (name, ) adjusting technical debt (Remove underscore folders from git from python compilations.)
 
-## June 2022 , 2022 DEVELOPMENT SPRINT
-
-Some enhancements
-
-
-### User stories:
-
-#### Customer role:
-CUS-1:  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1). 
-
-CUS-1-1: Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity. 
-
-#### Employee role:
-
-EMP-1-1: Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
 
 
 ## Back log of User stories.
-
+There is a dilemma. You want the current state of existing user stories. However a back log is also a repository of unfinished business.
 
 #### Customer role:
 
-CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
+CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. Suspend authentication for other parts of the application (YES / NO ) - No action - defered. CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
 
-Suspend authentication for other parts of the application (YES / NO ) - No action - defered.
-
-
+CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity. 
 
 Transfer
 
@@ -112,9 +103,9 @@ EUS-CUS10-2(name): Authentication part
 
 EUS-CUS10-3(anders, 100%, left): ER to relational part.
 
-Log in.
+Logging on.
 
-EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
+EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
 
 EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
 
@@ -148,15 +139,20 @@ CM-2 (name, : Adding data to the database
 
 ## log
 
-## June 2022 , 2022 DEVELOPMENT SPRINT
+## June 2022 , 2022 DEVELOPMENT SPRINTS
 Some enhancements
+
+CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1). 
+CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity. 
+
+EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
 
 #### Tasks:
 
 CM-2 (pax+anders,100%): Adding data to the database
 
 
-### April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINT
+### April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINTS
 Reviewing the prioritized user stories. User stories to be picked. 
 Our two target dates are: monday April 29th (choose not to meet if github works; stand by ) and Wednesday May 1st, when we meet for acceptance test. 
 We consider this a sprint started. Lets be modest and see if we can get some done. In a normal workplace situation no user story should for example not take more that 20 hours.
