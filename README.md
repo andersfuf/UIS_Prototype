@@ -60,9 +60,6 @@ There is a dilemma. You want the current state of existing user stories. However
 
 #### Customer role:
 
-CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. Suspend authentication for other parts of the application (YES / NO ) - No action - defered. CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
-
-CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity. 
 
 Transfer
 
@@ -93,6 +90,15 @@ CUS4-2(name); date part; consolidated view at point in time.
 CUS4-3(anders, 100%, left): ER to relational part. certificates_of_deposit, investmentaccounts;
 
 
+Logging on
+
+CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. Suspend authentication for other parts of the application (YES / NO ) - No action - defered. CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
+
+CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity. 
+
+
+
+
 ### Employee role:
 
 Chose customer.
@@ -105,11 +111,6 @@ EUS-CUS10-2(name): Authentication part
 
 EUS-CUS10-3(anders, 100%, left): ER to relational part.
 
-Logging on.
-
-EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
-
-EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
 
 
 Add and delete customers.
@@ -132,6 +133,14 @@ Certificate of deposits.
 EUS6 (name): As a bank employee, I can create a new CD (certificate of deposite) for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank.
 
 EUS6-2 (anders, 100%) ER to relational part.
+
+
+Logging on.
+
+EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
+
+EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
+
 
 #### Tasks:
 
