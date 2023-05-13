@@ -130,8 +130,7 @@ def transfer_account(date, amount, from_account, to_account):
     conn.commit()
     cur.close()
 
-def select_cus_accounts(emp_cpr_number):
-    # TODO-CUS employee id is parameter
+def select_cus_accounts(cpr_number):
     cur = conn.cursor()
     sql = """
     SELECT
@@ -143,13 +142,14 @@ def select_cus_accounts(emp_cpr_number):
       NATURAL JOIN accounts  
       NATURAL JOIN customers c
       JOIN employees e ON m.emp_cpr_number = e.id
-	WHERE emp_cpr_number = %s 
+	WHERE cpr_number = %s 
     ;
     """
-    cur.execute(sql, (emp_cpr_number,))
+    cur.execute(sql, (cpr_number,))
     tuple_resultset = cur.fetchall()
     cur.close()
     return tuple_resultset
+
 
 def select_cus_investments(cpr_number):
     cur = conn.cursor()
