@@ -101,6 +101,10 @@ CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer r
 
 ### Employee role:
 
+Transfer.
+
+EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1. SQL part. EUS-CUS7-2. Transfer between managed accounts. EUS-CUS7-3. Customer based transfer (requires EUS-CUS10) 
+
 Chose customer.
 
 EUS-CUS10 ((moved,SPLIT), 0%):  Move to employee as it is a employee/counter utility; Employee must chose the customer; CUS10: As a customer, I can deposit money to my checking account, so that I can have it in a safe place at the bank.-> EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
