@@ -16,7 +16,7 @@ Run the code below to install the necessary modules.
 
 >$ export FLASK_APP=run.py
 >
->$ export FLASK_DEBUG=1.          (Replaces export FLASK_ENV=development)
+>$ export FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
 >
 >$ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
 >
