@@ -41,6 +41,8 @@ Some enhancements
 
 #### Customer role:
 
+CUS-7-8-2023 Transfer. Fix SQL selecting customers accounts based on customer id.
+
 
 #### Employee role:
 
@@ -49,9 +51,9 @@ EUS-11 as an emplee i have access to specific customer accounts, so the employee
 
 #### Tasks:
 
-CM-2 (anders, 0%): Adding data to the database
+CM-2 (anders, 100%): Adding data to the database
 
-CM-1 (name, ) adjusting technical debt (Remove underscore folders from git from python compilations.)
+CM-1 (name, was ok) adjusting technical debt (Remove underscore folders from git from python compilations.)
 
 
 
@@ -73,7 +75,7 @@ CUS7-2 (ziming+anders,100%): confirm dropdown;
 
 CUS7-4 (anders, 100%, left): ER to relational part. deposit, transfer, withdraw;
 
-CUS7-5 (anders+, 10%): must be logged in as employee part
+CUS7-5 (anders+, Moved): must be logged in as employee part. Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer).
 
 CUS7-6 (name, ): restrict from_accounts to employees manages accounts
 
@@ -103,7 +105,7 @@ CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer r
 
 Transfer.
 
-EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1. SQL part. EUS-CUS7-2. Transfer between managed accounts. EUS-CUS7-3. Customer based transfer (requires EUS-CUS10) 
+EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1. SQL part(100%). EUS-CUS7-2 (100%). Transfer between managed accounts. EUS-CUS7-3. Customer based transfer (requires EUS-CUS10) 
 
 Chose customer.
 
