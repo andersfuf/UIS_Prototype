@@ -42,6 +42,24 @@ Some enhancements
 
 #### Customer role:
 
+Checking account
+
+CUS8-2023 (name, %) As a customer i want to see the balance and details of mu checking account. SPLIT into CUS8-1-2023, CUS8-2-2023 ,CUS8-3-2023, CUS8-4-2023, CUS8-5-2023, CUS8-6-2023.
+
+CUS8-1-2023 (name, %) checking account model-part (DML). 
+
+CUS8-2-2023 (name, %) checking account template. 
+
+CUS8-3-2023 (name, %) checking account controller-part. 
+
+CUS8-4-2023 (name, %) checking account detail-part model-part (SQL). 
+
+CUS8-5-2023 (name, %)  checking account detail-part template. 
+
+CUS8-6-2023 (name, %) detail-part controller-part.
+
+--
+
 CUS7-8-2023 Transfer. Fix SQL selecting customers accounts based on customer id.
 
 CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
