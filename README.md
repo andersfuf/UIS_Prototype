@@ -47,6 +47,8 @@ CUS-7-8-2023 Transfer. Fix SQL selecting customers accounts based on customer id
 
 #### Employee role:
 
+EUS-CUS7-2023 Transfer currently disabled in the templates. Could be enabled and debugged
+
 Accounts EUS-11
 EUS-11 as an emplee i have access to specific customer accounts, so the employee can manage the customer. Thoughts: SQL. The data model maps employees to customer accounts. The employee could be mapped to a customer.
 
