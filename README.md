@@ -91,7 +91,7 @@ CUS4(SPLIT, SPLIT): As a customer, I can see the consolidated summary of my inve
 
 CUS4-1(anders, 60%, SPLIT): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date.; ; SPLIT model part (CUS4-4).
 
-CUS4-4(anders, 70%); model part of CUS4-1
+CUS4-4(anders, 100%); model part of CUS4-1
 
 CUS4-2(name); date part; consolidated view at point in time.
 
