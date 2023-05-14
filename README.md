@@ -43,8 +43,8 @@ Some enhancements
 #### Customer role:
 
 CUS7-8-2023 Transfer. Fix SQL selecting customers accounts based on customer id.
+
 CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
-CUS7-8-2023 remo
 
 
 #### Employee role:
