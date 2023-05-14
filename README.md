@@ -42,7 +42,9 @@ Some enhancements
 
 #### Customer role:
 
-CUS-7-8-2023 Transfer. Fix SQL selecting customers accounts based on customer id.
+CUS7-8-2023 Transfer. Fix SQL selecting customers accounts based on customer id.
+CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
+CUS7-8-2023 remo
 
 
 #### Employee role:
@@ -56,8 +58,9 @@ EUS-11 as an emplee i have access to specific customer accounts, so the employee
 
 CM-2 (anders, 100%): Adding data to the database
 
-CM-1 (name, was ok) adjusting technical debt (Remove underscore folders from git from python compilations.)
-
+CM-1 (name, was ok, defer) adjusting technical debt. (Remove underscore folders from git from python compilations.)
+CM-1 (name, 0%) adjusting technical debt. CUS7-8-2023. models.select_cus_accounts() does not need employees
+     Remove employee from SqL.
 
 
 ## Back log of User stories.
