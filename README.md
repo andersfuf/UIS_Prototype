@@ -13,11 +13,11 @@ Run the code below to install the necessary modules.
 2. run schema.sql, schema_ins.sql, schema_upd.sql, schema_upd_2.sql in your database.
 
 ## Running flask
-The python way
+### The python way
 
 $ python3 run.py
 
-The flask way.
+### The flask way.
 
 $ export FLASK_APP=run.py
 
@@ -29,7 +29,7 @@ $ flask run
 
 
 
-The flask way with a virual environment.
+### The flask way with a virual environment.
 
 Set up virtual environment as specified in https://flask.palletsprojects.com/en/1.1.x/installation/ (OSX/WINDOWS)
 
