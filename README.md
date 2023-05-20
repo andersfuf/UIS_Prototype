@@ -1,7 +1,7 @@
 # usage
 The UIS_prototype is a website running Python and Flask library. It has evolved as an unfinished project with development flaws and serves as a starting point for adoption flask as a means of making your own prototype.
 The schema of the database is banking and transfer of money between accounts, offering two roles, the employee role managing customer accounts and the customer role offering a customer login to customer accounts.
-The Flask framework extends html with a { } - command set. SQL Datasets can be listed using loops and branching statements. 
+The Flask framework extends html with a { } - command set. SQL Datasets can be listed using loops and branching statements.
 
 ## Requirements:
 Run the code below to install the necessary modules.
@@ -15,7 +15,21 @@ Run the code below to install the necessary modules.
 ## Running flask
 The python way
 
-The flask way. 
+$ python3 run.py
+
+The flask way.
+
+$ export FLASK_APP=run.py
+
+$ export FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
+
+$ export FLASK_RUN_PORT=5004     (Optional if you want to change port numbe4. Default port is port 5000.)
+
+$ flask run
+
+
+
+The flask way with a virual environment.
 
 Set up virtual environment as specified in https://flask.palletsprojects.com/en/1.1.x/installation/ (OSX/WINDOWS)
 
@@ -41,24 +55,24 @@ $ pip install Flask
 
 Set environment variables and start flask
 
->$ export FLASK_APP=run.py
->
->$ export FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
->
->$ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
->
->$ flask run
+$ export FLASK_APP=run.py
+
+$ export FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
+
+$ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
+
+$ flask run
 
 # Development
 ### Rules:  
 
 To pick: Add your name. Pick one at the time, (pick only several when you break the rule)
 
-Update progress. 
+Update progress.
 
-Finalize ‘one at the time’. 
+Finalize ‘one at the time’.
 
-Commit to repository. 
+Commit to repository.
 
 ## 2023 DEVELOPMENT SPRINTS
 
@@ -72,15 +86,15 @@ Checking account
 
 CUS8-2023 (name, %) As a customer i want to see the balance and details of mu checking account. SPLIT into CUS8-1-2023, CUS8-2-2023 ,CUS8-3-2023, CUS8-4-2023, CUS8-5-2023, CUS8-6-2023.
 
-CUS8-1-2023 (name, %) checking account model-part (DML). 
+CUS8-1-2023 (name, %) checking account model-part (DML).
 
-CUS8-2-2023 (name, %) checking account template. 
+CUS8-2-2023 (name, %) checking account template.
 
-CUS8-3-2023 (name, %) checking account controller-part. 
+CUS8-3-2023 (name, %) checking account controller-part.
 
-CUS8-4-2023 (name, %) checking account detail-part model-part (SQL). 
+CUS8-4-2023 (name, %) checking account detail-part model-part (SQL).
 
-CUS8-5-2023 (name, %)  checking account detail-part template. 
+CUS8-5-2023 (name, %)  checking account detail-part template.
 
 CUS8-6-2023 (name, %) detail-part controller-part.
 
@@ -117,7 +131,7 @@ Transfer
 
 CUS7(SPLIT, 6 parts, 4 done): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money.
 
-CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed;  ; 
+CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed;  ;
 
 CUS7-3 (ziming, 100%): confirm update;
 
@@ -146,7 +160,7 @@ Logging on
 
 CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. Suspend authentication for other parts of the application (YES / NO ) - No action - defered. CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
 
-CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity. 
+CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
 
 
 
@@ -155,7 +169,7 @@ CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer r
 
 Transfer.
 
-EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1. SQL part(100%). EUS-CUS7-2 (100%). Transfer between managed accounts. EUS-CUS7-3. Customer based transfer (requires EUS-CUS10) 
+EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1. SQL part(100%). EUS-CUS7-2 (100%). Transfer between managed accounts. EUS-CUS7-3. Customer based transfer (requires EUS-CUS10)
 
 Chose customer.
 
@@ -193,7 +207,7 @@ EUS6-2 (anders, 100%) ER to relational part.
 
 Logging on.
 
-EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
+EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions.
 
 EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
 
@@ -211,10 +225,10 @@ CM-2 (name, : Adding data to the database
 ## June 2022 , 2022 DEVELOPMENT SPRINTS
 Some enhancements
 
-CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1). 
-CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity. 
+CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
+CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
 
-EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions. 
+EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions.
 
 #### Tasks:
 
@@ -222,14 +236,14 @@ CM-2 (pax+anders,100%): Adding data to the database
 
 
 ### April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINTS
-Reviewing the prioritized user stories. User stories to be picked. 
-Our two target dates are: monday April 29th (choose not to meet if github works; stand by ) and Wednesday May 1st, when we meet for acceptance test. 
+Reviewing the prioritized user stories. User stories to be picked.
+Our two target dates are: monday April 29th (choose not to meet if github works; stand by ) and Wednesday May 1st, when we meet for acceptance test.
 We consider this a sprint started. Lets be modest and see if we can get some done. In a normal workplace situation no user story should for example not take more that 20 hours.
- 
+
 
 CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
 Suspend authentication for other parts of the application (YES / NO ) - No action - defered.
-CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed;  ; 
+CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed;  ;
 CUS7-3 (ziming, 100%): confirm update;
 CUS7-2 (ziming+anders,100%): confirm dropdown;
 CUS7-4 (anders, 100%, left): ER to relational part. deposit, transfer, withdraw;
@@ -238,7 +252,7 @@ CUS4-1(anders, 60%): investment list; list of each and a total; one line for eac
 CUS4-3(anders, 100%, left): ER to relational part. certificates_of_deposit, investmentaccounts;
 
 EUS-CUS10-3(anders, 100%, left): ER to relational part.
-EUS1(lasse, 100%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
+EUS1(lasse, 100%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely.
 EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
 EUS3-1 (ziming, 100%) register page as is implements adding a customer
 EUS3-5 (anders, 100%) ER to relational part.
@@ -247,4 +261,3 @@ EUS6-2 (anders, 100%) ER to relational part.
 #### Tasks:
 
 MVC1-1 (ziming, 100%) Move SQL
-
