@@ -162,6 +162,8 @@ CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of
 
 CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
 
+CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template.
+
 
 
 
