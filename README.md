@@ -90,7 +90,7 @@ Account
 
 CUS9-2023 As a customer i want a list of my accounts to find find out which are managed and by who. 
 
-CUS9-2023-1 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting temåplate
+CUS9-2023-1 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting template
 
 
 
