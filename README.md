@@ -82,11 +82,17 @@ Some enhancements
 
 #### Customer role:
 
+CUS7-8-2023 (anders, 100%):Transfer. Fix SQL selecting customers accounts based on customer id.
+
+CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
+
 Account
 
 CUS9-2023 As a customer i want a list of my accounts to find find out which are managed and by who. 
 
 CUS9-2023-1 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting temåplate
+
+
 
 Checking account
 
@@ -103,12 +109,6 @@ CUS8-4-2023 (name, %) checking account detail-part model-part (SQL).
 CUS8-5-2023 (name, %)  checking account detail-part template.
 
 CUS8-6-2023 (name, %) detail-part controller-part.
-
---
-
-CUS7-8-2023 Transfer. Fix SQL selecting customers accounts based on customer id.
-
-CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
 
 
 #### Employee role:
