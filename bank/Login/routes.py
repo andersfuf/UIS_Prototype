@@ -3,7 +3,7 @@ from bank import app, conn, bcrypt
 from bank.forms import CustomerLoginForm, EmployeeLoginForm
 from flask_login import login_user, current_user, logout_user, login_required
 from bank.models import Customers, select_Customers, select_Employees
-
+from bank.models import select_cus_accounts
 #202212
 from bank import roles, mysession
 
@@ -21,7 +21,7 @@ def home():
     #202212
     role =  mysession["role"]
     print('role: '+ role)
-    
+
     return render_template('home.html', posts=posts, role=role)
 
 
@@ -35,24 +35,24 @@ def about():
 
 @Login.route("/login", methods=['GET', 'POST'])
 def login():
-    
+
     #202212
     mysession["state"]="login"
     print(mysession)
     role=None
-    
+
     # jeg tror det her betyder at man er er logget på, men har redirected til login
     # så kald formen igen
     # men jeg forstår det ikke
     if current_user.is_authenticated:
-        return redirect(url_for('Login.home'))    
-    
+        return redirect(url_for('Login.home'))
+
     is_employee = True if request.args.get('is_employee') == 'true' else False
     form = EmployeeLoginForm() if is_employee else CustomerLoginForm()
-    
+
     # Først bekræft, at inputtet fra formen er gyldigt... (f.eks. ikke tomt)
     if form.validate_on_submit():
-        
+
         #"202212"
         # her checkes noget som skulle være sessionsvariable, men som er en GET-parameter
         # implementeret af AL. Ideen er at teste på om det er et employee login
@@ -60,24 +60,24 @@ def login():
         # betinget tildeling. Enten en employee - eller en customer instantieret
         # Skal muligvis laves om. Hvad hvis nu user ikke blir instantieret
         user = select_Employees(form.id.data) if is_employee else select_Customers(form.id.data)
-        
+
         # Derefter tjek om hashet af adgangskoden passer med det fra databasen...
         # Her checkes om der er logget på
         if user != None and bcrypt.check_password_hash(user[2], form.password.data):
 
             #202212
             print("role:" + user.role)
-            if user.role == 'employee':  
+            if user.role == 'employee':
                 mysession["role"] = roles[1] #employee
-            elif user.role == 'customer':  
+            elif user.role == 'customer':
                 mysession["role"] = roles[2] #customer
             else:
                 mysession["role"] = roles[0] #ingen
-                
+
             mysession["id"] = form.id.data
             print(mysession)
             print(roles)
-                            
+
             login_user(user, remember=form.remember.data)
             flash('Login successful.','success')
             next_page = request.args.get('next')
@@ -121,4 +121,11 @@ def logout():
 def account():
     mysession["state"]="account"
     print(mysession)
-    return render_template('account.html', title='Account')
+    role =  mysession["role"]
+    print('role: '+ role)
+
+    accounts = select_cus_accounts(current_user.get_id())
+    print(accounts)
+    return render_template('account.html', title='Account'
+    , acc=accounts, role=role
+    )

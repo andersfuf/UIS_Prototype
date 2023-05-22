@@ -113,12 +113,12 @@ def update_CheckingAccount(amount, CPR_number):
     UPDATE CheckingAccount
     SET amount = %s
     WHERE CPR_number = %s
-    """ 
+    """
     cur.execute(sql, (amount, CPR_number))
     # Husk commit() for INSERT og UPDATE, men ikke til SELECT!
     conn.commit()
     cur.close()
-    
+
 def transfer_account(date, amount, from_account, to_account):
     cur = conn.cursor()
     sql = """
@@ -135,14 +135,14 @@ def select_cus_accounts(cpr_number):
     sql = """
     SELECT
       e.name employee
-    , c.name customer 
+    , c.name customer
     , cpr_number
-    , account_number 
+    , account_number
     FROM manages m
-      NATURAL JOIN accounts  
+      NATURAL JOIN accounts
       NATURAL JOIN customers c
-      JOIN employees e ON m.emp_cpr_number = e.id
-	WHERE cpr_number = %s 
+      LEFT OUTER JOIN employees e ON m.emp_cpr_number = e.id
+	WHERE cpr_number = %s
     ;
     """
     cur.execute(sql, (cpr_number,))
@@ -154,7 +154,7 @@ def select_cus_accounts(cpr_number):
 def select_cus_investments(cpr_number):
     cur = conn.cursor()
     sql = """
-    SELECT i.account_number, a.cpr_number, a.created_date 
+    SELECT i.account_number, a.cpr_number, a.created_date
     FROM investmentaccounts i
     JOIN accounts a ON i.account_number = a.account_number
 --    JOIN manages m ON m.account_number = a.account_number
@@ -171,10 +171,10 @@ def select_cus_investments_with_certificates(cpr_number):
     cur = conn.cursor()
     sql = """
     SELECT i.account_number, a.cpr_number, a.created_date
-    , cd.cd_number, start_date, maturity_date, rate, amount 
+    , cd.cd_number, start_date, maturity_date, rate, amount
     FROM investmentaccounts i
     JOIN accounts a ON i.account_number = a.account_number
-    JOIN certificates_of_deposit cd ON i.account_number = cd.account_number    
+    JOIN certificates_of_deposit cd ON i.account_number = cd.account_number
 --    JOIN manages m ON m.account_number = a.account_number
 --    JOIN employees e ON e.id = m.emp_cpr_number
     WHERE a.cpr_number = %s

@@ -17,6 +17,34 @@ iCustomer = 2 # bruges til transfer/
 Employee = Blueprint('Employee', __name__)
 
 
+@Employee.route("/deposite", methods=['GET', 'POST'])
+def deposit():
+    if not current_user.is_authenticated:
+        flash('Please Login.','danger')
+        return redirect(url_for('Login.login'))
+
+
+    #202212
+    #EUS-CUS10
+    # move to employee object
+    #20230522 copied, not moved yet.
+    if not mysession["role"] == roles[iEmployee]:
+        flash('Deposit is employee only.','danger')
+        return redirect(url_for('Login.login'))
+
+    mysession["state"]="deposite"
+    print(mysession)
+    print(current_user.get_id())
+
+    form = DepositForm()
+    if form.validate_on_submit():
+        amount=form.amount.data
+        CPR_number = form.CPR_number.data
+        update_CheckingAccount(amount, CPR_number)
+        flash('Succeed!', 'success')
+        return redirect(url_for('Login.home'))
+    return render_template('deposit.html', title='Deposit', form=form)
+
 @Employee.route("/investe", methods=['GET', 'POST'])
 def investe():
 
@@ -26,32 +54,27 @@ def investe():
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
 
-    #202212
-    #customer
-    # CUS4; CUS4-1, CUS4-4
-    # done for employee
-    # customer counterpart yet 
-    if not mysession["role"] == roles[iEmployee]:  
+    if not mysession["role"] == roles[iEmployee]:
         flash('Viewing investents is employee only.','danger')
         return redirect(url_for('Login.login'))
-              
-        
+
+
     mysession["state"]="invest"
     print(mysession)
-    
+
     #202212
-    # i think this view works for employee and customer but the 
+    # i think this view works for employee and customer but the
     # view is different as employees have customers.
     # CUS4; CUS4-1, CUS4-4
     print(current_user.get_id())
-    
+
     investments = select_emp_investments(current_user.get_id())
     investment_certificates = select_emp_investments_with_certificates(current_user.get_id())
     investment_sums = select_emp_investments_certificates_sum(current_user.get_id())
     print(investments)
     role =  mysession["role"]
     print('role: '+ role)
-    
+
     return render_template('invest.html', title='Investments'
     , inv=investments, inv_cd_list=investment_certificates
     , inv_sums=investment_sums, role=role)
@@ -63,20 +86,20 @@ def transfer():
     if not current_user.is_authenticated:
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
-        
+
     # CUS7 is the customer transfer. Create new endpoint.
     # EUS10 is the employee transfer.
     # manageCustor/ er EUS!=
     # transfer/  må være CUS7
     # move to customer DONE
     # duplicate back and change database access here
-    
-    
-    if not mysession["role"] == roles[iEmployee]:  
+
+
+    if not mysession["role"] == roles[iEmployee]:
         flash('transfer money is customer only.','danger')
         return redirect(url_for('Login.login'))
- 
-    
+
+
     CPR_number = current_user.get_id()
     print(CPR_number)
     dropdown_accounts = select_emp_cus_accounts(current_user.get_id())
@@ -85,8 +108,8 @@ def transfer():
         drp_accounts.append((drp[3], drp[1]+' '+str(drp[3])))
     print(drp_accounts)
     form = TransferForm()
-    form.sourceAccount.choices = drp_accounts    
-    form.targetAccount.choices = drp_accounts    
+    form.sourceAccount.choices = drp_accounts
+    form.targetAccount.choices = drp_accounts
     if form.validate_on_submit():
         date = datetime.date.today()
         amount = form.amount.data
@@ -100,13 +123,13 @@ def transfer():
 
 @Employee.route("/addcustomer", methods=['GET', 'POST'])
 def addcustomer():
-    
+
     if not current_user.is_authenticated:
         return redirect(url_for('Login.home'))
-        
+
     #202212
     # employee only
-    if not mysession["role"] == roles[iEmployee]:  
+    if not mysession["role"] == roles[iEmployee]:
         flash('Adding customers is employee only.','danger')
         return redirect(url_for('Login.login'))
 
@@ -127,14 +150,14 @@ def manageCustomer():
     if not current_user.is_authenticated:
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
-        
+
     # manageCustor/ må være EUS10
     # transfer/  må være CUS7
 
-    if not mysession["role"] == roles[iEmployee]:  
+    if not mysession["role"] == roles[iEmployee]:
         flash('Managing customers is employee only.','danger')
         return redirect(url_for('Login.login'))
-    
+
     form = TransferForm()
     if form.validate_on_submit():
         amount=form.amount.data
@@ -143,12 +166,10 @@ def manageCustomer():
         UPDATE CheckingAccount
         SET amount = %s
         WHERE CPR_number = %s
-        """ 
+        """
         cur.execute(sql, (amount, CPR_number))
         conn.commit()
         cur.close()
         flash('Transfer succeed!', 'success')
         return redirect(url_for('Login.home'))
     return render_template('transfer.html', title='Transfer', form=form)
-
-
