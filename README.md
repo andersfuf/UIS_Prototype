@@ -82,6 +82,12 @@ Some enhancements
 
 #### Customer role:
 
+Account
+
+CUS9-2023 As a customer i want a list of my accounts to find find out which are managed and by who. 
+
+CUS9-2023-1 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting temåplate
+
 Checking account
 
 CUS8-2023 (name, %) As a customer i want to see the balance and details of my checking account. SPLIT into CUS8-1-2023, CUS8-2-2023 ,CUS8-3-2023, CUS8-4-2023, CUS8-5-2023, CUS8-6-2023.
