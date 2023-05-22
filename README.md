@@ -84,7 +84,7 @@ Some enhancements
 
 Checking account
 
-CUS8-2023 (name, %) As a customer i want to see the balance and details of mu checking account. SPLIT into CUS8-1-2023, CUS8-2-2023 ,CUS8-3-2023, CUS8-4-2023, CUS8-5-2023, CUS8-6-2023.
+CUS8-2023 (name, %) As a customer i want to see the balance and details of my checking account. SPLIT into CUS8-1-2023, CUS8-2-2023 ,CUS8-3-2023, CUS8-4-2023, CUS8-5-2023, CUS8-6-2023.
 
 CUS8-1-2023 (name, %) checking account model-part (DML).
 
