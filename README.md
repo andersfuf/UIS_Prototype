@@ -28,6 +28,8 @@ $ export FLASK_RUN_PORT=5004     (Optional if you want to change port numbe4. De
 $ flask run
 
 
+For Windows you may have to use the SET command instead of EXPORT. Ex set FLASK_APP=run.py; set FLASK_DEBUG=1; flask run. This worked for me. Also remeber to add the path to your postgres bin-directory in order to run (SQL interpreter) and other postgres programs in any shell.
+
 
 ### The flask way with a virual environment.
 
@@ -88,7 +90,7 @@ CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/rout
 
 Account
 
-CUS9-2023 As a customer i want a list of my accounts to find find out which are managed and by who. 
+CUS9-2023 As a customer i want a list of my accounts to find find out which are managed and by who.
 
 CUS9-2023-1 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting template
 
@@ -120,11 +122,13 @@ EUS-11 as an emplee i have access to specific customer accounts, so the employee
 
 #### Tasks:
 
-CM-2 (anders, 100%): Adding data to the database
+CM-2 (anders, 100%): Adding data to the database.
+CM-2 (anders, 100%): Revisiting the about template.
 
 CM-1 (name, was ok, defer) adjusting technical debt. (Remove underscore folders from git from python compilations.)
 CM-1 (name, 0%) adjusting technical debt. CUS7-8-2023. models.select_cus_accounts() does not need employees
-     Remove employee from SqL.
+     Remove employee from SQL.
+
 
 
 ## Back log of User stories.
