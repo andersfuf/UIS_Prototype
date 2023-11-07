@@ -76,7 +76,13 @@ Finalize ‘one at the time’.
 
 Commit to repository.
 
-## 2023 DEVELOPMENT SPRINTS
+### November 2023 DEVELOPMENT SPRINTS
+Staring with a backlog spice. It is not understandable.
+
+#### Tasks
+CM-1 Spike Back-log consolidation. Making sense of the back-log. cm-log.md now logs sprints. 
+
+### Maj 2023 DEVELOPMENT SPRINTS
 
 Some enhancements
 
@@ -250,23 +256,26 @@ Our two target dates are: monday April 29th (choose not to meet if github works;
 We consider this a sprint started. Lets be modest and see if we can get some done. In a normal workplace situation no user story should for example not take more that 20 hours.
 
 
-CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
+CUS-1: finished (ziming, 100%, 2019); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
 Suspend authentication for other parts of the application (YES / NO ) - No action - defered.
-CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed;  ;
-CUS7-3 (ziming, 100%): confirm update;
-CUS7-2 (ziming+anders,100%): confirm dropdown;
-CUS7-4 (anders, 100%, left): ER to relational part. deposit, transfer, withdraw;
-CUS7-5 (anders+, 10%): must be logged in as employee part
-CUS4-1(anders, 60%): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date.; ; SPLIT model part (CUS4-4)CUS4-4(anders, 70%); model part of CUS4-1
-CUS4-3(anders, 100%, left): ER to relational part. certificates_of_deposit, investmentaccounts;
+CUS7-1 (ziming, 100%, 2019): HTML finished version one; SPLIT; update not confirmed;  ;
+CUS7-3 (ziming, 100%, 2019): confirm update;
+CUS7-2 (ziming+anders,100%, 2019): confirm dropdown;
+CUS7-4 (anders, 100%, left, 2019): ER to relational part. deposit, transfer, withdraw;
+CUS7-5 (anders+, 10%, 2019): must be logged in as employee part
+CUS4-1(anders, 60%, 2019): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date.; ; SPLIT model part (CUS4-4)CUS4-4(anders, 70%, 2019); model part of CUS4-1
+CUS4-3(anders, 100%, left, 2019): ER to relational part. certificates_of_deposit, investmentaccounts;
 
-EUS-CUS10-3(anders, 100%, left): ER to relational part.
+EUS-CUS10-3(anders, 100%, left, 2019): ER to relational part.
 EUS1(lasse, 100%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely.
-EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
-EUS3-1 (ziming, 100%) register page as is implements adding a customer
-EUS3-5 (anders, 100%) ER to relational part.
-EUS6-2 (anders, 100%) ER to relational part.
+EUS1-2: (anders, 100%, 2019) ER to relational part. created table manages with account_type field. Need to fix manages
+EUS3-1 (ziming, 100%, 2019) register page as is implements adding a customer
+EUS3-5 (anders, 100%, 2019) ER to relational part.
+EUS6-2 (anders, 100%, 2019) ER to relational part.
 
 #### Tasks:
 
-MVC1-1 (ziming, 100%) Move SQL
+MVC1-1 (ziming, 100%, 2019) Move SQL
+
+## User story repository
+
