@@ -27,19 +27,13 @@ Some enhancements
 #### Customer role:
 
 CUS7-8-2023 (anders, 100%):Transfer. Fix SQL selecting customers accounts based on customer id.
-
 CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
 
 Account
-
 CUS9-2023 As a customer i want a list of my accounts to find find out which are managed and by who.
-
 CUS9-2023-1 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting template
 
-
-
 Checking account
-
 CUS8-2023 (name, %) As a customer i want to see the balance and details of my checking account. SPLIT into CUS8-1-2023, CUS8-2-2023 ,CUS8-3-2023, CUS8-4-2023, CUS8-5-2023, CUS8-6-2023.
 CUS8-1-2023 (name, %) checking account model-part (DML).
 CUS8-2-2023 (name, %) checking account template.
@@ -50,22 +44,16 @@ CUS8-6-2023 (name, %) detail-part controller-part.
 
 
 #### Employee role:
-
 EUS-CUS7-2023 Transfer currently disabled in the templates. Could be enabled and debugged
 Accounts EUS-11
 EUS-11 as an emplee i have access to specific customer accounts, so the employee can manage the customer. Thoughts: SQL. The data model maps employees to customer accounts. The employee could be mapped to a customer.
 
 #### Tasks:
-
 CM-2 (anders, 100%): Adding data to the database.
 CM-2 (anders, 100%): Revisiting the about template.
-
 CM-1 (name, was ok, defer) adjusting technical debt. (Remove underscore folders from git from python compilations.)
 CM-1 (name, 0%) adjusting technical debt. CUS7-8-2023. models.select_cus_accounts() does not need employees
      Remove employee from SQL.
-
-
-
 
 ### June 2022 , 2022 DEVELOPMENT SPRINTS
 Some enhancements
