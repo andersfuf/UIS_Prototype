@@ -41,24 +41,17 @@ CUS9-2023-1 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting 
 Checking account
 
 CUS8-2023 (name, %) As a customer i want to see the balance and details of my checking account. SPLIT into CUS8-1-2023, CUS8-2-2023 ,CUS8-3-2023, CUS8-4-2023, CUS8-5-2023, CUS8-6-2023.
-
 CUS8-1-2023 (name, %) checking account model-part (DML).
-
 CUS8-2-2023 (name, %) checking account template.
-
 CUS8-3-2023 (name, %) checking account controller-part.
-
 CUS8-4-2023 (name, %) checking account detail-part model-part (SQL).
-
 CUS8-5-2023 (name, %)  checking account detail-part template.
-
 CUS8-6-2023 (name, %) detail-part controller-part.
 
 
 #### Employee role:
 
 EUS-CUS7-2023 Transfer currently disabled in the templates. Could be enabled and debugged
-
 Accounts EUS-11
 EUS-11 as an emplee i have access to specific customer accounts, so the employee can manage the customer. Thoughts: SQL. The data model maps employees to customer accounts. The employee could be mapped to a customer.
 
