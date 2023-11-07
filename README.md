@@ -80,7 +80,7 @@ Commit to repository.
 Staring with a backlog spice. It is not understandable.
 
 #### Tasks
-CM-1 Spike Back-log consolidation. Making sense of the back-log. cm-log.md now logs sprints. 
+CM-3 Spike Back-log consolidation. Making sense of the back-log. cm-log.md now logs sprints. 
 
 ### Maj 2023 DEVELOPMENT SPRINTS
 
@@ -278,4 +278,98 @@ EUS6-2 (anders, 100%, 2019) ER to relational part.
 MVC1-1 (ziming, 100%, 2019) Move SQL
 
 ## User story repository
+
+## Back log of User stories (Consolidation effort).
+There is a dilemma. You want the current state of existing user stories. However a back log is also a repository of unfinished business.
+
+#### Customer role:
+
+
+Transfer
+
+CUS7(SPLIT, 6 parts, 4 done, 1 moved, 1 not started): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money. CUS7-1 done; CUS7-3 done; CUS7-2 done; CUS7-4 done; CUS7-5 Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer); CUS7-6 (name, )
+
+CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed; 
+CUS7-3 (ziming, 100%): confirm update;
+CUS7-2 (ziming+anders,100%): confirm dropdown;
+CUS7-4 (anders, 100%, left): ER to relational part. deposit, transfer, withdraw;
+CUS7-5 (anders+, Moved): must be logged in as employee part. Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer).
+CUS7-6 (name, ): restrict from_accounts to employees manages accounts
+
+Investments
+
+CUS4(SPLIT, SPLIT): As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments. SPLIT current date (CUS4-1; date part (CUS4-2), ER-relational part (CUS4-3 done)
+
+CUS4-1(anders, 60%, SPLIT): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date.; ; SPLIT model part (CUS4-4).
+
+CUS4-4(anders, 100%); model part of CUS4-1
+
+CUS4-2(name); date part; consolidated view at point in time.
+
+CUS4-3(anders, 100%, left): ER to relational part. certificates_of_deposit, investmentaccounts;
+
+
+Logging on
+
+CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. Suspend authentication for other parts of the application (YES / NO ) - No action - defered. CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
+
+CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
+
+CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template.
+
+
+
+
+### Employee role:
+
+Transfer.
+
+EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1. SQL part(100%). EUS-CUS7-2 (100%). Transfer between managed accounts. EUS-CUS7-3. Customer based transfer (requires EUS-CUS10)
+
+Chose customer.
+
+EUS-CUS10 ((moved,SPLIT), 0%):  Move to employee as it is a employee/counter utility; Employee must chose the customer; CUS10: As a customer, I can deposit money to my checking account, so that I can have it in a safe place at the bank.-> EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
+
+EUS-CUS10-1: CUS10 moved to employee; status 0% but CUS7 can be used as start.
+
+EUS-CUS10-2(name): Authentication part
+
+EUS-CUS10-3(anders, 100%, left): ER to relational part.
+
+
+
+Add and delete customers.
+
+EUS3 (complex, SPLIT, 5 parts 40%): Complex story. SPLIT, only employees should have acces to this story). EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
+
+EUS3-1 (ziming, 100%) register page as is implements adding a customer
+
+EUS3-2 (name) add and remove money accounts for customers
+
+EUS3-3 (name) un-register page implements deleting a customer along with the accounts
+
+EUS3-4 (name) authentication against employee of EUS3.
+
+EUS3-5 (anders, 100%) ER to relational part.
+
+
+Certificate of deposits.
+
+EUS6 (name): As a bank employee, I can create a new CD (certificate of deposite) for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank.
+
+EUS6-2 (anders, 100%) ER to relational part.
+
+
+##### Logging on.
+
+EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions.
+EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
+
+
+#### Tasks:
+
+MVC1-2 (name, ) navigation
+CM-1 (name, ) adjusting technical debt
+CM-2 (name, : Adding data to the database
+CM-3 Spike Back-log consolidation
 
