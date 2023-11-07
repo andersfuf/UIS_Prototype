@@ -1,4 +1,6 @@
 # Development
+cm-log.md Consolidated log from the sprints.
+
 ### Rules:  
 
 To pick: Add your name. Pick one at the time, (pick only several when you break the rule)
@@ -25,7 +27,6 @@ Some enhancements
 ### User stories:
 
 #### Customer role:
-
 CUS7-8-2023 (anders, 100%):Transfer. Fix SQL selecting customers accounts based on customer id.
 CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
 
