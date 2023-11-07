@@ -292,11 +292,8 @@ CUS7-6 (name, ): restrict from_accounts to employees manages accounts
 CUS4(SPLIT, SPLIT,2 done, 60%, 1 not started): As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments. SPLIT current date (CUS4-1; date part (CUS4-2), ER-relational part (CUS4-3 done). CUS4-1 60%; CUS4-4 done; CUS4-2 not started; CUS4-3 done. 
 
 CUS4-1(anders, 60%, SPLIT): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date.; ; SPLIT model part (CUS4-4).
-
 CUS4-4(anders, 100%); model part of CUS4-1
-
 CUS4-2(name); date part; consolidated view at point in time.
-
 CUS4-3(anders, 100%, left): ER to relational part. certificates_of_deposit, investmentaccounts;
 
 
