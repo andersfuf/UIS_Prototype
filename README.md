@@ -143,13 +143,13 @@ There is a dilemma. You want the current state of existing user stories. However
 #### Customer role:
 
 
-#####Transfer
+##### Transfer
 
 CUS7(SPLIT, 6 parts, 4 done, 1 moved, 1 not started): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money. CUS7-1 done; CUS7-3 done; CUS7-2 done; CUS7-4 done; CUS7-5 Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer); CUS7-6 (name, )
 
 CUS7-6 (name, ): restrict from_accounts to employees manages accounts
 
-#####Investments
+##### Investments
 
 CUS4(SPLIT, SPLIT,2 done, 60%, 1 not started): As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments. SPLIT current date (CUS4-1; date part (CUS4-2), ER-relational part (CUS4-3 done). CUS4-1 60%; CUS4-4 done; CUS4-2 not started; CUS4-3 done. 
 
@@ -158,7 +158,7 @@ CUS4-1(anders, 60%, SPLIT): investment list; list of each and a total; one line 
 CUS4-2(name); date part; consolidated view at point in time.
 
 
-#####Logging on
+##### Logging on
 
 CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. Suspend authentication for other parts of the application (YES / NO ) - No action - defered. CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
 
