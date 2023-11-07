@@ -145,17 +145,7 @@ There is a dilemma. You want the current state of existing user stories. However
 
 Transfer
 
-CUS7(SPLIT, 6 parts, 4 done): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money.
-
-CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed;  ;
-
-CUS7-3 (ziming, 100%): confirm update;
-
-CUS7-2 (ziming+anders,100%): confirm dropdown;
-
-CUS7-4 (anders, 100%, left): ER to relational part. deposit, transfer, withdraw;
-
-CUS7-5 (anders+, Moved): must be logged in as employee part. Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer).
+CUS7(SPLIT, 6 parts, 4 done, 1 moved, 1 not started): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money. CUS7-1 done; CUS7-3 done; CUS7-2 done; CUS7-4 done; CUS7-5 Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer); CUS7-6 (name, )
 
 CUS7-6 (name, ): restrict from_accounts to employees manages accounts
 
@@ -277,15 +267,15 @@ EUS6-2 (anders, 100%, 2019) ER to relational part.
 
 MVC1-1 (ziming, 100%, 2019) Move SQL
 
-## User story repository
+## User story repository (Consolidation effort)
+
+CUS7: As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money.
 
 ## Back log of User stories (Consolidation effort).
 There is a dilemma. You want the current state of existing user stories. However a back log is also a repository of unfinished business.
 
 #### Customer role:
-
-
-Transfer
+#####Transfer
 
 CUS7(SPLIT, 6 parts, 4 done, 1 moved, 1 not started): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money. CUS7-1 done; CUS7-3 done; CUS7-2 done; CUS7-4 done; CUS7-5 Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer); CUS7-6 (name, )
 
