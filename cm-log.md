@@ -1,70 +1,3 @@
-# usage
-The UIS_prototype is a website running Python and Flask library. It has evolved as an unfinished project with development flaws and serves as a starting point for adopting flask as a means of making your own prototype.
-The schema of the database is banking and transfer of money between accounts, offering two roles, the employee role managing customer accounts and the customer role offering a customer login to customer accounts.
-The Flask framework extends html with a { } - command set. SQL Datasets can be listed using loops and branching statements.
-
-## Requirements:
-Run the code below to install the necessary modules.
-
->$ pip install -r requirements.txt
-
-## Database init
-1. set the database in __init__.py file.
-2. run schema.sql, schema_ins.sql, schema_upd.sql, schema_upd_2.sql in your database.
-
-## Running flask
-### The python way
-
-$ python3 run.py
-
-### The flask way.
-
-$ export FLASK_APP=run.py
-
-$ export FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
-
-$ export FLASK_RUN_PORT=5004     (Optional if you want to change port numbe4. Default port is port 5000.)
-
-$ flask run
-
-
-For Windows you may have to use the SET command instead of EXPORT. Ex set FLASK_APP=run.py; set FLASK_DEBUG=1; flask run. This worked for me. Also remeber to add the path to your postgres bin-directory in order to run (SQL interpreter) and other postgres programs in any shell.
-
-
-### The flask way with a virual environment.
-
-Set up virtual environment as specified in https://flask.palletsprojects.com/en/1.1.x/installation/ (OSX/WINDOWS)
-
-OSX:
-
-Create virtual environment in folder
-
-$ mkdir myproject
-
-$ cd myproject
-
-$ python3 -m venv .venv
-
-Activate virtual environment in folder
-
-$ . .venv/bin/activate
-
-Install flask
-
-$ pip install Flask
-
-
-
-Set environment variables and start flask
-
-$ export FLASK_APP=run.py
-
-$ export FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
-
-$ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
-
-$ flask run
-
 # Development
 ### Rules:  
 
@@ -76,7 +9,15 @@ Finalize ‘one at the time’.
 
 Commit to repository.
 
-## 2023 DEVELOPMENT SPRINTS
+## November, 2023 - xx xxx, 2024 DEVELOPMENT SPRINTS
+
+### User stories:
+
+#### Customer role:
+#### Employee role:
+
+
+### may 2023 DEVELOPMENT SPRINTS
 
 Some enhancements
 
