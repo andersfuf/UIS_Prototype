@@ -11,13 +11,6 @@ Finalize ‘one at the time’.
 
 Commit to repository.
 
-### November, 2023 - xx xxx, 2024 DEVELOPMENT SPRINTS
-
-### User stories:
-
-#### Customer role:
-#### Employee role:
-
 ## log
 
 ### may 2023 DEVELOPMENT SPRINTS
