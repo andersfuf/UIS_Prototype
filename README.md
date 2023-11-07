@@ -217,24 +217,21 @@ EUS6 (name): As a bank employee, I can create a new CD (certificate of deposite)
 EUS6-2 (anders, 100%) ER to relational part.
 
 
-Logging on.
+##### Logging on.
 
 EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions.
-
 EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
 
 
 #### Tasks:
 
 MVC1-2 (name, ) navigation
-
 CM-1 (name, ) adjusting technical debt
-
 CM-2 (name, : Adding data to the database
 
 ## log
 
-## June 2022 , 2022 DEVELOPMENT SPRINTS
+### June 2022 , 2022 DEVELOPMENT SPRINTS
 Some enhancements
 
 CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
