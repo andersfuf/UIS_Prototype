@@ -278,7 +278,7 @@ There is a dilemma. You want the current state of existing user stories. However
 #### Customer role:
 ##### Transfer
 
-CUS7(SPLIT,  4 done, 1 moved, 1 not started): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money. CUS7-1 done; CUS7-3 done; CUS7-2 done; CUS7-4 done; CUS7-5 Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer); CUS7-6 not started.
+CUS7(SPLIT,  6 parts, 4 done, 1 moved, 1 not started): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money. CUS7-1 done; CUS7-3 done; CUS7-2 done; CUS7-4 done; CUS7-5 Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer); CUS7-6 not started.
 
 CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed; 
 CUS7-3 (ziming, 100%): confirm update;
@@ -289,7 +289,7 @@ CUS7-6 (name, ): restrict from_accounts to employees manages accounts
 
 ##### Investments
 
-CUS4(SPLIT, SPLIT,2 done, 60%, 1 not started): As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments. SPLIT current date (CUS4-1; date part (CUS4-2), ER-relational part (CUS4-3 done). CUS4-1 60%; CUS4-4 done; CUS4-2 not started; CUS4-3 done. 
+CUS4(SPLIT, SPLIT, 4 parts, 2 done, 60%, 1 not started): As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments. SPLIT current date (CUS4-1; date part (CUS4-2), ER-relational part (CUS4-3 done). CUS4-1 60%; CUS4-4 done; CUS4-2 not started; CUS4-3 done. 
 
 CUS4-1(anders, 60%, SPLIT): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date.; ; SPLIT model part (CUS4-4).
 CUS4-4(anders, 100%); model part of CUS4-1
