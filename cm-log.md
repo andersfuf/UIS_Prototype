@@ -16,6 +16,7 @@ Commit to repository.
 #### Customer role:
 #### Employee role:
 
+## log
 
 ### may 2023 DEVELOPMENT SPRINTS
 
@@ -72,7 +73,6 @@ CM-1 (name, 0%) adjusting technical debt. CUS7-8-2023. models.select_cus_account
 
 
 
-## log
 
 ### June 2022 , 2022 DEVELOPMENT SPRINTS
 Some enhancements
