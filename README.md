@@ -82,60 +82,6 @@ Staring with a backlog spice. It is not understandable.
 #### Tasks
 CM-3 Spike Back-log consolidation. Making sense of the back-log. cm-log.md now logs sprints. 
 
-### May 2023 DEVELOPMENT SPRINTS
-
-Some enhancements
-
-### User stories:
-
-#### Customer role:
-
-CUS7-8-2023 (anders, 100%):Transfer. Fix SQL selecting customers accounts based on customer id.
-
-CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
-
-Account
-
-CUS9-2023 As a customer i want a list of my accounts to find find out which are managed and by who.
-
-CUS9-2023-1 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting template
-
-
-
-Checking account
-
-CUS8-2023 (name, %) As a customer i want to see the balance and details of my checking account. SPLIT into CUS8-1-2023, CUS8-2-2023 ,CUS8-3-2023, CUS8-4-2023, CUS8-5-2023, CUS8-6-2023.
-
-CUS8-1-2023 (name, %) checking account model-part (DML).
-
-CUS8-2-2023 (name, %) checking account template.
-
-CUS8-3-2023 (name, %) checking account controller-part.
-
-CUS8-4-2023 (name, %) checking account detail-part model-part (SQL).
-
-CUS8-5-2023 (name, %)  checking account detail-part template.
-
-CUS8-6-2023 (name, %) detail-part controller-part.
-
-
-#### Employee role:
-
-EUS-CUS7-2023 Transfer currently disabled in the templates. Could be enabled and debugged
-
-Accounts EUS-11
-EUS-11 as an emplee i have access to specific customer accounts, so the employee can manage the customer. Thoughts: SQL. The data model maps employees to customer accounts. The employee could be mapped to a customer.
-
-#### Tasks:
-
-CM-2 (anders, 100%): Adding data to the database.
-CM-2 (anders, 100%): Revisiting the about template.
-
-CM-1 (name, was ok, defer) adjusting technical debt. (Remove underscore folders from git from python compilations.)
-CM-1 (name, 0%) adjusting technical debt. CUS7-8-2023. models.select_cus_accounts() does not need employees
-     Remove employee from SQL.
-
-
 
 ## Back log of User stories (unfinished business).
 There is a dilemma. You want the current state of existing user stories. However a back log is also a repository of unfinished business. Decission 20231107: Maintain a consolidated respository of userstories along with the tasks. Have a Back log of user stories as unifinished business.
@@ -156,6 +102,22 @@ CUS4: As a customer, I can see the consolidated summary of my investments at a g
 CUS4-1(anders, 60%, SPLIT): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just startt (5%); SPLIT; consolidate up to and including ‘dags dato’-current date.; SPLIT model part (CUS4-4 done).
 
 CUS4-2(name); date part; consolidated view at point in time.
+
+#### Checking account
+
+CUS8 (name, %) As a customer i want to see the balance and details of my checking account. SPLIT into CUS8-1-2023, CUS8-2-2023 ,CUS8-3-2023, CUS8-4-2023, CUS8-5-2023, CUS8-6-2023.
+
+CUS8-1-2023 (name, %) checking account model-part (DML).
+
+CUS8-2-2023 (name, %) checking account template.
+
+CUS8-3-2023 (name, %) checking account controller-part.
+
+CUS8-4-2023 (name, %) checking account detail-part model-part (SQL).
+
+CUS8-5-2023 (name, %)  checking account detail-part template.
+
+CUS8-6-2023 (name, %) detail-part controller-part.
 
 ##### Logging on
 
@@ -198,6 +160,13 @@ EUS6 (name): As a bank employee, I can create a new CD (certificate of deposite)
 
 EUS6-1 (name, 0%) Flask part
 
+#### Accounts
+EUS11: as an employee i have access to specific customer accounts, so the employee can manage the customer. Thoughts: SQL. The data model maps employees to customer accounts. The employee could be mapped to a customer.
+
+EUS11-1 (name, 0%) Flask part
+
+EUS11-2 (name, 0%) ER to relational part.
+
 
 ##### Logging on.
 
@@ -212,7 +181,6 @@ CM-3 (name, ) dokumentation spikes
 
 
 
-## log
 
 
 
@@ -231,6 +199,9 @@ CUS4 (investments): As a customer, I can see the consolidated summary of my inve
 
 CUS7 (transfer): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money.
 
+CUS8 (checking account) As a customer i want to see the balance and details of my checking account. 
+
+
 ### Employee role:
 
 EUS1 (loging on): As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
@@ -240,6 +211,32 @@ EUS3 (Add and delete customers): As a bank employee, I can add or delete custome
 EUS-CUS7 (transfer): As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts.
 
 EUS-CUS10 (choose customer): As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
+
+EUS11-2023 (accounts): As an employee i have access to specific customer accounts, so the employee can manage the customer. Thoughts: SQL. The data model maps employees to customer accounts. The employee could be mapped to a customer.
+
+
+## log
+
+### May 2023 DEVELOPMENT SPRINTS
+
+Some enhancements
+
+### User stories:
+
+#### Customer role:
+
+CUS7-8-2023 (anders, 100%):Transfer. Fix SQL selecting customers accounts based on customer id.
+
+CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
+
+Account
+
+CUS9-2023 As a customer i want a list of my accounts to find find out which are managed and by who.
+
+CUS9-2023-1 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting template
+
+
+
 
 
 
@@ -276,6 +273,21 @@ CUS4-2(name); date part; consolidated view at point in time.
 
 CUS4-3(anders, 100%, left): ER to relational part. certificates_of_deposit, investmentaccounts;
 
+#### Checking account
+
+CUS8 (name, %) As a customer i want to see the balance and details of my checking account. SPLIT into CUS8-1-2023, CUS8-2-2023 ,CUS8-3-2023, CUS8-4-2023, CUS8-5-2023, CUS8-6-2023.
+
+CUS8-1-2023 (name, %) checking account model-part (DML).
+
+CUS8-2-2023 (name, %) checking account template.
+
+CUS8-3-2023 (name, %) checking account controller-part.
+
+CUS8-4-2023 (name, %) checking account detail-part model-part (SQL).
+
+CUS8-5-2023 (name, %)  checking account detail-part template.
+
+CUS8-6-2023 (name, %) detail-part controller-part.
 
 ##### Logging on
 
@@ -283,9 +295,9 @@ CUS1: As a customer, I can log in and log out of the system, so that my informat
 
 CUS1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. Suspend authentication for other parts of the application (YES / NO ) - No action - defered. CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
 
-CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
+CUS1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
 
-CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template.
+CUS1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template.
 
 
 
@@ -293,13 +305,17 @@ CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. St
 
 #### Transfer.
 
-EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1(100%) SQL part; EUS-CUS7-2 (100%) Transfer between managed accounts.; EUS-CUS7-3 (name). Customer based transfer (requires EUS-CUS10)
+EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1(100%) SQL part; EUS-CUS7-2 (100%) Transfer between managed accounts.; EUS-CUS7-3 (name). Customer based transfer (requires EUS-CUS10).
+Transfer currently disabled in the templates (EUS-CUS7-2023). Could be enabled and debugged.
 
  EUS-CUS7-1 (100%). SQL part. 
  
  EUS-CUS7-2 (100%). Transfer between managed accounts. 
  
  EUS-CUS7-3 (name). Customer based transfer (requires EUS-CUS10)
+
+ EUS-CUS7-2023 (100%) Transfer currently disabled in the templates. Could be enabled and debugged
+
 
 #### Chose customer.
 
@@ -335,6 +351,13 @@ EUS6: As a bank employee, I can create a new CD (certificate of deposite) for on
 EUS6-1 (name, 0%) Flask part
 
 EUS6-2 (anders, 100%) ER to relational part.
+
+#### Accounts
+EUS11: as an employee i have access to specific customer accounts, so the employee can manage the customer. Thoughts: SQL. The data model maps employees to customer accounts. The employee could be mapped to a customer.
+
+EUS11-1 (name, 0%) Flask part
+
+EUS11-2 (name, 0%) ER to relational part.
 
 
 ##### Logging on.
