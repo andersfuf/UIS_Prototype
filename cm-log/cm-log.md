@@ -1,5 +1,5 @@
 # Development
-cm-log.md Consolidated log from the sprints.
+cm-log/cm-log.md Consolidated log from the sprints.
 
 ### Rules:  
 
