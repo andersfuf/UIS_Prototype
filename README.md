@@ -157,16 +157,11 @@ CUS4-1(anders, 60%, SPLIT): investment list; list of each and a total; one line 
 
 CUS4-2(name); date part; consolidated view at point in time.
 
-
 ##### Logging on
 
-CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. Suspend authentication for other parts of the application (YES / NO ) - No action - defered. CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
-
-CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
+CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. CUS-1-1-2022 done; CUS-1-2-2022 started 10%.
 
 CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template.
-
-
 
 
 ### Employee role:
@@ -299,12 +294,11 @@ CUS4-3(anders, 100%, left): ER to relational part. certificates_of_deposit, inve
 
 ##### Logging on
 
-CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. Suspend authentication for other parts of the application (YES / NO ) - No action - defered. CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
+CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. CUS-1-1-2022 done; CUS-1-2-2022 started 10%.
 
+CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me. Suspend authentication for other parts of the application (YES / NO ) - No action - defered. CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1). CUS-1-1-2022 done; CUS-1-2-2022 started 10%.
 CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
-
 CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template.
-
 
 
 
