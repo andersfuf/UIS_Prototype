@@ -166,9 +166,13 @@ CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. St
 
 ### Employee role:
 
-Transfer.
+#### Transfer.
 
-EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1. SQL part(100%). EUS-CUS7-2 (100%). Transfer between managed accounts. EUS-CUS7-3. Customer based transfer (requires EUS-CUS10)
+EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1. SQL part(100%). EUS-CUS7-2 (100%). Transfer between managed accounts. EUS-CUS7-3 Not started.
+
+EUS-CUS7-3(name). Customer based transfer (requires EUS-CUS10)
+
+
 
 Chose customer.
 
@@ -260,12 +264,17 @@ MVC1-1 (ziming, 100%, 2019) Move SQL
 
 ## User story repository (Consolidation effort)
 
+#### Customer role:
+
 CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
 
 CUS4: As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments. S
 
 CUS7: As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money.
 
+### Employee role:
+
+EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts.
 
 ## Back log of User stories (Consolidation effort).
 There is a dilemma. You want the current state of existing user stories. However a back log is also a repository of unfinished business.
@@ -300,11 +309,9 @@ CUS-1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of
 CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
 CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template.
 
-
-
 ### Employee role:
 
-Transfer.
+#### Transfer.
 
 EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1. SQL part(100%). EUS-CUS7-2 (100%). Transfer between managed accounts. EUS-CUS7-3. Customer based transfer (requires EUS-CUS10)
 
