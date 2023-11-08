@@ -137,8 +137,8 @@ CM-1 (name, 0%) adjusting technical debt. CUS7-8-2023. models.select_cus_account
 
 
 
-## Back log of User stories.
-There is a dilemma. You want the current state of existing user stories. However a back log is also a repository of unfinished business.
+## Back log of User stories (unfinished business).
+There is a dilemma. You want the current state of existing user stories. However a back log is also a repository of unfinished business. Decission 20231107: Maintain a consolidated respository of userstories along with the tasks. Have a Back log of user stories as unifinished business.
 
 #### Customer role:
 
@@ -172,8 +172,6 @@ EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in or
 
 EUS-CUS7-3(name). Customer based transfer (requires EUS-CUS10)
 
-
-
 #### Chose customer.
 
 EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank. Employee/counter utility; Employee must chose the customer. EUS-CUS10-1 (not started); EUS-CUS10-2 (not started); EUS-CUS10-3 (100%) ER to relational part. 
@@ -182,11 +180,9 @@ EUS-CUS10-1(name): CUS10 moved to employee; status 0% but CUS7 can be used as st
 
 EUS-CUS10-2(name): Authentication part
 
-
-
 #### Add and delete customers.
 EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
-EUS3 (complex, SPLIT, 5 parts 40%): Complex story. SPLIT. Only employees should have acces to this story).  EUS3-1 (100%) register page; EUS3-2(name) mmoney accounts; EUS3-3(name) unregister; EUS3-4(name) authenticate; EUS3-5(100%) ER part.
+EUS3 (complex, SPLIT, 5 parts 40%): Complex story. SPLIT. Only employees should have acces to this story).  EUS3-1 (100%) register page; EUS3-2(name) mmoney accounts; EUS3-3(name) unregister; EUS3-4(name) authenticate; EUS3-5(100%) ER to relational part.
 
 EUS3-2 (name) add and remove money accounts for customers
 
@@ -196,26 +192,11 @@ EUS3-4 (name) authentication against employee of EUS3.
 
 
 
-Add and delete customers.
+#### Certificate of deposits.
 
-EUS3 (complex, SPLIT, 5 parts 40%): Complex story. SPLIT, only employees should have acces to this story). EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
+EUS6 (name): As a bank employee, I can create a new CD (certificate of deposite) for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank. EUS6-1 (name); EUS6-2 (100%) ER to relational part.
 
-EUS3-1 (ziming, 100%) register page as is implements adding a customer
-
-EUS3-2 (name) add and remove money accounts for customers
-
-EUS3-3 (name) un-register page implements deleting a customer along with the accounts
-
-EUS3-4 (name) authentication against employee of EUS3.
-
-EUS3-5 (anders, 100%) ER to relational part.
-
-
-Certificate of deposits.
-
-EUS6 (name): As a bank employee, I can create a new CD (certificate of deposite) for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank.
-
-EUS6-2 (anders, 100%) ER to relational part.
+EUS6-1 (name, 0%) Flask part
 
 
 ##### Logging on.
@@ -375,17 +356,22 @@ EUS3-4 (name) authentication against employee of EUS3.
 EUS3-5 (anders, 100%) ER to relational part.
 
 
-Certificate of deposits.
+#### Certificate of deposits.
 
-EUS6 (name): As a bank employee, I can create a new CD (certificate of deposite) for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank.
+EUS6: As a bank employee, I can create a new CD (certificate of deposite) for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank. EUS6-1 (name); EUS6-2 (100%).
+
+EUS6-1 (name, 0%) Flask part
 
 EUS6-2 (anders, 100%) ER to relational part.
 
 
 ##### Logging on.
 
-EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions.
-EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
+EUS1 (lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
+
+EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions.
+
+EUS1-2: (anders, 100%) ER to relational part. Created table manages with account_type field. Need to fix manages.
 
 
 #### Tasks:
