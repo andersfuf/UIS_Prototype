@@ -276,6 +276,7 @@ CUS7: As a customer, I can transfer money from one of my accounts to another, so
 
 EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts.
 
+
 ## Back log of User stories (Consolidation effort).
 There is a dilemma. You want the current state of existing user stories. However a back log is also a repository of unfinished business.
 
