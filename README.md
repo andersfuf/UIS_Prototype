@@ -76,8 +76,14 @@ Finalize ‘one at the time’.
 
 Commit to repository.
 
-### November 2023 DEVELOPMENT SPRINTS
+### November 2023 DEVELOPMENT SPRINT
 Staring with a backlog spice. It is not understandable.
+
+
+### User stories:
+
+#### Customer role:
+#### Employee role:
 
 #### Tasks
 CM-3 Spike Back-log consolidation. Making sense of the back-log. cm-log.md now logs sprints. 
@@ -85,6 +91,8 @@ CM-3 Spike Back-log consolidation. Making sense of the back-log. cm-log.md now l
 
 ## Back log of User stories (unfinished business).
 There is a dilemma. You want the current state of existing user stories. However a back log is also a repository of unfinished business. Decission 20231107: Maintain a consolidated respository of userstories along with the tasks. Have a Back log of user stories as unifinished business.
+
+### User stories:
 
 #### Customer role:
 
@@ -128,13 +136,13 @@ CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. St
 
 ### Employee role:
 
-#### Transfer.
+#### Transfer
 
 EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts. EUS-CUS7-1. SQL part(100%). EUS-CUS7-2 (100%). Transfer between managed accounts. EUS-CUS7-3 Not started.
 
 EUS-CUS7-3(name). Customer based transfer (requires EUS-CUS10)
 
-#### Chose customer.
+#### Chose customer
 
 EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank. Employee/counter utility; Employee must chose the customer. EUS-CUS10-1 (not started); EUS-CUS10-2 (not started); EUS-CUS10-3 (100%) ER to relational part. 
 
@@ -142,7 +150,7 @@ EUS-CUS10-1(name): CUS10 moved to employee; status 0% but CUS7 can be used as st
 
 EUS-CUS10-2(name): Authentication part
 
-#### Add and delete customers.
+#### Add and delete customers
 EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
 EUS3 (complex, SPLIT, 5 parts 40%): Complex story. SPLIT. Only employees should have acces to this story).  EUS3-1 (100%) register page; EUS3-2(name) mmoney accounts; EUS3-3(name) unregister; EUS3-4(name) authenticate; EUS3-5(100%) ER to relational part.
 
@@ -153,8 +161,7 @@ EUS3-3 (name) un-register page implements deleting a customer along with the acc
 EUS3-4 (name) authentication against employee of EUS3.
 
 
-
-#### Certificate of deposits.
+#### Certificate of deposits
 
 EUS6 (name): As a bank employee, I can create a new CD (certificate of deposite) for one of my customers and associate it to the customer's investment account, so that I can facilitate investments and attract money to the bank. EUS6-1 (name); EUS6-2 (100%) ER to relational part.
 
@@ -168,9 +175,7 @@ EUS11-1 (name, 0%) Flask part
 EUS11-2 (name, 0%) ER to relational part.
 
 
-##### Logging on.
-
-
+##### Logging on
 
 #### Tasks:
 
@@ -201,6 +206,8 @@ CUS7 (transfer): As a customer, I can transfer money from one of my accounts to 
 
 CUS8 (checking account) As a customer i want to see the balance and details of my checking account. 
 
+CUS9-2023 (accounts) As a customer i want a list of my accounts to find find out which are managed and by who.
+
 
 ### Employee role:
 
@@ -215,27 +222,6 @@ EUS-CUS10 (choose customer): As an employee, I can recieve money for deposit to 
 EUS11-2023 (accounts): As an employee i have access to specific customer accounts, so the employee can manage the customer. Thoughts: SQL. The data model maps employees to customer accounts. The employee could be mapped to a customer.
 
 
-## log
-
-### May 2023 DEVELOPMENT SPRINTS
-
-Some enhancements
-
-### User stories:
-
-#### Customer role:
-
-CUS7-8-2023 (anders, 100%):Transfer. Fix SQL selecting customers accounts based on customer id.
-
-CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
-
-Account
-
-CUS9-2023 As a customer i want a list of my accounts to find find out which are managed and by who.
-
-CUS9-2023-1 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting template
-
-
 
 
 
@@ -247,11 +233,12 @@ There is a dilemma. You want the current state of existing user stories. However
 #### Customer role:
 ##### Transfer
 
-CUS7: As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money. CUS7-1 done; CUS7-3 done; CUS7-2 done; CUS7-4 done; CUS7-5 Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer); CUS7-6 not started.
+CUS7: As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money. CUS7-1 (100%); CUS7-3 (100%); CUS7-2 (100%); CUS7-4 (100%); CUS7-5 Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer); CUS7-6 (0%); CUS7-3-2023(100%)
 
 CUS7-1 (ziming, 100%): HTML finished version one; SPLIT; update not confirmed; 
 
 CUS7-3 (ziming, 100%): confirm update;
+CUS7-3-2023 (anders, 100%): confirm update (insert into transfer). Customer/route.py must import transfer_account() from models.py
 
 CUS7-2 (ziming+anders,100%): confirm dropdown;
 
@@ -260,6 +247,11 @@ CUS7-4 (anders, 100%, left): ER to relational part. deposit, transfer, withdraw;
 CUS7-5 (anders+, Moved): must be logged in as employee part. Moved to EUS-CUS7 (Employee manager) and EUS-CUS10 (selecting customer).
 
 CUS7-6 (name, ): restrict from_accounts to employees manages accounts
+
+CUS7-8-2023 (anders, 100%):Transfer. Fix SQL selecting customers accounts based on customer id.
+
+
+
 
 ##### Investments
 
@@ -288,6 +280,13 @@ CUS8-4-2023 (name, %) checking account detail-part model-part (SQL).
 CUS8-5-2023 (name, %)  checking account detail-part template.
 
 CUS8-6-2023 (name, %) detail-part controller-part.
+
+#### Accounts
+
+CUS9-2023 As a customer i want a list of my accounts to find find out which are managed and by who. CUS9-1-2023 (100%).
+
+CUS9-1-2023 (anders, 100%) Initial listing. Use of sel_cus-accounts() adjusting template
+
 
 ##### Logging on
 
