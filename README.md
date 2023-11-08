@@ -82,7 +82,7 @@ Staring with a backlog spice. It is not understandable.
 #### Tasks
 CM-3 Spike Back-log consolidation. Making sense of the back-log. cm-log.md now logs sprints. 
 
-### Maj 2023 DEVELOPMENT SPRINTS
+### May 2023 DEVELOPMENT SPRINTS
 
 Some enhancements
 
@@ -201,75 +201,45 @@ EUS6-1 (name, 0%) Flask part
 
 ##### Logging on.
 
-EUS1(lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions.
-EUS1-2: (anders, 100%) ER to relational part. created table manages with account_type field. Need to fix manages
 
 
 #### Tasks:
 
 MVC1-2 (name, ) navigation
 CM-1 (name, ) adjusting technical debt
-CM-2 (name, : Adding data to the database
+CM-2 (name, ) Adding data to the database
+CM-3 (name, ) dokumentation spikes
+
+
 
 ## log
 
-### June 2022 , 2022 DEVELOPMENT SPRINTS
-Some enhancements
-
-CUS-1-2022(anders, 100%):  (reopend, SPLIT); CUS1: I can log in and log out of the system, so that my information in the bank is only accessible to me (CUS-1 -> CUS-1-1, EMP-1-1).
-CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
-
-EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions.
-
-#### Tasks:
-
-CM-2 (pax+anders,100%): Adding data to the database
 
 
-### April 24, 2019 - MAY 1ST, 2019 DEVELOPMENT SPRINTS
-Reviewing the prioritized user stories. User stories to be picked.
-Our two target dates are: monday April 29th (choose not to meet if github works; stand by ) and Wednesday May 1st, when we meet for acceptance test.
-We consider this a sprint started. Lets be modest and see if we can get some done. In a normal workplace situation no user story should for example not take more that 20 hours.
 
-
-CUS-1: finished (ziming, 100%, 2019); CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
-Suspend authentication for other parts of the application (YES / NO ) - No action - defered.
-CUS7-1 (ziming, 100%, 2019): HTML finished version one; SPLIT; update not confirmed;  ;
-CUS7-3 (ziming, 100%, 2019): confirm update;
-CUS7-2 (ziming+anders,100%, 2019): confirm dropdown;
-CUS7-4 (anders, 100%, left, 2019): ER to relational part. deposit, transfer, withdraw;
-CUS7-5 (anders+, 10%, 2019): must be logged in as employee part
-CUS4-1(anders, 60%, 2019): investment list; list of each and a total; one line for each investment account; at a given date; accounts.html with overview just start (5%); SPLIT; consolidate up to and including ‘dags dato’-current date.; ; SPLIT model part (CUS4-4)CUS4-4(anders, 70%, 2019); model part of CUS4-1
-CUS4-3(anders, 100%, left, 2019): ER to relational part. certificates_of_deposit, investmentaccounts;
-
-EUS-CUS10-3(anders, 100%, left, 2019): ER to relational part.
-EUS1(lasse, 100%) EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely.
-EUS1-2: (anders, 100%, 2019) ER to relational part. created table manages with account_type field. Need to fix manages
-EUS3-1 (ziming, 100%, 2019) register page as is implements adding a customer
-EUS3-5 (anders, 100%, 2019) ER to relational part.
-EUS6-2 (anders, 100%, 2019) ER to relational part.
-
-#### Tasks:
-
-MVC1-1 (ziming, 100%, 2019) Move SQL
 
 ## User story repository (Consolidation effort)
 
 #### Customer role:
 
-CUS1: As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
+CUS1 (logging-on): As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
 
-CUS4: As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments. S
+CUS-1-1-2022: As an autheticated customer i only have functions concerning my data, so customers have integrity.
 
-CUS7: As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money.
+
+CUS4 (investments): As a customer, I can see the consolidated summary of my investments at a given date, so that I can see how much money I have invested and the current value of these investments. S
+
+CUS7 (transfer): As a customer, I can transfer money from one of my accounts to another, so that I can make other operations with that money.
 
 ### Employee role:
 
-EUS3: As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
+EUS1 (loging on): As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
 
-EUS-CUS7. As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts.
+EUS3 (Add and delete customers): As a bank employee, I can add or delete customers and their accounts in the system, so that I can keep track of the my customers and the bank products they are using.
 
-EUS-CUS10 : As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
+EUS-CUS7 (transfer): As en employee i can transfer money between ccounts I manage, so in order to provide service managing accounts.
+
+EUS-CUS10 (choose customer): As an employee, I can recieve money for deposit to a customer account, so that the customer can have it in a safe place at the bank.
 
 
 
@@ -316,6 +286,8 @@ CUS1: finished (ziming, 100%); CUS1: As a customer, I can log in and log out of 
 CUS-1-1-2022(anders, 100%): Customer-part Carry authencication to all customer related endpoints: As an autheticated customer i only have functions concerning my data, so customers have integrity.
 
 CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template.
+
+
 
 ### Employee role:
 
@@ -367,9 +339,10 @@ EUS6-2 (anders, 100%) ER to relational part.
 
 ##### Logging on.
 
-EUS1 (lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started. EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
+EUS1: As a bank employee, I can log in and log out of the system, so that I can perform operations on behalf of customers securely. 
+EUS1 (lasse, 100%) Log in. EUS1 is very similar to CUS1. 60% finished even though it is not started.
 
-EMP-1-1-2022(22, anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions.
+EUS-1-1-2022(anders, 100%): Employee-part Carry authencication to all employee related endpoints: As an authenticated employee i have employee functions.
 
 EUS1-2: (anders, 100%) ER to relational part. Created table manages with account_type field. Need to fix manages.
 
