@@ -1,17 +1,36 @@
+--
+-- schema_ins.sql
+-- Populate bank schema with data.
+--
+\echo Emptying the bank database. Deleting all tuples.
+--
+-- Dependency level 2
+-- Referential integrity to level 1 and 0
+--
 DELETE FROM deposits;
 DELETE FROM withdraws;
 DELETE FROM checkingaccounts;
 DELETE FROM certificates_of_deposit;
+--
+-- Dependency level 1
+-- Referential integrity to level 0
 --
 DELETE FROM InvestmentAccounts;
 DELETE FROM CheckingAccounts;
 DELETE FROM manages;
 DELETE FROM transfers;
 --
+-- Dependency level 0. 
+-- No referential integrity constraints
+--
 DELETE FROM accounts;
 DELETE FROM employees;
 DELETE FROM customers;
 
+\echo .
+\echo
+\echo Adding data:
+\echo customers
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5000, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-DB3-C-Lasse', 'aud Auditorium A, bygning 1, 1. sal Universitetsparken 15 (Zoo)');
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5001, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-PD3-C-Anders', 'øv* Kursussal 1, bygning 3, 1.sal Universitetsparken 15 (Zoo)');
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5002, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-DB2-C-Ziming', 'øv 4032, Ole Maaløes Vej 5 (Biocenter)');
@@ -20,6 +39,7 @@ INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VAL
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5005, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-PD1-C-Marco', 'Aud 07, Universitetsparken 5, HCØ');
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5006, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-LE1-C-Marcos', 'AUD 02 in the HCØ building (HCØ, Universitetsparken 5)');
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5007, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-LE2-C-Finn', 'AUD 02 in the HCØ building (HCØ, Universitetsparken 5)');
+\echo ..
 
 INSERT INTO public.Employees(id, name, password)
 VALUES (6000, 'UIS-DB3-E-Lasse',  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx')
@@ -31,7 +51,7 @@ VALUES (6000, 'UIS-DB3-E-Lasse',  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx')
 , (6006, 'UIS-LE1-E-Marcos',  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
 , (6007, 'UIS-LE2-E-Finn' ,  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
 ;
-
+\echo ...
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8000, '2018-06-01',5000);
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8001, '2018-07-01',5000);
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8002, '2018-08-01',5001);
@@ -48,7 +68,7 @@ INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (80
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8013, '2018-08-01',5006);
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8014, '2018-09-01',5007);
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8015, '2018-10-01',5007);
-
+\echo ....
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6000, 8000);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6000, 8001);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6001, 8002);
@@ -65,15 +85,13 @@ INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6006, 8012);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6006, 8013);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6007, 8014);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6007, 8015);
-
-
-
+\echo .....
 INSERT INTO checkingaccounts(account_number) 
 VALUES (8000),(8001),(8002),(8003),(8004),(8005),(8006),(8007);
-
+\echo ......
 INSERT INTO InvestmentAccounts(account_number) 
 VALUES (8008),(8009),(8010),(8011),(8012),(8013),(8014),(8015);
-
+\echo ........
 -- contraints missing on transfers
 
 INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 10, 8000, 8001);
@@ -82,16 +100,16 @@ INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (
 INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 80, 8003, 8011);
 INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 160, 8002, 8003);
 INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 320, 8004, 8012);
-
+\echo .........
 -- contraints missing on withdraws
 
 INSERT INTO withdraws ( amount, withdraw_date) VALUES (20480, now())
 , (10240, now()), (5120, now()), (2560, now()), (1280, now()), (640, now());
-
+\echo ..........
 -- contraints missing on deposits
 INSERT INTO deposits ( amount, deposit_date) VALUES (40960, now())
 , (81920, now()), (163840, now()), (327696, now()), (655392, now()), (1310784, now());
-
+\echo ...........
 
 -- new certificate
 INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number) VALUES (now(), 10000, now(), 8014);
@@ -99,17 +117,20 @@ INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,acc
 INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number) VALUES (now(), 40000, now(), 8014);
 INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number) VALUES (now(),  1000, now(), 8014);
 INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number) VALUES (now(),  2000, now(), 8014);
+\echo ............
 -- cd_number given
 INSERT INTO public.certificates_of_deposit(cd_number, start_date, amount, maturity_date,account_number) VALUES (7000, now(), 10000, now(),8015);
 -- new certificate fixed rate 4 percent
 INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(), 10000, now(), 8013, 4);
 -- cd_number given fixed rate 5 percent
 INSERT INTO public.certificates_of_deposit(cd_number, start_date, amount, maturity_date,account_number, rate) VALUES (7001, now(), 10000, now(),8012, 5);
+\echo .............
 
 
 --
 -- from schema_upd.sql 20231112
 --
+\echo "from schema_upd.sql 20231112"
 
 
 
@@ -217,11 +238,14 @@ INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,acc
 INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),   8000, now(), 8032, 6);
 INSERT INTO public.certificates_of_deposit(start_date, amount, maturity_date,account_number, rate) VALUES (now(),   6500, now(), 8012, 3);
 
+\echo ..............
+
 
 
 --
 -- from schema_upd_2.sql 20231112
 --
+\echo "from schema_upd_2.sql 20231112"
 
 
 UPDATE public.customers SET name    = 'C-5000-Theo'        , address = '3-0-25, UP 1 (DIKU)' WHERE cpr_number IN (5000); 
@@ -306,3 +330,5 @@ VALUES (now(), 3827, 8000, 8042), (now(), 3827, 8001, 8042), (now(), 3827, 8002,
 INSERT INTO investmentaccounts (account_number)
 VALUES (8035), (8038), (8041)
 ;
+\echo ...............
+\echo done
