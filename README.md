@@ -86,7 +86,8 @@ Staring with a backlog spice. It is not understandable.
 #### Employee role:
 
 #### Tasks
-CM-3 Spike Back-log consolidation. Making sense of the back-log. cm-log.md now logs sprints. 
+CM-2 (anders, ) Adding data to the database
+CM-3 (anders) Spike Back-log consolidation. Making sense of the back-log. cm-log.md now logs sprints. 
 
 
 ## Back log of User stories (unfinished business).
