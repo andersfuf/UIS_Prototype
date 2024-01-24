@@ -77,7 +77,7 @@ Finalize ‘one at the time’.
 Commit to repository.
 
 ### November 2023 DEVELOPMENT SPRINT
-Staring with a backlog spice. It is not understandable.
+CM-3 Staring with a backlog spice. It is not understandable.
 
 
 ### User stories:
