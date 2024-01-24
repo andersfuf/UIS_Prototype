@@ -30,7 +30,6 @@ DELETE FROM customers;
 \echo .
 \echo
 \echo Adding data:
-\echo customers
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5000, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-DB3-C-Lasse', 'aud Auditorium A, bygning 1, 1. sal Universitetsparken 15 (Zoo)');
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5001, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-PD3-C-Anders', 'øv* Kursussal 1, bygning 3, 1.sal Universitetsparken 15 (Zoo)');
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5002, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-DB2-C-Ziming', 'øv 4032, Ole Maaløes Vej 5 (Biocenter)');
@@ -39,6 +38,23 @@ INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VAL
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5005, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-PD1-C-Marco', 'Aud 07, Universitetsparken 5, HCØ');
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5006, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-LE1-C-Marcos', 'AUD 02 in the HCØ building (HCØ, Universitetsparken 5)');
 INSERT INTO public.customers(cpr_number, risk_type, password, name, address) VALUES (5007, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-LE2-C-Finn', 'AUD 02 in the HCØ building (HCØ, Universitetsparken 5)');
+
+INSERT INTO public.customers(cpr_number, risk_type, password, name, address) 
+VALUES (5008, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-PD1-C-Rikke', 'AUD 08, Universitetsparken 5, HCØ')
+,      (5009, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-DB1-C-Pax'  , 'AUD 05, Universitetsparken 5, HCØ')
+,      (5010, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-PD2-C-Nadja', 'AUD 08, Universitetsparken 5, HCØ')
+;
+
+UPDATE public.customers SET address = 'AUD 08, Universitetsparken 5, HCØ' WHERE cpr_number IN (5001); 
+UPDATE public.customers SET address = 'aud - Lille UP1 - 04-1-22, Universitetsparken 1-3, DIKU' WHERE cpr_number IN (5003, 5007); 
+UPDATE public.customers SET address = 'online-zoom'      WHERE cpr_number IN (5006); 
+UPDATE public.customers SET name    = 'UIS-DB2-C-Anders' WHERE cpr_number IN (5008); 
+UPDATE public.customers SET name    = 'UIS-LE-C-Hubert'  WHERE cpr_number IN (5003); 
+
+	
+
+
+
 \echo ..
 
 INSERT INTO public.Employees(id, name, password)
@@ -51,6 +67,13 @@ VALUES (6000, 'UIS-DB3-E-Lasse',  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx')
 , (6006, 'UIS-LE1-E-Marcos',  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
 , (6007, 'UIS-LE2-E-Finn' ,  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
 ;
+
+INSERT INTO public.Employees(id, name, password)
+VALUES (6008, 'UIS-PD3-E-Rikke',  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
+,      (6009, 'UIS-DB2-E-Pax'  ,  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
+,      (6010, 'UIS-PD2-E-Nadja',  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
+;
+
 \echo ...
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8000, '2018-06-01',5000);
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8001, '2018-07-01',5000);
@@ -68,6 +91,15 @@ INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (80
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8013, '2018-08-01',5006);
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8014, '2018-09-01',5007);
 INSERT INTO public.accounts(account_number, created_date, cpr_number) VALUES (8015, '2018-10-01',5007);
+
+
+
+INSERT INTO public.accounts(account_number, created_date, cpr_number) 
+VALUES (8016, '2018-06-01',5008), (8017, '2018-06-01',5008), (8018, '2018-06-01',5008)
+,      (8019, '2018-06-01',5009), (8020, '2018-06-01',5009), (8021, '2018-06-01',5009)
+,      (8022, '2018-06-01',5010), (8023, '2018-06-01',5010), (8024, '2018-06-01',5010)
+;
+
 \echo ....
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6000, 8000);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6000, 8001);
@@ -85,12 +117,23 @@ INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6006, 8012);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6006, 8013);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6007, 8014);
 INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6007, 8015);
+
+INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6008, 8010), (6008, 8011), (6008, 8016), (6008, 8017), (6008, 8018);
+INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6009, 8012), (6009, 8013), (6009, 8019), (6009, 8020), (6009, 8021);
+INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6010, 8014), (6010, 8015), (6010, 8022), (6010, 8023), (6010, 8024);
+
+
 \echo .....
 INSERT INTO checkingaccounts(account_number) 
 VALUES (8000),(8001),(8002),(8003),(8004),(8005),(8006),(8007);
 \echo ......
 INSERT INTO InvestmentAccounts(account_number) 
 VALUES (8008),(8009),(8010),(8011),(8012),(8013),(8014),(8015);
+
+INSERT INTO investmentaccounts (account_number)
+VALUES (8016), (8019), (8022)
+;
+
 \echo ........
 -- contraints missing on transfers
 
@@ -100,15 +143,34 @@ INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (
 INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 80, 8003, 8011);
 INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 160, 8002, 8003);
 INSERT INTO transfers (transfer_date, amount, from_account, to_account) VALUES (now(), 320, 8004, 8012);
+
+INSERT INTO transfers (transfer_date, amount, from_account, to_account)
+VALUES (now(), 5000, 8000, 8016), (now(), 5000, 8001, 8017), (now(), 5000, 8002, 8018), (now(), 5000, 8003, 8019), (now(), 5000, 8004, 8020), (now(), 5000, 8005, 8021), (now(), 5000, 8006, 8022), (now(), 5000, 8007, 8023)
+;
+
 \echo .........
 -- contraints missing on withdraws
 
 INSERT INTO withdraws ( amount, withdraw_date) VALUES (20480, now())
 , (10240, now()), (5120, now()), (2560, now()), (1280, now()), (640, now());
+
+INSERT INTO withdraws (account_number, amount, withdraw_date)
+VALUES (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
+,      (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
+,      (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
+;
+
 \echo ..........
 -- contraints missing on deposits
 INSERT INTO deposits ( amount, deposit_date) VALUES (40960, now())
 , (81920, now()), (163840, now()), (327696, now()), (655392, now()), (1310784, now());
+
+INSERT INTO deposits (account_number, amount, deposit_date)
+VALUES (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
+,      (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
+,      (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
+;
+
 \echo ...........
 
 -- new certificate
@@ -131,64 +193,6 @@ INSERT INTO public.certificates_of_deposit(cd_number, start_date, amount, maturi
 -- from schema_upd.sql 20231112
 --
 \echo "from schema_upd.sql 20231112"
-
-
-
-
-INSERT INTO public.customers(cpr_number, risk_type, password, name, address) 
-VALUES (5008, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-PD1-C-Rikke', 'AUD 08, Universitetsparken 5, HCØ')
-,      (5009, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-DB1-C-Pax'  , 'AUD 05, Universitetsparken 5, HCØ')
-,      (5010, TRUE, '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO', 'UIS-PD2-C-Nadja', 'AUD 08, Universitetsparken 5, HCØ')
-;
-
-UPDATE public.customers SET address = 'AUD 08, Universitetsparken 5, HCØ' WHERE cpr_number IN (5001); 
-UPDATE public.customers SET address = 'aud - Lille UP1 - 04-1-22, Universitetsparken 1-3, DIKU' WHERE cpr_number IN (5003, 5007); 
-UPDATE public.customers SET address = 'online-zoom'      WHERE cpr_number IN (5006); 
-UPDATE public.customers SET name    = 'UIS-DB2-C-Anders' WHERE cpr_number IN (5008); 
-UPDATE public.customers SET name    = 'UIS-LE-C-Hubert'  WHERE cpr_number IN (5003); 
-
-	
-
-
-
-INSERT INTO public.Employees(id, name, password)
-VALUES (6008, 'UIS-PD3-E-Rikke',  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
-,      (6009, 'UIS-DB2-E-Pax'  ,  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
-,      (6010, 'UIS-PD2-E-Nadja',  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
-;
-
-INSERT INTO public.accounts(account_number, created_date, cpr_number) 
-VALUES (8016, '2018-06-01',5008), (8017, '2018-06-01',5008), (8018, '2018-06-01',5008)
-,      (8019, '2018-06-01',5009), (8020, '2018-06-01',5009), (8021, '2018-06-01',5009)
-,      (8022, '2018-06-01',5010), (8023, '2018-06-01',5010), (8024, '2018-06-01',5010)
-;
-
-INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6008, 8010), (6008, 8011), (6008, 8016), (6008, 8017), (6008, 8018);
-INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6009, 8012), (6009, 8013), (6009, 8019), (6009, 8020), (6009, 8021);
-INSERT INTO public.manages(emp_cpr_number, account_number) VALUES (6010, 8014), (6010, 8015), (6010, 8022), (6010, 8023), (6010, 8024);
-
-
-
-INSERT INTO deposits (account_number, amount, deposit_date)
-VALUES (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
-,      (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
-,      (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
-;
-
-INSERT INTO withdraws (account_number, amount, withdraw_date)
-VALUES (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
-,      (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
-,      (8000, 40960, now()), (8001, 81920, now()), (8002, 163840, now()), (8003, 327696, now()), (8004, 655392, now()), (8005, 1310784, now()), (8006, 16394, now()), (8007, 3154, now())
-;
-
-INSERT INTO transfers (transfer_date, amount, from_account, to_account)
-VALUES (now(), 5000, 8000, 8016), (now(), 5000, 8001, 8017), (now(), 5000, 8002, 8018), (now(), 5000, 8003, 8019), (now(), 5000, 8004, 8020), (now(), 5000, 8005, 8021), (now(), 5000, 8006, 8022), (now(), 5000, 8007, 8023)
-;
-
-INSERT INTO investmentaccounts (account_number)
-VALUES (8016), (8019), (8022)
-;
-
 
 
 -- 202212

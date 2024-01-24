@@ -83,6 +83,11 @@ Staring with a backlog spice. It is not understandable.
 ### User stories:
 
 #### Customer role:
+
+##### Logging on
+
+CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template.
+
 #### Employee role:
 
 #### Tasks

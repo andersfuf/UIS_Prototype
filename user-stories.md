@@ -2,6 +2,12 @@
 
 ## User story repository (Consolidated list)
 
+Consolidated list of user stories.
+
+See cm-log/cm-back-log-consolidated.md for full account
+see cm-log/cm-sprint-log.md for full account of sprint logs. You may call this the sprint-log-history.
+
+
 #### Customer role:
 
 CUS1 (logging-on): As a customer, I can log in and log out of the system, so that my information in the bank is only accessible to me.
