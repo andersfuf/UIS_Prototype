@@ -79,9 +79,10 @@ To explain the global variables the endpoint /login sets `mysession["role"]` to 
                 mysession["role"] = roles[0] #ingen
 ```
 
-I think cus-1-2-2022 should be split in a database part and a python part cus-1-3-2024
 
 # Notes
+I think cus-1-2-2022 should be split in a database part and a python part cus-1-3-2024
+
 Comment github: Make a branch to develop or continue on main branch. 
 I Decide to work on main brainch as i am old school and not adopted
 to branching.
