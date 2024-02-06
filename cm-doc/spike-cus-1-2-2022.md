@@ -24,6 +24,29 @@ depending on you want new customers to apear on the list or not.
 ``` 
 Pseudo SQL code..
 
+If default is set to FALSE, then the students will wonder why their new customer does not apear on the easy login and issue an UPDATE statement to make it happen. For now i go for default FALSE. An alternative to the datatype BOOLEAN is VARCHAR() or 'character varying'.  Then the access right can take on more values that TRUE, FALSE or NULL.
+
+Login form. The current login form (L) and a listed login form (LL). Imagine a picture with two forms one marke (L) and another marked (LL). Alternative 1(story A): LL is to replace L everywhere; or alternative 2 (Story B): LL is available through a link. Story B is the easier as existing functionality is maintained. The global variables roles and mysession must be maintained as well as the authetication mechanism that evaluates `if current_user.is_authenticated:`  to true.
+
+Table with trueth values for a boolan. Row 1 TRUE, FALSE, NULL. Then dieerent other values for true (true, 't', 'true', 'y', 'yes', 1) and other values for false (false, 'f', 'false', 'n', 'no', '0') in postgresql. So there are a range of ways to check a BOOLEAN.
+
+This means that models.py and medels_e.py could have a SQL like this:
+
+```
+		SELECT username
+		FROM users
+		WHERE direct = 'yes'
+		
+		or 
+		WHERE direct 
+		
+		or 
+		
+		WHERE direct IS TRUE
+				
+``` 
+Pseudo SQL code..
+
 
 
 # Notes
