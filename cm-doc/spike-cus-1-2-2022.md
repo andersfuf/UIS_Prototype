@@ -68,6 +68,17 @@ To add a field to a table, an ALTER-TABLE-ADD-COLUMN statement could be issued t
 ```
 Pseudo SQL code..
 
+To explain the global variables the endpoint /login sets `mysession["role"]` to passed role. This could probably be simplified, but did the job:
+```
+            print("role:" + user.role)
+            if user.role == 'employee':
+                mysession["role"] = roles[1] #employee
+            elif user.role == 'customer':
+                mysession["role"] = roles[2] #customer
+            else:
+                mysession["role"] = roles[0] #ingen
+```
+
 I think cus-1-2-2022 should be split in a database part and a python part cus-1-3-2024
 
 # Notes
