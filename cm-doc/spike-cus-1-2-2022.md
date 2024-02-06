@@ -16,6 +16,12 @@ direct BOOLEAN DEFAULT TRUE -- or default FALSE
 
 depending on you want new customers to apear on the list or not.
 '''
+
+`
+  line 1
+  line 2
+  las line
+`
   loop
     if rec.direct
 	  add to list
