@@ -15,7 +15,7 @@ The agile solution is to only change what is neecesary. So discard the generic s
 direct BOOLEAN DEFAULT TRUE -- or default FALSE
 
 depending on you want new customers to apear on the list or not.
-'''
+```
 
 `
   line 1
@@ -27,7 +27,7 @@ depending on you want new customers to apear on the list or not.
 	  add to list
 	end if
   end loop that created list
-'''  
+``` 
 Pseudo SQL code..
 
 
