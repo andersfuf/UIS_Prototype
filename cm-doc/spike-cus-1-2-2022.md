@@ -8,7 +8,7 @@ ADD COLUMN direct type VARCHAR(10) or boolean.
 ```
 Pseudo SQL code..
 
-Modalities could be: login, derect, fasual, fingerprint. This is not our solution, but if there were several modalities, like fasual or fingerprint authentication, other modalities like github, dropbox or facebook login could also a concern to support. A number of authentication mechanisms could be relevant. In this a seperate entity 'login-modalities' with a one-many relationship to customers could an alternative. 
+Modalities could be: login, derect, fasual, fingerprint. This is not our solution, but if there were several modalities, like fasual or fingerprint authentication, other modalities like github, dropbox or facebook login could also a concern to support. A number of authentication mechanisms could be relevant. In this case a seperate entity 'login-modalities' with a one-many relationship to customers could an alternative. 
 
 The agile solution is to only change what is neecesary. So discard the generic solution and create a dedicated field:
 ```
