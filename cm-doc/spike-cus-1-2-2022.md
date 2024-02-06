@@ -2,10 +2,10 @@
 
 
 Change login to listbased. The present login has authentication. This authentication should be changed to make authentication easier. To implement a degree of security in line with the durrent implementation a security feature for a user is to have granted acces to direct login or not. This would be similar to having fasual recognition enabled in an app.
-
+`
 ALTER TABLE customers
 ADD COLUMN direct type VARCHAR(10) or boolean.
-
+`
 Pseudo SQL code..
 
 Modalities could be: login, derect, fasual, fingerprint. This is not our solution, but if there were several modalities, like fasual or fingerprint authentication, other modalities like github, dropbox or facebook login could also a concern to support. A number of authentication mechanisms could be relevant. In this a seperate entity 'login-modalities' with a one-many relationship to customers could an alternative. 
