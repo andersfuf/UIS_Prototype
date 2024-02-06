@@ -47,7 +47,28 @@ This means that models.py and medels_e.py could have a SQL like this:
 ``` 
 Pseudo SQL code..
 
+To add a field to a table, an ALTER-TABLE-ADD-COLUMN statement could be issued to an existing database. In this case an install script would also need a remove statement if changes need to be rolled back.
 
+```
+  -- To add field
+  ALTER TABLE test24004
+  ADD COLUMN direct BOOLEAN DEFAUL FALSE
+  ;
+  COMMIT; -- If needed
+
+  ..
+  
+  -- To remove field
+  ALTER TABLE test24004
+  DROP COLUMN direct
+  ;
+  COMMIT; -- If needed
+  
+  
+```
+Pseudo SQL code..
+
+I think cus-1-2-2022 should be split in a database part and a python part cus-1-3-2024
 
 # Notes
 Comment github: Make a branch to develop or continue on main branch. 

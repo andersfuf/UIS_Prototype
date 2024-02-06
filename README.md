@@ -86,7 +86,7 @@ CM-3 Staring with a backlog spice. It is not understandable.
 
 ##### Logging on
 
-CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template.
+CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template. CUS-1-2-2022 split in a database part CUS-1-2-2022 and a python part CUS-1-3-2024.
 
 #### Employee role:
 
