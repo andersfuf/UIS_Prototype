@@ -76,9 +76,8 @@ Finalize ‘one at the time’.
 
 Commit to repository.
 
-### November 2023 DEVELOPMENT SPRINT
+### November 2023 DEVELOPMENT SPRINT (-FEB2024)
 CM-3 Staring with a backlog spice. It is not understandable.
-
 
 ### User stories:
 
@@ -86,7 +85,8 @@ CM-3 Staring with a backlog spice. It is not understandable.
 
 ##### Logging on
 
-CUS-1-2-2022(anders, 10%): SPIKE. List users and authenticate using the list. Status: List part drafted in template. CUS-1-2-2022 split in a database part CUS-1-2-2022 and a python part CUS-1-3-2024.
+CUS-1-2-2022(anders, 40%): SPIKE. List users and authenticate using the list. Status: List part drafted in template. CUS-1-2-2022 split in a database part CUS-1-2-2022 and a python part CUS-1-3-2024.
+CUS-1-3-2024(,) python part of CUS-1-2-2022.  ListLogin flask form (LL) direct CUS-1-4-2024(,), Login class endpoint /direct, endpoint python code.
 
 #### Employee role:
 
