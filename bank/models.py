@@ -4,6 +4,7 @@ from bank import conn, login_manager
 from flask_login import UserMixin
 from psycopg2 import sql
 
+
 @login_manager.user_loader
 def load_user(user_id):
     cur = conn.cursor()
@@ -32,6 +33,7 @@ def load_user(user_id):
         return None
 
 
+
 class Customers(tuple, UserMixin):
     def __init__(self, user_data):
         self.CPR_number = user_data[0]
@@ -44,6 +46,7 @@ class Customers(tuple, UserMixin):
     def get_id(self):
        return (self.CPR_number)
 
+
 class Employees(tuple, UserMixin):
     def __init__(self, employee_data):
         self.id = employee_data[0]
@@ -53,7 +56,7 @@ class Employees(tuple, UserMixin):
 
     def get_id(self):
        return (self.id)
-
+       
 class CheckingAccount(tuple):
     def __init__(self, user_data):
         self.id = user_data[0]
@@ -85,7 +88,7 @@ def insert_Customers(name, CPR_number, password):
     conn.commit()
     cur.close()
 
-def select_Customers(CPR_number):
+def select_Customer(CPR_number):
     cur = conn.cursor()
     sql = """
     SELECT * FROM Customers
@@ -96,7 +99,7 @@ def select_Customers(CPR_number):
     cur.close()
     return user
 
-def select_Employees(id):
+def select_Employee(id):
     cur = conn.cursor()
     sql = """
     SELECT * FROM Employees
@@ -157,8 +160,6 @@ def select_cus_investments(cpr_number):
     SELECT i.account_number, a.cpr_number, a.created_date
     FROM investmentaccounts i
     JOIN accounts a ON i.account_number = a.account_number
---    JOIN manages m ON m.account_number = a.account_number
---    JOIN employees e ON e.id = m.emp_cpr_number
     WHERE a.cpr_number = %s
     """
     cur.execute(sql, (cpr_number,))
@@ -175,8 +176,6 @@ def select_cus_investments_with_certificates(cpr_number):
     FROM investmentaccounts i
     JOIN accounts a ON i.account_number = a.account_number
     JOIN certificates_of_deposit cd ON i.account_number = cd.account_number
---    JOIN manages m ON m.account_number = a.account_number
---    JOIN employees e ON e.id = m.emp_cpr_number
     WHERE a.cpr_number = %s
     ORDER BY 1
     """

@@ -5,6 +5,10 @@ from flask_login import UserMixin
 from psycopg2 import sql
 
 
+
+
+
+
 def select_emp_cus_accounts(emp_cpr_number):
     # employee id is parameter
     cur = conn.cursor()
