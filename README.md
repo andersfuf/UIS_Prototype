@@ -89,6 +89,8 @@ CUS-1-2-2022(anders, 100%): List users and authenticate using the list. Status: 
 
 CUS-1-3-2024(,) python part of CUS-1-2-2022.  ListLogin flask form (LL) direct CUS-1-4-2024(,), Login class endpoint /direct, endpoint python code. SPIKE.
 
+CUS-1-4-2024(anders, 10%) flask part of CUS-1-2-2022. ListLogin flask form (LL) direct.
+
 #### Employee role:
 
 #### Tasks

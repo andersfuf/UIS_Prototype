@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Log In</legend>
+                <div class="form-group">
+                    {{ form.id.label(class="form-control-label") }}
+                    {% if form.id.errors %}
+                        {{ form.id(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.id.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.id(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.password.label(class="form-control-label") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-check">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label") }}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+            <small class="text-muted">
+                <a href="#">Forgot Password?</a>
+            </small>
+            <small class="text-muted ml-2">
+                {% if is_employee %}
+                    <a href="/login?is_employee=false">Customer login?</a>
+                {% else %}
+                    <a href="/login?is_employee=true">Employee login?</a>
+                {%  endif %}
+            </small>
+        </form>
+
+    </div>
+    <div class="content-section">
+      <legend class="border-bottom mb-4">SPIKE-CUS1-2: Log In </legend>
+      <p>Select a user from a role to log on. The users are seperated into teachers, parents, students from the aula project. For the bank project we map this to employees and customers:</p>
+      <form action="/login" method="POST">
+        <table class="table table-striped">
+         <thead>
+          <tr>
+          <h5>Teachers</h5>
+	      </tr>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Teacher (role: employee)</th>
+          </tr>
+          </thead>
+       <tbody>
+        {% for t in teachers %}
+          <tr>
+			<td>
+          <input type="radio" id="{{ t.id }}" name="ID" value="{{ t.id }}">
+            </td>
+			<td>
+          <label for="{{ t.id }}">{{ t.name }}</label><br>
+            </td>
+          </tr>
+        {% endfor %}
+       </tbody>
+    </table>
+        <table class="table table-striped">
+         <thead>
+          <tr>
+          <h5>Parents</h5>
+	      </tr>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Parent (role: customer)</th>
+          </tr>
+          </thead>
+       <tbody>
+        {% for p in parents %}
+ <tr>
+<td>
+          <input type="radio" id="{{ p.id }}" name="ID" value="{{ p.id }}">
+            </td>
+			<td>
+          <label for="{{ p.id }}">{{ p.name }}</label><br>
+            </td>
+          </tr>
+         {% endfor %}
+       </tbody>
+    </table>
+        <table class="table table-striped">
+         <thead>
+          <tr>
+          <h5>Students</h5>
+	      </tr>
+           <tr>
+            <th scope="col"></th>
+            <th scope="col">Student (role: customer)</th>
+          </tr>
+          </thead>
+       <tbody>
+        {% for s in students %}
+          <tr>
+			<td>
+           <input type="radio" id="{{ s.id }}" name="ID" value="{{ s.id }}">
+            </td>
+			<td>
+          <label for="{{ s.id }}">{{ s.name }}</label><br>
+            </td>
+          </tr>
+         {% endfor %}
+       </tbody>
+    </table>
+    <div class="form-group">
+        {{ form.submit(class="btn btn-outline-info") }}
+        <input type="submit" value="Login">
+    </div>
+      </form>
+    </div>
+
+
+{% endblock content %}
