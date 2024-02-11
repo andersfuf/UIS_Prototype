@@ -83,6 +83,9 @@ def direct():
         # må direct logge på
         # så kan man disable og enable en på listen
         # Her skal check være på brugernavn stemmer. Lav funktion.
+
+        #AL20240211
+        # forsimple til kun at validere direct-customers. Det er kun et eksempel.
         if user != None and bcrypt.check_password_hash(user[2], form.password.data):
 
             #set-bank-project-variables
@@ -110,21 +113,23 @@ def direct():
     #  
     print('C1-1-22 : ')
     
-    #202212
+    #202212, 20240211
     #Get lists of employees and customers
     teachers = [{"id": str(6234), "name":"anders. teachers with 6."}, {"id": str(6214), "name":"simon"},
                 {"id": str(6862), "name":"dmitry"}, {"id": str(6476), "name":"finn"}]
-    parents =  [{"id": str(4234), "name":"parent-anders. parents with 4."}, {"id": str(4214), "name":"parent-simon"},
-                {"id": str(4862), "name":"parent-dmitry"}, {"id": str(4476), "name":"parent-finn"}]
+    parents =  [{"id": str(4234), "name":"parent-anders. parents with 4.", "address":"address 1"}
+              , {"id": str(4214), "name":"parent-simon", "address":"address 2"}
+              , {"id": str(4862), "name":"parent-dmitry", "address":"address 3"}
+              , {"id": str(4476), "name":"parent-finn", "address":"address 4"}]
     students = [{"id": str(5234), "name":"student-anders. students with 5."}, {"id": str(5214), "name":"student-simon"},
                 {"id": str(5862), "name":"student-dmitry"}, {"id": str(5476), "name":"student-finn"}]
 
     #202212
     role =  mysession["role"]
-    print('C1-1-22 role: '+ role)
+    print('C1-1-3-24 role: '+ role)
 
-    return render_template('login.html', title='Login', is_employee=is_employee, form=form
-    , teachers=teachers, parents=parents, students=students, role=role
+    return render_template('direct.html', title='Login (direct)', is_employee=is_employee, form=form
+    , teachers=teachers, customers=parents, students=students, role=role
     )
 
 
@@ -178,15 +183,9 @@ def login():
         else:
             flash('Login Unsuccessful. Please check identifier and password', 'danger')
 
-
     return render_template('login.html', title='Login', is_employee=is_employee, form=form
-    #, teachers=teachers, parents=parents, students=students
     , role=role
     )
-#teachers={{"id": str(1234), "name":"anders"},}
-#data={"user_id": str(user_id), "total_trials":total_trials}
-
-    #hvor gemmes login-bruger-id?
 
 @Login.route("/logout")
 def logout():

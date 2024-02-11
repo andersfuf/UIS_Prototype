@@ -99,12 +99,39 @@ def select_Customer(CPR_number):
     cur.close()
     return user
 
+#cus-1-3-2024
+def select_Customer_d(CPR_number):
+    cur = conn.cursor()
+    sql = """
+    SELECT * FROM Customers
+    WHERE CPR_number = %s
+    AND DIRECT IS TRUE
+    """
+    cur.execute(sql, (CPR_number,))
+    user = Customers(cur.fetchone()) if cur.rowcount > 0 else None;
+    cur.close()
+    return user
+
 def select_Employee(id):
     cur = conn.cursor()
     sql = """
     SELECT * FROM Employees
     WHERE id = %s
     """
+    cur.execute(sql, (id,))
+    user = Employees(cur.fetchone()) if cur.rowcount > 0 else None;
+    cur.close()
+    return user
+
+#cus-1-3-2024
+def select_Employee_d(id):
+    cur = conn.cursor()
+    sql = """
+    SELECT * FROM Employees
+    WHERE id = %s
+    """
+    # AND DIRECT IS TRUE
+
     cur.execute(sql, (id,))
     user = Employees(cur.fetchone()) if cur.rowcount > 0 else None;
     cur.close()
@@ -132,6 +159,23 @@ def transfer_account(date, amount, from_account, to_account):
     # Husk commit() for INSERT og UPDATE, men ikke til SELECT!
     conn.commit()
     cur.close()
+
+#cus-1-3-2024
+def select_customers_direct():
+    cur = conn.cursor()
+    sql = """
+    SELECT
+      c.name customer
+    , cpr_number
+    , address
+    FROM customers c
+	WHERE direct IS TRUE
+    ;
+    """
+    cur.execute(sql, (cpr_number,))
+    tuple_resultset = cur.fetchall()
+    cur.close()
+    return tuple_resultset
 
 def select_cus_accounts(cpr_number):
     cur = conn.cursor()
