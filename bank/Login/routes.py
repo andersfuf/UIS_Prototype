@@ -1,9 +1,9 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from bank import app, conn, bcrypt
-from bank.forms import CustomerLoginForm, EmployeeLoginForm
+from bank.forms import CustomerLoginForm, EmployeeLoginForm, DirectCustomerLoginForm
 from flask_login import login_user, current_user, logout_user, login_required
 from bank.models import select_Employee
-from bank.models import Customers, select_Customer
+from bank.models import Customers, select_Customer, select_Customer_d
 from bank.models import select_cus_accounts
 from bank import roles, mysession
 
@@ -27,7 +27,6 @@ def home():
 
 @Login.route("/about")
 def about():
-    #202212
     mysession["state"]="about"
     print(mysession)
     return render_template('about.html', title='About')
@@ -36,70 +35,44 @@ def about():
 @Login.route("/direct", methods=['GET', 'POST'])
 def direct():
 
-    mysession["state"]="login"
-    print(mysession)
+    mysession["state"]="direct"
+    print("L1", mysession)
     role=None
 
-    #AL20240211 Direct
-    #
-    # jeg tror det her betyder at man er er logget på, men har redirected til login
-    # så kald formen igen
-    # men jeg forstår det ikke
-    #
     if current_user.is_authenticated:
         return redirect(url_for('Login.home'))
-
-    is_employee = True if request.args.get('is_employee') == 'true' else False
     
+    print("L1", request.args.get('is_employee') )
+    #print("L1", request.form('p') )
+    
+    is_employee = True if request.args.get('is_employee') == 'true' else False
+    form = DirectCustomerLoginForm()
 
-    #AL20240211 Her instantieles en EmployeeLoginForm eller CustomerLoginForm
-    # fra bank/forms.py
-    # I cus-1-3-2024 starter vi med customer
-      
-    form = EmployeeLoginForm() if is_employee else CustomerLoginForm()
-
-    print('C1-1-3-24 id: ', form.id.data)
-
+    # Først bekræft, at inputtet fra formen er gyldigt... 
     if form.validate_on_submit():
-
+        print("L2 p", form.p.data)
+        
         #
-        # Her checkes noget som skulle være sessionsvariable, men som er en GET-parameter
+        # her checkes noget som skulle være sessionsvariable, men som er en GET-parameter
         # implementeret af AL. Ideen er at teste på om det er et employee login
         # eller om det er et customer login.
-        # Betinget tildeling. Enten en employee - eller en customer instantieret
+        # betinget tildeling. Enten en employee - eller en customer instantieret
         # Skal muligvis laves om. Hvad hvis nu user ikke blir instantieret
         #
-        # select_Customers() burde være ental.
-        user = select_Employee(form.id.data) if is_employee else select_Customer(form.id.data)
+        user = select_Customer_d(form.p.data)
+
+        print("L2 user", user)
 
         # Derefter tjek om hashet af adgangskoden passer med det fra databasen...
         # Her checkes om der er logget på
         
-        #AL20240211
-        #print(form)
-        #AL20240211 direct er et valg af en bruger, som skal være aktiv
-        # måske er der to tilstande for en bruger
-        # må være på listen
-        # må direct logge på
-        # så kan man disable og enable en på listen
-        # Her skal check være på brugernavn stemmer. Lav funktion.
+        if user != None:
 
-        #AL20240211
-        # forsimple til kun at validere direct-customers. Det er kun et eksempel.
-        if user != None and bcrypt.check_password_hash(user[2], form.password.data):
-
-            #set-bank-project-variables
-            print("role:" + user.role)
-            if user.role == 'employee':
-                mysession["role"] = roles[1] #employee
-            elif user.role == 'customer':
-                mysession["role"] = roles[2] #customer
-            else:
-                mysession["role"] = roles[0] #ingen
-
-            mysession["id"] = form.id.data
-            print(mysession)
-            print(roles)
+            print("L3 role:" + user.role)
+            mysession["role"] = roles[2] #customer
+            mysession["id"] = form.p.data
+            print("L3", mysession)
+            print("L3", roles)
 
             login_user(user, remember=form.remember.data)
             flash('Login successful.','success')
@@ -107,30 +80,23 @@ def direct():
             return redirect(next_page) if next_page else redirect(url_for('Login.home'))
         else:
             flash('Login Unsuccessful. Please check identifier and password', 'danger')
-    #
-    # Ny login som skal undgå password prompt. Det betyder at  form.password.data ikke er sat,
-    # og bcrypt ikke skal checke.
-    #  
-    print('C1-1-22 : ')
-    
-    #202212, 20240211
+
     #Get lists of employees and customers
     teachers = [{"id": str(6234), "name":"anders. teachers with 6."}, {"id": str(6214), "name":"simon"},
                 {"id": str(6862), "name":"dmitry"}, {"id": str(6476), "name":"finn"}]
     parents =  [{"id": str(4234), "name":"parent-anders. parents with 4.", "address":"address 1"}
-              , {"id": str(4214), "name":"parent-simon", "address":"address 2"}
+              , {"id": str(5002), "name":"parent-simon", "address":"address 2"}
               , {"id": str(4862), "name":"parent-dmitry", "address":"address 3"}
-              , {"id": str(4476), "name":"parent-finn", "address":"address 4"}]
-    students = [{"id": str(5234), "name":"student-anders. students with 5."}, {"id": str(5214), "name":"student-simon"},
-                {"id": str(5862), "name":"student-dmitry"}, {"id": str(5476), "name":"student-finn"}]
+              , {"id": str(5010), "name":"parent-finn", "address":"address 4"}]
+    students = [{"id": str(5002), "name":"student-anders. students with 5."}, {"id": str(5214), "name":"student-simon"},
+                {"id": str(5010), "name":"student-dmitry"}, {"id": str(5476), "name":"student-finn"}]
 
-    #202212
-    role =  mysession["role"]
-    print('C1-1-3-24 role: '+ role)
-
-    return render_template('direct.html', title='Login (direct)', is_employee=is_employee, form=form
-    , teachers=teachers, customers=parents, students=students, role=role
+    return render_template('direct.html', title='Direct Login', is_employee=is_employee, form=form
+    , students=students, role=role
     )
+
+
+
 
 
 

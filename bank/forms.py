@@ -10,6 +10,11 @@ class AddCustomerForm(FlaskForm):
     submit = SubmitField('Add')
 
 
+class DirectCustomerLoginForm(FlaskForm):
+    p = IntegerField('CPR_number', validators=[DataRequired()])
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Login')
+
 class CustomerLoginForm(FlaskForm):
     id = IntegerField('CPR_number', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])

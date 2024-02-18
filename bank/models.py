@@ -101,6 +101,7 @@ def select_Customer(CPR_number):
 
 #cus-1-3-2024
 def select_Customer_d(CPR_number):
+    #SELECT cpr_number, name, address FROM Customers
     cur = conn.cursor()
     sql = """
     SELECT * FROM Customers
@@ -123,19 +124,6 @@ def select_Employee(id):
     cur.close()
     return user
 
-#cus-1-3-2024
-def select_Employee_d(id):
-    cur = conn.cursor()
-    sql = """
-    SELECT * FROM Employees
-    WHERE id = %s
-    """
-    # AND DIRECT IS TRUE
-
-    cur.execute(sql, (id,))
-    user = Employees(cur.fetchone()) if cur.rowcount > 0 else None;
-    cur.close()
-    return user
 
 def update_CheckingAccount(amount, CPR_number):
     cur = conn.cursor()
