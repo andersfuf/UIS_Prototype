@@ -100,11 +100,12 @@ def select_Customer(CPR_number):
     return user
 
 #cus-1-3-2024
-def select_Customer_d(CPR_number):
+def select_customer_direct(CPR_number):
     #SELECT cpr_number, name, address FROM Customers
     cur = conn.cursor()
     sql = """
-    SELECT * FROM Customers
+    SELECT *
+     FROM Customers
     WHERE CPR_number = %s
     AND DIRECT IS TRUE
     """
@@ -160,7 +161,7 @@ def select_customers_direct():
 	WHERE direct IS TRUE
     ;
     """
-    cur.execute(sql, (cpr_number,))
+    cur.execute(sql)
     tuple_resultset = cur.fetchall()
     cur.close()
     return tuple_resultset

@@ -1,8 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
     <div class="content-section">
-      <legend class="border-bottom mb-4">SPIKE-CUS1-2: Log In </legend>
-      <p>Select a user from a role to log on. The users are seperated into employees and customers:</p>
+      <legend class="border-bottom mb-4">Direct customer login </legend>
       <form action="/direct" method="POST">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -10,24 +9,38 @@
         <table class="table table-striped">
          <thead>
           <tr>
-          <h5>Students</h5>
+          <h5>Made for test purposes</h5>
+		  If a user login is needed for security reasons, a system adminitrator can remove users from the list by setting <b>customer.direct</b> to FALSE. Inspect the <b>customer</b> table.
+		   <br/> <br/> 
+		  
+		  UPDATE Customer SET DIRECT = TRUE WHERE id_field = some_id;
+		  <br/>		  
+		  <br/>
+		  
 	      </tr>
-           <tr>
+         <tr>
             <th scope="col"></th>
-            <th scope="col">Student (role: customer)</th>
-          </tr>
+            <th scope="col">TA customer or Name</th>
+            <th scope="col">ID</th>
+            <th scope="col">TA place or Address</th>
+		  </tr> 
           </thead>
         <tbody>
-        {% for s in students %}
+
+ 
+        {% for rd in radio_direct %}
           <tr>
 			<td>
-              <input type="radio" id="{{ s.id }}" name="p" value="{{ s.id }}">
+              <input type="radio" id="{{ rd[1] }}" name="p" value="{{ rd[1] }}">
             </td>
 			<td>
-              <label for="{{ s.id }}">{{ s.name }}</label>
+              <label for="{{ rd[1] }}"> {{ rd[0] }}</label>
             </td>
 			<td>
-				{{ s.name }}
+				{{ rd[1] }}
+			</td>
+			<td>
+				{{ rd[2] }}
 			</td>
           </tr>
          {% endfor %}
@@ -51,6 +64,25 @@
                     <a href="/login?is_employee=true">Employee login?</a>
             </small>
       </form>
+        <table class="table table-striped">
+         <thead>
+          <tr>
+AL20240225. The XP principle of self similarity [Beck 2005, p27] (copy / paste) can be used to adopt this login scheme to student projects. This comment is an example of anchoring an idea (principle of PD [Bødker et. al. 2004; Bødker et. al. 2008]), since refurbishing a project to another database schema without login remains one of the challenges of adopting the unfinished bank project. <br/><br/>
+	      </tr>
+          </thead>
+        <tbody>
+          <tr><small>
+[Beck 2005] Kent Beck with Cynthia Andres. Extreme programming explained. Embrace change. 2nd edition. Addison-Wesley. 2005. ISBN: 0-321-27865-8.
+          <br/></small></tr>
+
+          <tr><small>
+[Bødker et. al. 2004] Keld Bødker, Finn Kensing and Jesper Simonsen. Participatory IT Design. Designing for Business and workplace realities. The MIT press, 2004. ISBN 978-0-262-51244-2.  Kommentar: MUST-method to develop an IT project proposal (IT Design Project). Participatory Design 
+          <br/></small></tr>
+          <tr><small>
+			[Bødker et. al. 2008] Keld Bødker, Finn Kensing and Jesper Simonsen. Professionel IT Forurundersøgelse. Grundlag for brugerdrevet innovation. Samfundslitteratur, 2008. ISBN 978-87-593-1376-1.  Kommentar MUST-method to develop an IT project proposal (IT Design Project). Participatory Design text book in Danish
+          <br/></small></tr>
+        </tbody>
+        </table>
     </div>
 
 

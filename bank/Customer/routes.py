@@ -104,9 +104,6 @@ def deposit():
         return redirect(url_for('Login.login'))
 
 
-    #202212
-    #EUS-CUS10
-    # move to employee object
     if not mysession["role"] == roles[iEmployee]:
         flash('Deposit is employee only.','danger')
         return redirect(url_for('Login.login'))

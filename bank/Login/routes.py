@@ -3,8 +3,8 @@ from bank import app, conn, bcrypt
 from bank.forms import CustomerLoginForm, EmployeeLoginForm, DirectCustomerLoginForm
 from flask_login import login_user, current_user, logout_user, login_required
 from bank.models import select_Employee
-from bank.models import Customers, select_Customer, select_Customer_d
-from bank.models import select_cus_accounts
+from bank.models import Customers, select_Customer, select_customer_direct
+from bank.models import select_cus_accounts, select_customers_direct
 from bank import roles, mysession
 
 Login = Blueprint('Login', __name__)
@@ -50,17 +50,8 @@ def direct():
 
     # Først bekræft, at inputtet fra formen er gyldigt... 
     if form.validate_on_submit():
-        print("L2 p", form.p.data)
         
-        #
-        # her checkes noget som skulle være sessionsvariable, men som er en GET-parameter
-        # implementeret af AL. Ideen er at teste på om det er et employee login
-        # eller om det er et customer login.
-        # betinget tildeling. Enten en employee - eller en customer instantieret
-        # Skal muligvis laves om. Hvad hvis nu user ikke blir instantieret
-        #
-        user = select_Customer_d(form.p.data)
-
+        user = select_customer_direct(form.p.data)
         print("L2 user", user)
 
         # Derefter tjek om hashet af adgangskoden passer med det fra databasen...
@@ -80,6 +71,9 @@ def direct():
             return redirect(next_page) if next_page else redirect(url_for('Login.home'))
         else:
             flash('Login Unsuccessful. Please check identifier and password', 'danger')
+ 
+    direct_users = select_customers_direct()
+    print("L2 direct", direct_users)
 
     #Get lists of employees and customers
     teachers = [{"id": str(6234), "name":"anders. teachers with 6."}, {"id": str(6214), "name":"simon"},
@@ -92,7 +86,7 @@ def direct():
                 {"id": str(5010), "name":"student-dmitry"}, {"id": str(5476), "name":"student-finn"}]
 
     return render_template('direct.html', title='Direct Login', is_employee=is_employee, form=form
-    , students=students, role=role
+    , students=students, radio_direct=direct_users, role=role
     )
 
 
