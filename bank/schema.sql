@@ -99,3 +99,4 @@ COMMENT ON COLUMN Certificates_of_deposit.rate IS 'at fixed rate certificated´s
 \i sql_ddl/vw_invest_accounts.sql
 \i sql_ddl/vw_invest_certificates.sql
 \i sql_ddl/vw_tdw.sql
+\i sql_ddl/ddl-customers-001-add.sql
