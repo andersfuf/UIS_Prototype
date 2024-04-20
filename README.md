@@ -79,7 +79,7 @@ Create virtual environment in folder
 
 > cd myproject
 
-> python -3 -m venv .venv
+> py -3 -m venv .venv
 
 Activate virtual environment in folder
 
