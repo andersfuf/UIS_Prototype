@@ -10,7 +10,9 @@ Run the code below to install the necessary modules.
 
 ## Database init
 1. set the database in __init__.py file.
-2. run schema.sql, schema_ins.sql in your database (not needed: schema_upd.sql, schema_upd_2.sql).
+2. run schema.sql, schema_ins.sql in your database
+3. run sql_ddl/ddl-customers-001-add.sql in your database.
+
    Example: psql -d{database} -U{user} -W -f schema.sql
 
 ## Running flask
@@ -35,6 +37,7 @@ For Windows you may have to use the SET command instead of EXPORT. Ex set FLASK_
 ### The flask way with a virual environment.
 
 Set up virtual environment as specified in https://flask.palletsprojects.com/en/1.1.x/installation/ (OSX/WINDOWS)
+vitualenv may be bundled with python.
 
 OSX:
 
@@ -65,6 +68,33 @@ $ export FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
 $ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
 
 $ flask run
+
+WINDOWS:
+
+Create virtual environment in folder
+
+> mkdir myproject
+
+> cd myproject
+
+> python -3 -m venv .venv
+
+Activate virtual environment in folder
+
+> .venv\Script\activate
+
+> pip install Flask
+
+Set environment variables and start flask
+
+> set FLASK_APP=run.py
+
+> set FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
+
+> set FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
+
+> flask run
+
 
 # Development
 ### Rules:  
