@@ -69,7 +69,9 @@ $ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. De
 
 $ flask run
 
-WINDOWS:
+WINDOWS: Note: in addition whatever troble you may be in, running psql needs a codepage set by invoking cmd like this: 
+> cmd /c chcp 1252 
+This makes a subshell with the codepage set to 1252. 
 
 Create virtual environment in folder
 
@@ -107,7 +109,7 @@ Finalize ‘one at the time’.
 
 Commit to repository.
 
-### November 2023 DEVELOPMENT SPRINT (-FEB2024)
+### November 2023 DEVELOPMENT SPRINT (-APR2024)
 CM-3 Staring with a backlog spice. It is not understandable.
 
 ### User stories:
