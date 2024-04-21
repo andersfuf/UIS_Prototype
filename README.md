@@ -10,10 +10,14 @@ Run the code below to install the necessary modules.
 
 ## Database init
 1. set the database in __init__.py file.
-2. run schema.sql, schema_ins.sql in your database
+2. run schema.sql, schema_ins.sql, schema_upd.sql in your database
 3. run sql_ddl/ddl-customers-001-add.sql in your database.
 
    Example: psql -d{database} -U{user} -W -f schema.sql
+   
+Ubuntu: Like OSX. Add host (-h127.0.0.1) to psql. 
+   
+   Example: psql -d{database} -U{user} -h127.0.0.1 -W -f schema.sql
 
 ## Running flask
 ### The python way
@@ -39,7 +43,7 @@ For Windows you may have to use the SET command instead of EXPORT. Ex set FLASK_
 Set up virtual environment as specified in https://flask.palletsprojects.com/en/1.1.x/installation/ (OSX/WINDOWS)
 vitualenv may be bundled with python.
 
-OSX:
+OSX: 
 
 Create virtual environment in folder
 
@@ -69,8 +73,12 @@ $ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. De
 
 $ flask run
 
+Ubuntu: Note: like OSX. Add host (-h127.0.0.1) in call to psql. 
+
 WINDOWS: Note: in addition whatever troble you may be in, running psql needs a codepage set by invoking cmd like this: 
-> cmd /c chcp 1252 
+> cmd /c chcp 65001   
+This makes a subshell with the codepage set to UTF8. 
+> cmd /c chcp 1252  
 This makes a subshell with the codepage set to 1252. 
 
 Create virtual environment in folder
