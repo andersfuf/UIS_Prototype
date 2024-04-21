@@ -35,7 +35,9 @@ For WINDOWS. See above starting a subshell with the codepage set to UTF8 before 
 ### The flask way.
 
 >$ export FLASK_APP=run.py
+
 >$ export FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
+
 >$ export FLASK_RUN_PORT=5004     (Optional if you want to change port numbe4. Default port is port 5000.)
 
 >$ flask run
@@ -53,7 +55,9 @@ vitualenv may be bundled with python.
 Create virtual environment in folder
 
 >$ mkdir myproject
+
 >$ cd myproject
+
 >$ python3 -m venv .venv
 
 Activate virtual environment in folder
@@ -67,7 +71,9 @@ Install flask
 Set environment variables and start flask
 
 >$ export FLASK_APP=run.py
+
 >$ export FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
+
 >$ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
 
 >$ flask run
@@ -78,18 +84,23 @@ Set environment variables and start flask
 Create virtual environment in folder
 
 > mkdir myproject
+
 > cd myproject
+
 > py -3 -m venv .venv
 
 Activate virtual environment in folder
 
 > .venv\Script\activate
+
 > pip install Flask
 
 Set environment variables and start flask
 
 > set FLASK_APP=run.py
+
 > set FLASK_DEBUG=1           (Replaces export FLASK_ENV=development)
+
 > set FLASK_RUN_PORT=5000     (Optional if you want to change port number. Default port is port 5000.)
 
 > flask run
