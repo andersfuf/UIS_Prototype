@@ -16,12 +16,10 @@ Run the code below to install the necessary modules.
 Example: 
 >psql -d{database} -U{user} -W -f schema.sql
    
-For Ubuntu do like OSX. 
-Add host (-h127.0.0.1) to psql. Example: 
+For Ubuntu add host (-h127.0.0.1) to psql: 
 >psql -d{database} -U{user} -h127.0.0.1 -W -f schema.sql
 
-
-For WINDOWS: In addition whatever trouble you may be in, running psql needs a codepage set by invoking cmd like this: 
+For WINDOWS: In addition whatever trouble you may be in, running psql needs a codepage set by invoking a cmd shell like this: 
 > cmd /c chcp 65001   
 
 This makes a subshell with the codepage set to UTF8. 'cmd /c chcp 1252' makes a subshell with the codepage set to 1252. 
