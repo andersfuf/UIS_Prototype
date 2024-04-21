@@ -9,6 +9,7 @@ Run the code below to install the necessary modules.
 >$ pip install -r requirements.txt
 
 
+#### 
 For WINDOWS: Loading data into postgres using psql needs a codepage set. Invoking a cmd shell like this set the codepage: 
 > cmd /c chcp 65001   
 
