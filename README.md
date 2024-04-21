@@ -50,7 +50,7 @@ For Windows you may have to use the SET command instead of EXPORT. Ex set FLASK_
 Set up virtual environment as specified in https://flask.palletsprojects.com/en/1.1.x/installation/ (OSX/WINDOWS)
 vitualenv may be bundled with python.
 
-OSX: 
+#### OSX: 
 
 Create virtual environment in folder
 
@@ -81,7 +81,7 @@ $ export FLASK_RUN_PORT=5000     (Optional if you want to change port number. De
 $ flask run
  
 
-
+#### WINDOWS
 
 Create virtual environment in folder
 
