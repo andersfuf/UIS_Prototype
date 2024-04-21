@@ -8,6 +8,12 @@ Run the code below to install the necessary modules.
 
 >$ pip install -r requirements.txt
 
+
+For WINDOWS: Loading data into postgres using psql needs a codepage set. Invoking a cmd shell like this set the codepage: 
+> cmd /c chcp 65001   
+
+This makes a subshell with the codepage set to UTF8. 'cmd /c chcp 1252' makes a subshell with the codepage set to 1252. The requirements may have to be run again in the subshell. And you might also have to run the reguirements again when invoking a virtual environment (see below). 
+
 ## Database init
 1. set the database in __init__.py file.
 2. run schema.sql, schema_ins.sql, schema_upd.sql in your database
@@ -19,10 +25,7 @@ Example:
 For Ubuntu add host (-h127.0.0.1) to psql: 
 >psql -d{database} -U{user} -h127.0.0.1 -W -f schema.sql
 
-For WINDOWS: In addition whatever trouble you may be in, running psql needs a codepage set by invoking a cmd shell like this: 
-> cmd /c chcp 65001   
-
-This makes a subshell with the codepage set to UTF8. 'cmd /c chcp 1252' makes a subshell with the codepage set to 1252. 
+For WINDOWS. See above starting a subshell with the codepage set to UTF8 before running psql if you load funny characters.
 
 ## Running flask
 ### The python way
