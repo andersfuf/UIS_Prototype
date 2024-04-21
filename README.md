@@ -9,7 +9,7 @@ Run the code below to install the necessary modules.
 >$ pip install -r requirements.txt
 
 
-#### 
+#### notes
 For WINDOWS: Loading data into postgres using psql needs a codepage set. Invoking a cmd shell like this set the codepage: 
 > cmd /c chcp 65001   
 
@@ -23,6 +23,7 @@ This makes a subshell with the codepage set to UTF8. 'cmd /c chcp 1252' makes a 
 Example: 
 >psql -d{database} -U{user} -W -f schema.sql
    
+#### notes
 For Ubuntu add host (-h127.0.0.1) to psql: 
 >psql -d{database} -U{user} -h127.0.0.1 -W -f schema.sql
 
@@ -43,6 +44,7 @@ For WINDOWS. See above starting a subshell with the codepage set to UTF8 before 
 
 >$ flask run
 
+#### notes
 For Windows you may have to use the SET command instead of EXPORT. Ex set FLASK_APP=run.py; set FLASK_DEBUG=1; flask run. This worked for me. Also remeber to add the path to your postgres bin-directory in order to run (SQL interpreter) and other postgres programs in any shell.
 
 
@@ -110,15 +112,12 @@ Set environment variables and start flask
 # Development
 ### Rules:  
 
-To pick: Add your name. Pick one at the time, (pick only several when you break the rule)
+1. To pick: Add your name. Pick one at the time, (pick only several when you break the rule). 
+2. Update progress. 
+3. Finalize ‘one at the time’.
+4. Commit to repository.
 
-Update progress.
-
-Finalize ‘one at the time’.
-
-Commit to repository.
-
-### November 2023 DEVELOPMENT SPRINT (-APR2024)
+## November 2023 DEVELOPMENT SPRINT (-APR2024)
 CM-3 Staring with a backlog spice. It is not understandable.
 
 ### User stories:
