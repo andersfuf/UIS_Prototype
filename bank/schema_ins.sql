@@ -294,7 +294,7 @@ UPDATE public.employees SET name    = 'DS-E-Karl' WHERE id IN (6010);
 
 INSERT INTO public.Employees(id, name, password)
 VALUES (6011, 'DIS-E-Lennard'  ,  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
-,      (6012, 'DS-E-Theo',  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
+,      (6012, 'DS-E-Theo'      ,  '$2b$12$KFkp1IEMGT4QrWwjPGhE3ejOv6Z3pYhx/S4qOoFbanR2sMiZqgeJO')
 ;
 
 
