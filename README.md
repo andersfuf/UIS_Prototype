@@ -59,10 +59,11 @@ vitualenv may be bundled with python.
 
 #### OSX: 
 
-Create virtual environment in folder
-
     mkdir myproject
     cd myproject
+
+Create virtual environment in folder
+
     python3 -m venv .venv
 
 Activate virtual environment in folder
