@@ -34,8 +34,6 @@ For Ubuntu add host (-h127.0.0.1) to psql:
 
     psql -d{database} -U{user} -h127.0.0.1 -W -f schema.sql
 
-For WINDOWS. See above starting a subshell with the codepage set to UTF8 before running psql if you load funny characters.
-
 ## Running flask
 ### The python way
 
