@@ -2,7 +2,7 @@
 
 ## User story repository (Consolidated list)
 
-Consolidated list of user stories.
+Consolidated list of user stories. Overview of all main user stories.
 
 See cm-log/cm-back-log-consolidated.md for full account
 see cm-log/cm-sprint-log.md for full account of sprint logs. You may call this the sprint-log-history.
