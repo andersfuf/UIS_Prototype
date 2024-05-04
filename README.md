@@ -108,8 +108,9 @@ Set environment variables and start flask
 3. Finalize ‘one at the time’.
 4. Commit to repository.
 
-## November 2023 DEVELOPMENT SPRINT (-APR2024)
+## November 2023 DEVELOPMENT SPRINT (-MAJ2024)
 CM-3 Staring with a backlog spice. It is not understandable.
+CM-3 Working on CUS8.
 
 ### User stories:
 
@@ -117,16 +118,23 @@ CM-3 Staring with a backlog spice. It is not understandable.
 
 ##### Logging on
 
-CUS-1-2-2022(anders, 100%): List users and authenticate using the list. Status: List part drafted in template. CUS-1-2-2022 split in a database part CUS-1-2-2022 and a python part CUS-1-3-2024 SPIKE.
+CUS1-2-2022(anders, 100%): List users and authenticate using the list. Status: List part drafted in template. CUS-1-2-2022 split in a database part CUS-1-2-2022 and a python part CUS-1-3-2024 SPIKE.
 
-CUS-1-3-2024(anders, 100%) python part of CUS-1-2-2022. Flask form direct (CUS-1-4-2024), Login class endpoint /direct, endpoint python code. SPIKE.
+CUS1-3-2024(anders, 100%) python part of CUS-1-2-2022. Flask form direct (CUS-1-4-2024), Login class endpoint /direct, endpoint python code. SPIKE.
 
-CUS-1-4-2024(anders, 100%) flask part of CUS-1-2-2022. ListLogin flask form (LL) direct.
+CUS1-4-2024(anders, 100%) flask part of CUS-1-2-2022. ListLogin flask form (LL) direct.
+
+#### Checking account
+
+CUS8-1-2023 (anders, 50%) checking account model-part (DML).
+
+#### transfer
+CUS7-6 (name, ): Remove duplicates from dropdown by removing employee part. Simplify SQL.
 
 #### Employee role:
 
 #### Tasks
-CM-2 (anders, ) Adding data to the database
+CM-2 (anders) Adding data to the database
 CM-3 (anders) Spike Back-log consolidation. Making sense of the back-log. cm-log.md now logs sprints. 
 
 

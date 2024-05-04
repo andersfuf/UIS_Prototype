@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField, SelectField
 from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
+
 class AddCustomerForm(FlaskForm):
     username = StringField('Username',
                            validators=[DataRequired(), Length(min=2, max=20)])
@@ -8,7 +9,6 @@ class AddCustomerForm(FlaskForm):
                         validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Add')
-
 
 class DirectCustomerLoginForm(FlaskForm):
     p = IntegerField('CPR_number', validators=[DataRequired()])
@@ -42,3 +42,8 @@ class DepositForm(FlaskForm):
     
 class InvestForm(FlaskForm):
     submit = SubmitField('Confirm')
+
+class ListAccount(FlaskForm):
+    account = SelectField('Account:', choices=[], coerce=int, validators=[DataRequired()])
+
+
