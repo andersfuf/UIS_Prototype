@@ -36,10 +36,10 @@ def checklist(paccount):
     # Make stub document style
 
     stubRecords = [
-        { 'no': '1010', 'dato': '2024-05-10', 'desc': 'first', 'debit': '3', 'kredit': '3'},
-        { 'no': '1009', 'dato': '2024-05-9', 'desc': 'second', 'debit': '3', 'kredit': '3'},
-        { 'no': '1008', 'dato': '2024-05-8', 'desc': 'third', 'debit': '3', 'kredit': '3'},
-        { 'no': '1007', 'dato': '2024-05-7', 'desc': 'last', 'debit': '3', 'kredit': '3'}
+        { 'no': '1009', 'dato': '2024-05-19', 'desc': 'second-deposit', 'debit': '230', 'credit': '0'},
+        { 'no': '1010', 'dato': '2024-05-10', 'desc': 'first-withdraw', 'debit': '0', 'credit': '200'},
+        { 'no': '1008', 'dato': '2024-05-8', 'desc': 'third-withdraw', 'debit': '0', 'credit': '43'},
+        { 'no': '1007', 'dato': '2024-05-7', 'desc': 'last-deposit', 'debit': '4360', 'credit': '0'}
     ]
     print('AL2024-001', stubRecords)
 
@@ -50,8 +50,8 @@ def checklist(paccount):
 
         return redirect(url_for('Login.home'))
 
-    return render_template('check_list.html', title='List Account',
-                           drop_cus_acc=dropdown_accounts, form=form)
+    return render_template('check_list.html', title='List Checking Account'
+    , records=stubRecords, paccount=paccount, drop_cus_acc=dropdown_accounts, form=form)
 
 
 @Customer.route("/transfer", methods=['GET', 'POST'])

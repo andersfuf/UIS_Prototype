@@ -6,23 +6,25 @@
      </div>
 
     <div class="content-section">
-      <p>Accounts:</p>
+      <p>Checking account {{paccount}}</p>
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">account_number</th>
-            <th scope="col">cpr_number</th>
-            <th scope="col">name</th>
-            <th scope="col">managed by</th>
+            <th scope="col">no</th>
+            <th scope="col">dato</th>
+            <th scope="col">description</th>
+            <th scope="col">debit</th>
+            <th scope="col">credit</th>
           </tr>
         </thead>
         <tbody>
-        {% for n in acc %}
+        {% for record in records %}
           <tr>
-            <th scope="row">{{n[3]}}</th>
-            <td>{{n[2]}}</td>
-            <td>{{n[1]}}</td>
-            <td>{{n[0]}}</td>
+            <th scope="row">{{record['no']}}</th>
+            <td>{{record['dato']}}</td>
+            <td>{{record['desc']}}</td>
+            <td>{{record['debit']}}</td>
+            <td>{{record['credit']}}</td>
           </tr>
         {% endfor %}
         </tbody>
