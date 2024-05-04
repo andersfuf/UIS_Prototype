@@ -1,7 +1,7 @@
 # spike checking account CUS8
 
 An account listing is called from a list of account. An account listing list the account information above. Then, the account entries are listed with two columns Debit and Credit to denote deposits and with drawals.
-
+Listing is for checking accounts. 
 
 ## Form / template list account
 

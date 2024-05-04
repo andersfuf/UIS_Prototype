@@ -16,8 +16,8 @@ iCustomer = 2
 
 Customer = Blueprint('Customer', __name__)
 
-@Customer.route("/account/list/<paccount>", methods=['GET', 'POST'])
-def accountlist(paccount):
+@Customer.route("/check/list/<paccount>", methods=['GET', 'POST'])
+def checklist(paccount):
     if not current_user.is_authenticated:
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
@@ -28,11 +28,11 @@ def accountlist(paccount):
 
 
     CPR_number = current_user.get_id()
-    print('AL2024-001', CPR_number)
+    print('AL2024-001', CPR_number, paccount)
     dropdown_accounts=[]
     form = ListAccount()
 
-    # call model function to get accountlisting
+    # call model function to get check-account-listing
     # Make stub document style
 
     stubRecords = [
@@ -50,8 +50,7 @@ def accountlist(paccount):
 
         return redirect(url_for('Login.home'))
 
-
-    return render_template('account_list.html', title='List Account',
+    return render_template('check_list.html', title='List Account',
                            drop_cus_acc=dropdown_accounts, form=form)
 
 
@@ -108,7 +107,6 @@ def invest():
     mysession["state"]="invest"
     print(mysession)
 
-    #202212
     # i think this view works for employee and customer but the
     # view is different as employees have customers.
     # CUS4; CUS4-1, CUS4-4
@@ -123,6 +121,10 @@ def invest():
 
 
 """
+ # 202405
+ # Technical dept - remove
+# Maybe deposit was ment to be employee deposit to an account...
+
 @Customer.route("/deposit", methods=['GET', 'POST'])
 def deposit():
     if not current_user.is_authenticated:
