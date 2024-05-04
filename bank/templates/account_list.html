@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>{{ current_user.name }}</h1>
+
+    <div class="content-section">
+     </div>
+
+    <div class="content-section">
+      <p>Accounts:</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">account_number</th>
+            <th scope="col">cpr_number</th>
+            <th scope="col">name</th>
+            <th scope="col">managed by</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for n in acc %}
+          <tr>
+            <th scope="row">{{n[3]}}</th>
+            <td>{{n[2]}}</td>
+            <td>{{n[1]}}</td>
+            <td>{{n[0]}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+
+{% endblock content %}

@@ -8,6 +8,7 @@ An account listing is called from a list of account. An account listing list the
 Take the account number and formatted account listing along with the balance and list the account.
 Template name: accountlist.html
 Form class in forms.py: 
+Need endpoint (/AccountList) in module customers / routes.py.
 
 ## SQL on the account balance part
 

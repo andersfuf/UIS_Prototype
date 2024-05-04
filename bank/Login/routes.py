@@ -15,10 +15,8 @@ posts = [{}]
 @Login.route("/")
 @Login.route("/home")
 def home():
-    #202212
     mysession["state"]="home or /"
     print(mysession)
-    #202212
     role =  mysession["role"]
     print('role: '+ role)
 

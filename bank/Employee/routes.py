@@ -5,14 +5,12 @@ from bank.forms import TransferForm
 from flask_login import current_user
 from bank.models import Transfers, CheckingAccount, InvestmentAccount,  transfer_account, insert_Customers
 import sys, datetime
-
-#202212
 from bank import roles, mysession
 from bank.models_e import select_emp_investments_with_certificates, select_emp_investments, select_emp_investments_certificates_sum
 
 
 iEmployee = 1
-iCustomer = 2 # bruges til transfer/
+iCustomer = 2   # bruges til transfer/
 
 Employee = Blueprint('Employee', __name__)
 
@@ -24,10 +22,6 @@ def deposit():
         return redirect(url_for('Login.login'))
 
 
-    #202212
-    #EUS-CUS10
-    # move to employee object
-    #20230522 copied, not moved yet.
     if not mysession["role"] == roles[iEmployee]:
         flash('Deposit is employee only.','danger')
         return redirect(url_for('Login.login'))
@@ -62,7 +56,6 @@ def investe():
     mysession["state"]="invest"
     print(mysession)
 
-    #202212
     # i think this view works for employee and customer but the
     # view is different as employees have customers.
     # CUS4; CUS4-1, CUS4-4
@@ -127,7 +120,6 @@ def addcustomer():
     if not current_user.is_authenticated:
         return redirect(url_for('Login.home'))
 
-    #202212
     # employee only
     if not mysession["role"] == roles[iEmployee]:
         flash('Adding customers is employee only.','danger')

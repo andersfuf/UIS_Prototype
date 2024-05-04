@@ -1,17 +1,13 @@
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from bank import app, conn, bcrypt
 from bank.forms import DepositForm, InvestForm
-from bank.forms import TransferForm
+from bank.forms import TransferForm, ListAccount
 from flask_login import current_user
 from bank.models import CheckingAccount, InvestmentAccount, update_CheckingAccount
 from bank.models import select_cus_investments_with_certificates, select_cus_investments, select_cus_investments_certificates_sum
 from bank.models import select_cus_accounts,  transfer_account
 
-
 import sys, datetime
-
-#202212
-# roles is defined in the init-file
 from bank import roles, mysession
 
 iEmployee = 1
@@ -20,20 +16,50 @@ iCustomer = 2
 
 Customer = Blueprint('Customer', __name__)
 
+@Customer.route("/account/list/<paccount>", methods=['GET', 'POST'])
+def accountlist(paccount):
+    if not current_user.is_authenticated:
+        flash('Please Login.','danger')
+        return redirect(url_for('Login.login'))
+
+#    if not mysession["role"] == roles[iCustomer]:
+#        flash('account listing is customer mode.','danger')
+#        return redirect(url_for('Login.login'))
+
+
+    CPR_number = current_user.get_id()
+    print('AL2024-001', CPR_number)
+    dropdown_accounts=[]
+    form = ListAccount()
+
+    # call model function to get accountlisting
+    # Make stub document style
+
+    stubRecords = [
+        { 'no': '1010', 'dato': '2024-05-10', 'desc': 'first', 'debit': '3', 'kredit': '3'},
+        { 'no': '1009', 'dato': '2024-05-9', 'desc': 'second', 'debit': '3', 'kredit': '3'},
+        { 'no': '1008', 'dato': '2024-05-8', 'desc': 'third', 'debit': '3', 'kredit': '3'},
+        { 'no': '1007', 'dato': '2024-05-7', 'desc': 'last', 'debit': '3', 'kredit': '3'}
+    ]
+    print('AL2024-001', stubRecords)
+
+    # call model function to get summary information
+
+    if form.validate_on_submit():
+        print('AL2024-001', form.data)
+
+        return redirect(url_for('Login.home'))
+
+
+    return render_template('account_list.html', title='List Account',
+                           drop_cus_acc=dropdown_accounts, form=form)
+
 
 @Customer.route("/transfer", methods=['GET', 'POST'])
 def transfer():
     if not current_user.is_authenticated:
         flash('Please Login.','danger')
         return redirect(url_for('Login.login'))
-
-    # CUS7 is the customer transfer. Create new endpoint.
-    # EUS10 is the employee transfer.
-    # manageCustor/ er EUS!=
-    # transfer/  må være CUS7
-    # move to customer DONE
-    # duplicate back and change database access here
-
 
     if not mysession["role"] == roles[iCustomer]:
         flash('transfer money customer mode.','danger')
@@ -65,7 +91,6 @@ def transfer():
 @Customer.route("/invest", methods=['GET', 'POST'])
 def invest():
 
-    #202212
     # Her laves et login check
     if not current_user.is_authenticated:
         flash('Please Login.','danger')
@@ -97,6 +122,7 @@ def invest():
     , inv_sums=investment_sums)
 
 
+"""
 @Customer.route("/deposit", methods=['GET', 'POST'])
 def deposit():
     if not current_user.is_authenticated:
@@ -131,3 +157,6 @@ def summary():
         flash('Succeed!', 'success')
         return redirect(url_for('Login.home'))
     return render_template('deposit.html', title='Deposit', form=form)
+    
+    
+    """
