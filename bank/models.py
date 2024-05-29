@@ -33,6 +33,7 @@ def load_user(user_id):
         return None
 
 
+# Class definitions used to cast resultsets... to object lists.
 
 class Customers(tuple, UserMixin):
     def __init__(self, user_data):
@@ -76,6 +77,15 @@ class Transfers(tuple):
         self.id = user_data[0]
         self.amount = user_data[1]
         self.transfer_date = user_data[2]
+
+#AL20240506
+class CheckingAccountSum(tuple):
+    def __init__(self, user_data):
+        self.account = user_data[0]
+        self.sumd = user_data[1]
+        self.sumw = user_data[2]
+        self.balance = user_data[3]
+
 
 def insert_Customers(name, CPR_number, password):
     cur = conn.cursor()
@@ -126,18 +136,6 @@ def select_Employee(id):
     return user
 
 
-def update_CheckingAccount(amount, CPR_number):
-    cur = conn.cursor()
-    sql = """
-    UPDATE CheckingAccount
-    SET amount = %s
-    WHERE CPR_number = %s
-    """
-    cur.execute(sql, (amount, CPR_number))
-    # Husk commit() for INSERT og UPDATE, men ikke til SELECT!
-    conn.commit()
-    cur.close()
-
 def transfer_account(date, amount, from_account, to_account):
     cur = conn.cursor()
     sql = """
@@ -186,6 +184,19 @@ def select_cus_accounts(cpr_number):
     cur.close()
     return tuple_resultset
 
+def select_check_balance(account):
+    # AL20240506
+    cur = conn.cursor()
+    sql = """
+    SELECT account, sumd, sumw, balance
+    FROM vw_check_balance
+    WHERE account = %s
+    """
+    cur.execute(sql,(account,))
+    check_balance = cur.fetchone()
+    cur.close()
+    return check_balance
+
 
 def select_cus_investments(cpr_number):
     cur = conn.cursor()
@@ -218,7 +229,6 @@ def select_cus_investments_with_certificates(cpr_number):
     return tuple_resultset
 
 def select_cus_investments_certificates_sum(cpr_number):
-    # TODO-CUS employee id is parameter - DONE
     cur = conn.cursor()
     sql = """
     SELECT account_number, cpr_number, created_date, sum
@@ -231,3 +241,21 @@ def select_cus_investments_certificates_sum(cpr_number):
     tuple_resultset = cur.fetchall()
     cur.close()
     return tuple_resultset
+
+
+#AL20240506 TODO Does not work
+# What is CheckinAccout..
+#TD Create a stored PLPGSQL Procedure make transaction
+#TD Deposit or widtraw pendeing on amount
+#TD
+def update_CheckingAccount(amount, CPR_number):
+    cur = conn.cursor()
+    sql = """
+    UPDATE CheckingAccount
+    SET amount = %s
+    WHERE CPR_number = %s
+    """
+    cur.execute(sql, (amount, CPR_number))
+    # Husk commit() for INSERT og UPDATE, men ikke til SELECT!
+    conn.commit()
+    cur.close()

@@ -7,8 +7,8 @@ from psycopg2 import sql
 
 
 
-
-
+#AL20240506
+#Tutorial slide 28
 def select_emp_cus_accounts(emp_cpr_number):
     # employee id is parameter
     cur = conn.cursor()

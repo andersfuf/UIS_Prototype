@@ -2,6 +2,10 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField, SelectField
 from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
 
+# Class definition used to instantiate form object
+# with field set, dropdown, input validation
+
+
 class AddCustomerForm(FlaskForm):
     username = StringField('Username',
                            validators=[DataRequired(), Length(min=2, max=20)])

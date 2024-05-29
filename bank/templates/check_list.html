@@ -3,18 +3,41 @@
     <h1>{{ current_user.name }}</h1>
 
     <div class="content-section">
-     </div>
+      <p>Checking account balance</p>
+      <table class="table table-striped">
+        <thead><tr>
+            <th scope="col">Account__</th>
+            <th scope="col">______________</th>
+            <th scope="col">description</th>
+            <th scope="col">debit</th>
+            <th scope="col">credit</th>
+            <th scope="col">balance</th>
+        </tr></thead>
+          {% if balance|length %}
+          <tbody><tr>
+              <th scope="row">{{ balance[0] }}</th>
+              <td>__________</td>
+              <td>BALANCE</td>
+              <td>{{ balance[1] }}</td>
+              <td>{{ balance[2] }}</td>
+              <td>{{ balance[3] }}</td>
+          </tr></tbody>
+          {% endif %}
+
+      </table>
+    </div>
 
     <div class="content-section">
       <p>Checking account {{paccount}}</p>
       <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col">no</th>
+            <th scope="col">entry no</th>
             <th scope="col">dato</th>
             <th scope="col">description</th>
             <th scope="col">debit</th>
             <th scope="col">credit</th>
+            <th scope="col">______</th>
           </tr>
         </thead>
         <tbody>

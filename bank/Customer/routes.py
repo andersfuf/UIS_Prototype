@@ -43,6 +43,10 @@ def checklist(paccount):
     ]
     print('AL2024-001', stubRecords)
 
+    stubBalance = {'account': '1009', 'sumd': '4300', 'sumw': '2500', 'balance': '230'}
+
+    print('AL2024-001', stubBalance)
+
     # call model function to get summary information
 
     if form.validate_on_submit():
@@ -51,7 +55,7 @@ def checklist(paccount):
         return redirect(url_for('Login.home'))
 
     return render_template('check_list.html', title='List Checking Account'
-    , records=stubRecords, paccount=paccount, drop_cus_acc=dropdown_accounts, form=form)
+    , records=stubRecords, paccount=paccount, drop_cus_acc=dropdown_accounts, balance=stubBalance, form=form)
 
 
 @Customer.route("/transfer", methods=['GET', 'POST'])

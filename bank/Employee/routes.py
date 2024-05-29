@@ -6,7 +6,8 @@ from flask_login import current_user
 from bank.models import Transfers, CheckingAccount, InvestmentAccount,  transfer_account, insert_Customers
 import sys, datetime
 from bank import roles, mysession
-from bank.models_e import select_emp_investments_with_certificates, select_emp_investments, select_emp_investments_certificates_sum
+from bank.models_e import select_emp_investments_with_certificates, select_emp_investments
+from bank.models_e import select_emp_investments_certificates_sum
 
 
 iEmployee = 1
